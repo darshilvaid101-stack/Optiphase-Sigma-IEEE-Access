@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{The same pass pairs under the ratio estimator (Equation~\ref{eq:ratio}) and under the timing interaction normalized by the canonical cost (Equation~\ref{eq:timing}). The ratio columns are dimensionless. The interaction columns are percentages of the canonical cost.}
+\label{tab:comparison}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|l|l|r|r|r|r|}
+\hline
+First pass & Second pass & Ratio mean & Ratio SE & Mean (\%) & SE (\%) \\
+\hline
+dse & dse & +0.42 & 0.27 & +0.97 & 0.76 \\
+\hline
+licm & licm & +0.37 & 0.71 & +0.44 & 0.77 \\
+\hline
+early-cse & early-cse & +0.05 & 0.30 & +0.58 & 0.65 \\
+\hline
+gvn & gvn & +0.46 & 0.45 & -0.96 & 1.31 \\
+\hline
+sccp & sccp & -0.27 & 0.35 & -0.36 & 0.52 \\
+\hline
+jump-threading & loop-vectorize & -0.19 & 0.10 & -0.88 & 0.78 \\
+\hline
+\end{tabular}
+\end{table}

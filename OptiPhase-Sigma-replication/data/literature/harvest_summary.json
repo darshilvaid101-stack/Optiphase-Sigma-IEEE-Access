@@ -1,0 +1,58 @@
+{
+  "generated_utc": "2026-10-15T18:20:22+00:00",
+  "harvest_years": [
+    2024,
+    2025,
+    2026
+  ],
+  "final_entries": 4338,
+  "compiler_topic_entries": 377,
+  "abstract_sources": {
+    "none": 2633,
+    "crossref": 945,
+    "openalex": 758,
+    "arxiv": 2
+  },
+  "gate_1": {
+    "required_entries": 2500,
+    "parsed_entries": 4338,
+    "passed": true
+  },
+  "bibtex_validation": {
+    "parsed_entries": 4338,
+    "failed_blocks": 0,
+    "entries_missing_required_fields": 0,
+    "first_incomplete_keys": []
+  },
+  "stats": {
+    "openalex_returned_by_venue": {
+      "TACO": 415,
+      "CGO": 104,
+      "PLDI": 282,
+      "ASPLOS": 526,
+      "CC": 56,
+      "PACT": 72,
+      "Supercomputing": 2901
+    },
+    "openalex_total": 4356,
+    "missing_doi": 0,
+    "after_doi_dedupe": 4356,
+    "crossref_status_counts": {
+      "verified": 4355,
+      "crossref_not_found": 1
+    },
+    "accepted_before_title_dedupe": 4339,
+    "title_year_duplicates": 1,
+    "final_entries": 4338,
+    "arxiv": {
+      "entries_seen": 1824,
+      "matched_records": 54,
+      "failures": []
+    },
+    "semantic_scholar": {
+      "status": "rate_limited",
+      "hits": 0
+    },
+    "dblp": "not used: dblp.org answered every request with an anti-bot challenge page (HTTP 202, HTML body), so no DBLP data was collected"
+  }
+}

@@ -1,0 +1,21 @@
+\section*{Data and Code Availability}
+
+The source code, the unit tests, the telemetry, the figures, the manuscript sources, the benchmark manifests, and the curated bibliography (\texttt{manuscript/\allowbreak{}references\_\allowbreak{}curated.bib}) are available on GitHub at \textbf{[GitHub URL to be inserted before submission]}. The sweep dataset is \texttt{data/\allowbreak{}telemetry/\allowbreak{}master\_\allowbreak{}sweeps\_\allowbreak{}28800.csv}, with one row per sweep. The other outputs in \texttt{data/\allowbreak{}telemetry/} are the refinement analysis, the SAT-witness attribution, the Pareto fronts, the pass transition matrix, the lowering pilot, the pass checks, and the output exceptions. The SMT-LIB v2.6 certificates for the Pareto-front sweeps are in \texttt{data/\allowbreak{}smt2\_\allowbreak{}certificates/}. The file \texttt{manuscript/\allowbreak{}generated/\allowbreak{}provenance.json} records the \texttt{SHA-256} checksum of each input that \texttt{src/\allowbreak{}task6\_\allowbreak{}manuscript\_\allowbreak{}author.py} reads, and that script regenerates the macros and tables the text uses. The four output exceptions are reproduced by \texttt{src/\allowbreak{}investigate\_\allowbreak{}output\_\allowbreak{}exceptions.py}. The instruction-count figure is drawn by \texttt{src/\allowbreak{}figure\_\allowbreak{}instcount.py}, and the other figures by \texttt{src/\allowbreak{}task5\_\allowbreak{}plot\_\allowbreak{}generator.py}; the checksum file does not cover the figures.
+
+The benchmark suites evaluated in this study are open-source third-party software and are not redistributed directly. The replication repository contains automated acquisition and build manifests that record the upstream origin and the cryptographic checksum of every kernel, together with the build scripts. The ingested benchmark sources are PolyBench/C \texttt{4.\allowbreak{}2.\allowbreak{}1} (beta), obtained from the SourceForge mirror recorded in the manifest; MiBench v1.0, obtained from the per-category archives published by the University of Michigan; the TSVC vectorization suite from the LLVM test suite at the revision recorded in \texttt{data/\allowbreak{}benchmarks/\allowbreak{}tsvc\_coremark/\allowbreak{}MANIFEST.json}; and CoreMark at the revision recorded in the same file. Five of the six CoreMark checksums in the upstream registry match the ingested source files. The sixth, \texttt{coremark.\allowbreak{}h}, differs by one comment word, because the upstream project changed a comment without regenerating its checksum registry.
+
+\section*{Funding, Competing Interests, and Author Contributions}
+
+\textbf{Corresponding Author:} Kanagaraj R (kanagaraj.r@vit.ac.in).
+
+\textbf{Funding:} The authors attest that no external financial support, grant, fee, payment, or other benefit was provided to or received by them for the research, design, or publication of this work.
+
+\textbf{Competing Interests:} The authors attest that nothing of financial or other value was provided to or taken from any person or organization in connection with this work. They declare no financial, personal, or professional competing interests that could have influenced the design, execution, or interpretation of this study.
+
+\textbf{Author Contributions:} Devarsh Patel and Darshil Vaid conceived the research trajectory, formulated the theoretical framework and mathematical pass algebra, developed the multi-core execution engine and SMT translation validator, analyzed the experimental telemetry, and co-authored the final manuscript. Devarsh Patel and Darshil Vaid reviewed, refined, and approved the final manuscript. \textbf{[Kanagaraj R's contribution, and confirmation of approval of the final manuscript, to be stated by the authors.]}
+
+\textbf{Ethics Approval:} Not applicable. This study involves exclusively deterministic computational benchmarking and formal logic verification on standard user-space open-source software, with zero human subjects or animal testing.
+
+\textbf{Consent to Participate:} Not applicable.
+
+\textbf{Consent for Publication:} Not applicable. The manuscript contains no individual's data.

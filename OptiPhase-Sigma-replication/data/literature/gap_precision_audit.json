@@ -1,0 +1,51 @@
+{
+  "method": "Judgments by one AI assistant (Claude) against two written criteria. Limitation: the sentence states a limitation of existing work or the approach, an unsolved problem, or an unmet need. Cluster: the assigned cluster matches its definition in config/gap_regex_patterns.json (or the remedy text). Wilson 95% intervals. Each judgment was madeonce; no human re-judged the sample.",
+  "tiers": {
+    "candidate": {
+      "n": 150,
+      "limitation_yes": 62,
+      "limitation_precision": 0.4133,
+      "limitation_wilson95": [
+        0.3377,
+        0.4933
+      ],
+      "cluster_yes": 5,
+      "cluster_precision": 0.0333,
+      "cluster_wilson95": [
+        0.0143,
+        0.0757
+      ]
+    },
+    "refined": {
+      "n": 75,
+      "limitation_yes": 32,
+      "limitation_precision": 0.4267,
+      "limitation_wilson95": [
+        0.321,
+        0.5395
+      ],
+      "cluster_yes": 17,
+      "cluster_precision": 0.2267,
+      "cluster_wilson95": [
+        0.1466,
+        0.3334
+      ]
+    },
+    "strict_census": {
+      "n": 17,
+      "limitation_yes": 4,
+      "limitation_precision": 0.2353,
+      "limitation_wilson95": [
+        0.0955,
+        0.4726
+      ],
+      "cluster_yes": 4,
+      "cluster_precision": 0.2353,
+      "cluster_wilson95": [
+        0.0955,
+        0.4726
+      ],
+      "judgments_retained": false
+    }
+  }
+}

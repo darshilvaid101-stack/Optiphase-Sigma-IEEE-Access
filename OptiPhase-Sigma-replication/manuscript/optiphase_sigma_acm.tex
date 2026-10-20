@@ -1,0 +1,77 @@
+\documentclass[acmsmall]{acmart}
+
+\acmJournal{TACO}
+\acmVolume{1}
+\acmNumber{1}
+\acmArticle{1}
+\acmYear{2026}
+\acmMonth{10}
+
+\input{generated/macros}
+
+\graphicspath{{../figures/}}
+
+% Page-width figure: the shared sections call \PaperFigure{file}{caption}.
+\newcommand{\PaperFigure}[2]{%
+  \begin{figure*}[t]%
+  \centering%
+  \includegraphics[width=\textwidth]{#1}%
+  \caption{#2}%
+  \end{figure*}}
+
+\emergencystretch=3em
+
+\AtBeginDocument{\providecommand\BibTeX{{\normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+\newtheorem{remark}{Remark}
+
+% The IEEE class defines \PARstart; the other layouts set the first word in plain type.
+\providecommand{\PARstart}[2]{#1#2}
+
+\begin{document}
+
+\title[OptiPhase-$\Sigma$]{OptiPhase-$\Sigma$: Measured Pass Interference and Bounded Refinement Checks in the LLVM New Pass Manager}
+
+\author{Devarsh Patel}
+\email{devarsh.patel2024@vitstudent.ac.in}
+\affiliation{%
+  \institution{School of Computer Science and Engineering, Vellore Institute of Technology}
+  \city{Vellore}
+  \country{India}}
+
+\author{Darshil Vaid}
+\email{darshil.vaid2024@vitstudent.ac.in}
+\affiliation{%
+  \institution{School of Computer Science and Engineering, Vellore Institute of Technology}
+  \city{Vellore}
+  \country{India}}
+
+\author{Kanagaraj R}
+\authornote{Corresponding author.}
+\email{kanagaraj.r@vit.ac.in}
+\affiliation{%
+  \institution{School of Computer Science and Engineering, Vellore Institute of Technology}
+  \city{Vellore}
+  \country{India}}
+
+\begin{abstract}
+\input{sections/abstract_body}
+\end{abstract}
+
+\keywords{phase ordering, LLVM new pass manager, pass interference, translation validation, Z3, hypervolume}
+
+\maketitle
+\hypersetup{pdftitle={OptiPhase-Sigma: Measured Pass Interference and Bounded Refinement Checks in the LLVM New Pass Manager}}
+
+\input{sections/introduction}
+\input{sections/background}
+\input{sections/framework}
+\input{sections/methods}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/declarations}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references_curated}
+
+\end{document}

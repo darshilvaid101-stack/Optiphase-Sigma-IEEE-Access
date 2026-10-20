@@ -1,0 +1,5 @@
+{
+  "rule": "Retired for the unconfounded campaign (decision D97). unify-loop-exits is replaced by newgvn on every kernel before R2 runs, so no R2 sweep crashes and no replacement is needed. The table of the first campaign is kept in config/archive_v1.",
+  "evidence": "The first campaign recorded a segmentation fault for unify-loop-exits on mibench/gsm-toast and mibench/gsm-untoast; see config/archive_v1/llvm_newpm_crash_replacements_v1.json.",
+  "replacements": []
+}

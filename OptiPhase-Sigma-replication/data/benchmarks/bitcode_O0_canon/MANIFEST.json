@@ -1,0 +1,2664 @@
+{
+  "generatedUtc": "2026-10-20T07:15:50+00:00",
+  "toolchain": {
+    "clang": "Homebrew clang version 23.1.3",
+    "opt": "Homebrew LLVM version 23.1.3"
+  },
+  "canonicalFlags": [
+    "-O0",
+    "-Xclang",
+    "-disable-O0-optnone",
+    "-emit-llvm",
+    "-c"
+  ],
+  "canonicalPass": "opt -passes=mem2reg,loop-simplify,lcssa",
+  "gate3": {
+    "requiredKernels": 60,
+    "verifiedKernels": 60,
+    "passed": true
+  },
+  "kernels": [
+    {
+      "kernel_id": "polybench/correlation",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "35cec61fe3bba0dad083e4facfcc4ac6eb6aadaafde057a362df7cd57e8727dd",
+      "native_digest_run2": "35cec61fe3bba0dad083e4facfcc4ac6eb6aadaafde057a362df7cd57e8727dd",
+      "lli_digest": "35cec61fe3bba0dad083e4facfcc4ac6eb6aadaafde057a362df7cd57e8727dd",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "f94980db79889d21caccc7b4b7b8116a71c28a63624a3d45ad1f73b466aa2457",
+      "canonical_bytes": "12128",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/correlation",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/datamining/correlation/correlation.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/datamining/correlation"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "correlation",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/covariance",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "73c5f23303d7f9d13902d08b4de2c485768fb6499c03c93343a0000b3271dd16",
+      "native_digest_run2": "73c5f23303d7f9d13902d08b4de2c485768fb6499c03c93343a0000b3271dd16",
+      "lli_digest": "73c5f23303d7f9d13902d08b4de2c485768fb6499c03c93343a0000b3271dd16",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "0c7911fefaf22c06c9d61f7d73a24ac6d2171d88a29b74ede59c4f8fb2d3b46f",
+      "canonical_bytes": "11584",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/covariance",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/datamining/covariance/covariance.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/datamining/covariance"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "covariance",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/gemm",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "4085c6b7260e0af3cfce141175db9051d501530aaca5011b44b129146e797075",
+      "native_digest_run2": "4085c6b7260e0af3cfce141175db9051d501530aaca5011b44b129146e797075",
+      "lli_digest": "4085c6b7260e0af3cfce141175db9051d501530aaca5011b44b129146e797075",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "f662f718a134664c3b50b93a0ca9aa2b427c74d9eae8e8be71d30e208b09f3a9",
+      "canonical_bytes": "11552",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/gemm",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/blas/gemm/gemm.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/blas/gemm"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "gemm",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/gemver",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "eda33e6d5134ebddfd920533107bb4e6d718a9489cd2c2b794aa7af7c2f69615",
+      "native_digest_run2": "eda33e6d5134ebddfd920533107bb4e6d718a9489cd2c2b794aa7af7c2f69615",
+      "lli_digest": "eda33e6d5134ebddfd920533107bb4e6d718a9489cd2c2b794aa7af7c2f69615",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "0ff394362829322042296c51a914d9c04cae9e873a45ce0da66cdbb06698e6d5",
+      "canonical_bytes": "12032",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/gemver",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/blas/gemver/gemver.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/blas/gemver"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "gemver",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/gesummv",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "5508e9a2efabd262baa7579b411d4119872279219ed0f099c252ff186cdab9b0",
+      "native_digest_run2": "5508e9a2efabd262baa7579b411d4119872279219ed0f099c252ff186cdab9b0",
+      "lli_digest": "5508e9a2efabd262baa7579b411d4119872279219ed0f099c252ff186cdab9b0",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "6c0076cf980f16fa678df165fd87656ca61b2baf6d4d65513fc287cf76d2ff2b",
+      "canonical_bytes": "11424",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/gesummv",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/blas/gesummv/gesummv.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/blas/gesummv"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "gesummv",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/symm",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "54fe8fc01fedc5aae4ed3bf0672126d7cc6afd93acbecdab742daff932c569df",
+      "native_digest_run2": "54fe8fc01fedc5aae4ed3bf0672126d7cc6afd93acbecdab742daff932c569df",
+      "lli_digest": "54fe8fc01fedc5aae4ed3bf0672126d7cc6afd93acbecdab742daff932c569df",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "f0cb03949a13daa57da9583e9946d695065b65d3f2e057cad9f10277ebefc0b3",
+      "canonical_bytes": "11680",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/symm",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/blas/symm/symm.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/blas/symm"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "symm",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/syr2k",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "b4325e81b0cd81031c72c28370209bc48946c02d279cd76751df589fd202853f",
+      "native_digest_run2": "b4325e81b0cd81031c72c28370209bc48946c02d279cd76751df589fd202853f",
+      "lli_digest": "b4325e81b0cd81031c72c28370209bc48946c02d279cd76751df589fd202853f",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "b9aa41999bf8ec405b72c5456c4f2fb0113d62c78c4ffde89fc00fb0291ef9f9",
+      "canonical_bytes": "11520",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/syr2k",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/blas/syr2k/syr2k.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/blas/syr2k"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "syr2k",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/syrk",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "2e269ece33a47c60a82895f8a8c1272bd8b03bccb9dd9d040e9c799528c3262f",
+      "native_digest_run2": "2e269ece33a47c60a82895f8a8c1272bd8b03bccb9dd9d040e9c799528c3262f",
+      "lli_digest": "2e269ece33a47c60a82895f8a8c1272bd8b03bccb9dd9d040e9c799528c3262f",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "875a80c4d25e0e1300d7f2ae2205eb3e2340dacf6369f0f4b88f73f9f235db2d",
+      "canonical_bytes": "11376",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/syrk",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/blas/syrk/syrk.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/blas/syrk"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "syrk",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/trmm",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "0a619cee0f5730acffec925b51cf7eb1bd1b98c7660b49b344545eac550f1544",
+      "native_digest_run2": "0a619cee0f5730acffec925b51cf7eb1bd1b98c7660b49b344545eac550f1544",
+      "lli_digest": "0a619cee0f5730acffec925b51cf7eb1bd1b98c7660b49b344545eac550f1544",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "707d42fa78a5e4e9498a5ef2486f0b36b6e53a5504effa9704e7c6d98be7abcd",
+      "canonical_bytes": "11328",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/trmm",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/blas/trmm/trmm.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/blas/trmm"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "trmm",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/2mm",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "c598617e0b753d5b46475473d881b248e571832e20a5d9fd553cde031db9eb26",
+      "native_digest_run2": "c598617e0b753d5b46475473d881b248e571832e20a5d9fd553cde031db9eb26",
+      "lli_digest": "c598617e0b753d5b46475473d881b248e571832e20a5d9fd553cde031db9eb26",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "ba2b672bd1e0de365ea7cda55a694519df6812db90990e5384653a64d0ff3eb0",
+      "canonical_bytes": "11984",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/2mm",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/kernels/2mm/2mm.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/kernels/2mm"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "2mm",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/3mm",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "40563f6611e7b57917f3db259fdbe148dbab45478197989b7b812b111e9c109f",
+      "native_digest_run2": "40563f6611e7b57917f3db259fdbe148dbab45478197989b7b812b111e9c109f",
+      "lli_digest": "40563f6611e7b57917f3db259fdbe148dbab45478197989b7b812b111e9c109f",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "fbe6a75f2ad075bf2877dae33137c9b765509ab8d31508526a59f559b3af032e",
+      "canonical_bytes": "12256",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/3mm",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/kernels/3mm/3mm.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/kernels/3mm"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "3mm",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/atax",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "38c0f0e0ade8d5d4667e0c9a4c70acfec3aad868fe4df134b33709b9ce349a62",
+      "native_digest_run2": "38c0f0e0ade8d5d4667e0c9a4c70acfec3aad868fe4df134b33709b9ce349a62",
+      "lli_digest": "38c0f0e0ade8d5d4667e0c9a4c70acfec3aad868fe4df134b33709b9ce349a62",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "13fff15cc60e7a065f4f7956a20d90dd0403671c2045c165adafcfc8cac2d5c1",
+      "canonical_bytes": "11344",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/atax",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/kernels/atax/atax.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/kernels/atax"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "atax",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/bicg",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "cf3c76dd2b71597e49f52cf28956e244e7fa278de65355dc1538dea1265973eb",
+      "native_digest_run2": "cf3c76dd2b71597e49f52cf28956e244e7fa278de65355dc1538dea1265973eb",
+      "lli_digest": "cf3c76dd2b71597e49f52cf28956e244e7fa278de65355dc1538dea1265973eb",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "f96d811fca9f9d6ff90d6746c6b162ff5f968be68884a6d1e23f2c55aefd90db",
+      "canonical_bytes": "11584",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/bicg",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/kernels/bicg/bicg.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/kernels/bicg"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "bicg",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/doitgen",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "9a8cf10d168416f47190fa14fcbe3648a47302fe011e07e6755faa25ab912d02",
+      "native_digest_run2": "9a8cf10d168416f47190fa14fcbe3648a47302fe011e07e6755faa25ab912d02",
+      "lli_digest": "9a8cf10d168416f47190fa14fcbe3648a47302fe011e07e6755faa25ab912d02",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "0f538d2639150f5f756ce02edb1a4536953f39a002a259be07d2d96bc2ed9b35",
+      "canonical_bytes": "11536",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/doitgen",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/kernels/doitgen/doitgen.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/kernels/doitgen"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "doitgen",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/mvt",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "0036271302315aff2ad8e90bae7de26d60af20db3cc1d9c005c1e2c23cfd9ea0",
+      "native_digest_run2": "0036271302315aff2ad8e90bae7de26d60af20db3cc1d9c005c1e2c23cfd9ea0",
+      "lli_digest": "0036271302315aff2ad8e90bae7de26d60af20db3cc1d9c005c1e2c23cfd9ea0",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "3dcd14790951c3f6ee9542f2bf54cbcf453a3d41f3fd0649e9ac22046f4e5fc9",
+      "canonical_bytes": "11616",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/mvt",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/kernels/mvt/mvt.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/kernels/mvt"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "mvt",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/cholesky",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "8cdf4d357205fc7bb6a2e3d69bfe80d63a0c46b36e57e8f593ab02700ae1621a",
+      "native_digest_run2": "8cdf4d357205fc7bb6a2e3d69bfe80d63a0c46b36e57e8f593ab02700ae1621a",
+      "lli_digest": "8cdf4d357205fc7bb6a2e3d69bfe80d63a0c46b36e57e8f593ab02700ae1621a",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "20be05bc2ab552324307078a8ef82f97f94d245e8ea4ad99d3161631365a8611",
+      "canonical_bytes": "11888",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/cholesky",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/solvers/cholesky/cholesky.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/solvers/cholesky"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "cholesky",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/durbin",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "4defb569b72bd7e26ba8509225042458487ba0127ce89b7a865964677d2a42a0",
+      "native_digest_run2": "4defb569b72bd7e26ba8509225042458487ba0127ce89b7a865964677d2a42a0",
+      "lli_digest": "4defb569b72bd7e26ba8509225042458487ba0127ce89b7a865964677d2a42a0",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "457471f342699b31cb05559abfd8851e00f4aa10999f281e1ab4c9f26a78cbeb",
+      "canonical_bytes": "11216",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/durbin",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/solvers/durbin/durbin.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/solvers/durbin"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "durbin",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/gramschmidt",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "96507d4778febf280813bbc56c079adea1b88d52cf279240d13a1f3dbab70c81",
+      "native_digest_run2": "96507d4778febf280813bbc56c079adea1b88d52cf279240d13a1f3dbab70c81",
+      "lli_digest": "96507d4778febf280813bbc56c079adea1b88d52cf279240d13a1f3dbab70c81",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "704d21d2dcf0dda3025b9802b111a741b122b92792a66cf807c647c0cef9d993",
+      "canonical_bytes": "12080",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/gramschmidt",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/solvers/gramschmidt/gramschmidt.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/solvers/gramschmidt"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "gramschmidt",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/lu",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "e4424f4673e70056c0c67bfc75a57206d8a702efcfe1a817a4edd7dde314a80a",
+      "native_digest_run2": "e4424f4673e70056c0c67bfc75a57206d8a702efcfe1a817a4edd7dde314a80a",
+      "lli_digest": "e4424f4673e70056c0c67bfc75a57206d8a702efcfe1a817a4edd7dde314a80a",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "1c89f4cf9369a0f00473963c37096ab32f49d41c7c0c1d05bcb40fa88f8bc9b3",
+      "canonical_bytes": "11776",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/lu",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/solvers/lu/lu.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/solvers/lu"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "lu",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/ludcmp",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "8956930be135683cb76c79602ff922793748c00cc2b53ea650f35e46f164d958",
+      "native_digest_run2": "8956930be135683cb76c79602ff922793748c00cc2b53ea650f35e46f164d958",
+      "lli_digest": "8956930be135683cb76c79602ff922793748c00cc2b53ea650f35e46f164d958",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "20d70eede7bcea9c0afd2dbda604b408807a64ea524319afd6b536b4ce14ba8f",
+      "canonical_bytes": "12400",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/ludcmp",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/solvers/ludcmp/ludcmp.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/solvers/ludcmp"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "ludcmp",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/trisolv",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "a9a3766fc6ba681eb7ffb8b1eeac9ef197fe511ce68a7434872684e0da87c0c8",
+      "native_digest_run2": "a9a3766fc6ba681eb7ffb8b1eeac9ef197fe511ce68a7434872684e0da87c0c8",
+      "lli_digest": "a9a3766fc6ba681eb7ffb8b1eeac9ef197fe511ce68a7434872684e0da87c0c8",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "fd5655c96504dd1eb27a3ba098be56abb45ca6cd4b5663725fae3df366566a96",
+      "canonical_bytes": "11168",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/trisolv",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/solvers/trisolv/trisolv.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/linear-algebra/solvers/trisolv"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "trisolv",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/deriche",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "d90bc7e1de4676192af062c92f8f89b2fafcf3e995c293cd3506cb9009a9b282",
+      "native_digest_run2": "d90bc7e1de4676192af062c92f8f89b2fafcf3e995c293cd3506cb9009a9b282",
+      "lli_digest": "d90bc7e1de4676192af062c92f8f89b2fafcf3e995c293cd3506cb9009a9b282",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "0cf46b72fd566e150d915192f3e85d724d00ad28101791d5137e722179682222",
+      "canonical_bytes": "12752",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/deriche",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/medley/deriche/deriche.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/medley/deriche"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "deriche",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/floyd-warshall",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "bea0456e005ea7c526224d26d7d70e248013eda944c7f784ba42c07e7f5e374d",
+      "native_digest_run2": "bea0456e005ea7c526224d26d7d70e248013eda944c7f784ba42c07e7f5e374d",
+      "lli_digest": "bea0456e005ea7c526224d26d7d70e248013eda944c7f784ba42c07e7f5e374d",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "8a7717e486c74ed811e09893e4ad4ee286ee68e5f4d0e179db5534491774fa10",
+      "canonical_bytes": "11152",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/floyd-warshall",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/medley/floyd-warshall/floyd-warshall.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/medley/floyd-warshall"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "floyd-warshall",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/nussinov",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "3de0acac90c3788de1745d06ffb4bdfb96e15e215149d525e81a90bdd9feeb7b",
+      "native_digest_run2": "3de0acac90c3788de1745d06ffb4bdfb96e15e215149d525e81a90bdd9feeb7b",
+      "lli_digest": "3de0acac90c3788de1745d06ffb4bdfb96e15e215149d525e81a90bdd9feeb7b",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "cafb574ca1bc35032e2549cf8a8ba0d1e52f7f0d0e0b926296e1cc5296dcb574",
+      "canonical_bytes": "11936",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/nussinov",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/medley/nussinov/nussinov.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/medley/nussinov"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "nussinov",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/adi",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "0f7522c7733b5f9ba2371139a25934961903037a729573004b009c15b3654de7",
+      "native_digest_run2": "0f7522c7733b5f9ba2371139a25934961903037a729573004b009c15b3654de7",
+      "lli_digest": "0f7522c7733b5f9ba2371139a25934961903037a729573004b009c15b3654de7",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "e93ce0046f73881ccea98fd409978dbe730e3235a576bf10395d48c6dcb80e9a",
+      "canonical_bytes": "12352",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/adi",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/stencils/adi/adi.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/stencils/adi"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "adi",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/fdtd-2d",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "165ce9848e2ab1ff8e34f084f2b08e62fb20461bc86d0587f523de73982d1323",
+      "native_digest_run2": "165ce9848e2ab1ff8e34f084f2b08e62fb20461bc86d0587f523de73982d1323",
+      "lli_digest": "165ce9848e2ab1ff8e34f084f2b08e62fb20461bc86d0587f523de73982d1323",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "77e5920d88828c978e85af06178a9d377d36135696fdbbd29f187ef31cb9d791",
+      "canonical_bytes": "12416",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/fdtd-2d",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/stencils/fdtd-2d/fdtd-2d.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/stencils/fdtd-2d"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "fdtd-2d",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/heat-3d",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "8e44831bde8e584d947116a933259fb73b8434025a4ed55ad973e6ca9a16bbc2",
+      "native_digest_run2": "8e44831bde8e584d947116a933259fb73b8434025a4ed55ad973e6ca9a16bbc2",
+      "lli_digest": "8e44831bde8e584d947116a933259fb73b8434025a4ed55ad973e6ca9a16bbc2",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "a0b5dfa5b33f052449af63d83758340f3ca2eb47fd5d7ff8d50523f57031012b",
+      "canonical_bytes": "12240",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/heat-3d",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/stencils/heat-3d/heat-3d.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/stencils/heat-3d"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "heat-3d",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/jacobi-1d",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "b709bfc5f481dd496fe9b168c389a148e24b609fb6d49096c824fc3576b4daec",
+      "native_digest_run2": "b709bfc5f481dd496fe9b168c389a148e24b609fb6d49096c824fc3576b4daec",
+      "lli_digest": "b709bfc5f481dd496fe9b168c389a148e24b609fb6d49096c824fc3576b4daec",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "9f7caa0fae5cf9cc8c4e1098f036814b80de54bedb9514aa141d6ac947f176fb",
+      "canonical_bytes": "11024",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/jacobi-1d",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/stencils/jacobi-1d/jacobi-1d.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/stencils/jacobi-1d"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "jacobi-1d",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/jacobi-2d",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "19a3ca5c45c406098bb241a1f2639dc3de7b4d7c81c7de70132c3d9c810cefcb",
+      "native_digest_run2": "19a3ca5c45c406098bb241a1f2639dc3de7b4d7c81c7de70132c3d9c810cefcb",
+      "lli_digest": "19a3ca5c45c406098bb241a1f2639dc3de7b4d7c81c7de70132c3d9c810cefcb",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "53e0f6795ed411e248086a1df2ae437ec600a71b0e8853bfaf36f00109efdcbe",
+      "canonical_bytes": "11568",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/jacobi-2d",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/stencils/jacobi-2d/jacobi-2d.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/stencils/jacobi-2d"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "jacobi-2d",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "polybench/seidel-2d",
+      "suite": "polybench",
+      "status": "verified",
+      "native_digest_run1": "78e9be980b1d675daebb7a0c36076768a34273219288460f9cb83ebe815e6fa4",
+      "native_digest_run2": "78e9be980b1d675daebb7a0c36076768a34273219288460f9cb83ebe815e6fa4",
+      "lli_digest": "78e9be980b1d675daebb7a0c36076768a34273219288460f9cb83ebe815e6fa4",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "b3f6a31426e7e43df21ac66442f078206017728e1e008aff2957579d60a42185",
+      "canonical_bytes": "11344",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "polybench/seidel-2d",
+        "suite": "polybench",
+        "sources": [
+          "data/benchmarks/polybench_c_4.2.1/stencils/seidel-2d/seidel-2d.c",
+          "data/benchmarks/polybench_c_4.2.1/utilities/polybench.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/polybench_c_4.2.1/utilities",
+          "data/benchmarks/polybench_c_4.2.1/stencils/seidel-2d"
+        ],
+        "defines": [
+          "SMALL_DATASET",
+          "POLYBENCH_DUMP_ARRAYS"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "seidel-2d",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/bitcount",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "23ca207990133c305acc201dbb01b437355fc8308e289d1c9ec055e130c09915",
+      "native_digest_run2": "23ca207990133c305acc201dbb01b437355fc8308e289d1c9ec055e130c09915",
+      "lli_digest": "23ca207990133c305acc201dbb01b437355fc8308e289d1c9ec055e130c09915",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "e21a19314381e1d92dea073cc959638e26bb8e5f84c402db48f7253834be21c3",
+      "canonical_bytes": "12208",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/bitcount",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/automotive/bitcount/bitcnt_1.c",
+          "data/benchmarks/mibench_v1/automotive/bitcount/bitcnt_2.c",
+          "data/benchmarks/mibench_v1/automotive/bitcount/bitcnt_3.c",
+          "data/benchmarks/mibench_v1/automotive/bitcount/bitcnt_4.c",
+          "data/benchmarks/mibench_v1/automotive/bitcount/bitcnts.c",
+          "data/benchmarks/mibench_v1/automotive/bitcount/bitfiles.c",
+          "data/benchmarks/mibench_v1/automotive/bitcount/bitstrng.c",
+          "data/benchmarks/mibench_v1/automotive/bitcount/bstr_i.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/automotive/bitcount",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types"
+        ],
+        "link_libraries": [],
+        "run_directory": "data/benchmarks/mibench_v1/automotive/bitcount",
+        "program_name": "bitcnts",
+        "arguments": [
+          "75000"
+        ],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": [
+          "Time:\\s*[0-9.]+\\s*sec"
+        ]
+      }
+    },
+    {
+      "kernel_id": "mibench/basicmath",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "e8aee4312503c2ddbdeba62cb649a213c3c0854db7307d1d50bf82d42117921b",
+      "native_digest_run2": "e8aee4312503c2ddbdeba62cb649a213c3c0854db7307d1d50bf82d42117921b",
+      "lli_digest": "e8aee4312503c2ddbdeba62cb649a213c3c0854db7307d1d50bf82d42117921b",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "cbbddc4a897b5ea09471515d100d3967c399a9527bd6daad5d4747ac624feed6",
+      "canonical_bytes": "8928",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/basicmath",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/automotive/basicmath/basicmath_small.c",
+          "data/benchmarks/mibench_v1/automotive/basicmath/rad2deg.c",
+          "data/benchmarks/mibench_v1/automotive/basicmath/cubic.c",
+          "data/benchmarks/mibench_v1/automotive/basicmath/isqrt.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/automotive/basicmath",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "data/benchmarks/mibench_v1/automotive/basicmath",
+        "program_name": "basicmath_small",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/qsort",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "a568a2ab7c8d8929a4e914d28f875084e3b3223cea4a05fd5c72ff10ce61dbbd",
+      "native_digest_run2": "a568a2ab7c8d8929a4e914d28f875084e3b3223cea4a05fd5c72ff10ce61dbbd",
+      "lli_digest": "a568a2ab7c8d8929a4e914d28f875084e3b3223cea4a05fd5c72ff10ce61dbbd",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "8196a59cfaf1df239b99b1218cc61ab7bff9b64b18b419baf162eb4eda665b39",
+      "canonical_bytes": "6320",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/qsort",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/automotive/qsort/qsort_small.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/automotive/qsort",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "data/benchmarks/mibench_v1/automotive/qsort",
+        "program_name": "qsort_small",
+        "arguments": [
+          "input_small.dat"
+        ],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/susan-smoothing",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "5a901c5f5ef4b424238648accf6e2542124d3541cac896eb1160881e1e606316",
+      "native_digest_run2": "5a901c5f5ef4b424238648accf6e2542124d3541cac896eb1160881e1e606316",
+      "lli_digest": "5a901c5f5ef4b424238648accf6e2542124d3541cac896eb1160881e1e606316",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "9323be21c590c3ef86cd88360a9af76bb11610867ac88c646676d0cf09e9be92",
+      "canonical_bytes": "49504",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/susan-smoothing",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/automotive/susan/susan.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/automotive/susan",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "data/benchmarks/mibench_v1/automotive/susan",
+        "program_name": "susan",
+        "arguments": [
+          "input_small.pgm",
+          "output_small.smoothing.pgm",
+          "-s"
+        ],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/susan-edges",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "334cb8cdef8db559879ed64a2259c24394ed216990b9194e51449dfa8c565e1b",
+      "native_digest_run2": "334cb8cdef8db559879ed64a2259c24394ed216990b9194e51449dfa8c565e1b",
+      "lli_digest": "334cb8cdef8db559879ed64a2259c24394ed216990b9194e51449dfa8c565e1b",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "9323be21c590c3ef86cd88360a9af76bb11610867ac88c646676d0cf09e9be92",
+      "canonical_bytes": "49504",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/susan-edges",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/automotive/susan/susan.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/automotive/susan",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "data/benchmarks/mibench_v1/automotive/susan",
+        "program_name": "susan",
+        "arguments": [
+          "input_small.pgm",
+          "output_small.edges.pgm",
+          "-e"
+        ],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/susan-corners",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "a9d360e4216520b29774aa20c7e45f6136d63056af52697292ec0d6fc067975f",
+      "native_digest_run2": "a9d360e4216520b29774aa20c7e45f6136d63056af52697292ec0d6fc067975f",
+      "lli_digest": "a9d360e4216520b29774aa20c7e45f6136d63056af52697292ec0d6fc067975f",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "9323be21c590c3ef86cd88360a9af76bb11610867ac88c646676d0cf09e9be92",
+      "canonical_bytes": "49504",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/susan-corners",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/automotive/susan/susan.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/automotive/susan",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "data/benchmarks/mibench_v1/automotive/susan",
+        "program_name": "susan",
+        "arguments": [
+          "input_small.pgm",
+          "output_small.corners.pgm",
+          "-c"
+        ],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/dijkstra",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "16b49550bbf15ab1ac5920a70126fa60832fcb90635fe52cd0fc9e40c3498484",
+      "native_digest_run2": "16b49550bbf15ab1ac5920a70126fa60832fcb90635fe52cd0fc9e40c3498484",
+      "lli_digest": "16b49550bbf15ab1ac5920a70126fa60832fcb90635fe52cd0fc9e40c3498484",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "802eb775cb740b05c67d77ac3f3401d89865a9b5bc8afe1fc7eeddf9095050da",
+      "canonical_bytes": "9264",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/dijkstra",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/network/dijkstra/dijkstra_small.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/network/dijkstra",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types"
+        ],
+        "link_libraries": [],
+        "run_directory": "data/benchmarks/mibench_v1/network/dijkstra",
+        "program_name": "dijkstra_small",
+        "arguments": [
+          "input.dat"
+        ],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/patricia",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "c5aa4e7fbd5e9843853212255c0a81250125a53fa77b964fbe6be875e843cd99",
+      "native_digest_run2": "c5aa4e7fbd5e9843853212255c0a81250125a53fa77b964fbe6be875e843cd99",
+      "lli_digest": "c5aa4e7fbd5e9843853212255c0a81250125a53fa77b964fbe6be875e843cd99",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "819e25a796e7303b8893284b356a91c80604f352d820a12009307272e78d15cb",
+      "canonical_bytes": "13424",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/patricia",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/network/patricia/patricia.c",
+          "data/benchmarks/mibench_v1/network/patricia/patricia_test.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/network/patricia",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types"
+        ],
+        "link_libraries": [],
+        "run_directory": "data/benchmarks/mibench_v1/network/patricia",
+        "program_name": "patricia",
+        "arguments": [
+          "small.udp"
+        ],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": [
+          "(?m)^[0-9]+\\.[0-9]+ "
+        ]
+      }
+    },
+    {
+      "kernel_id": "mibench/blowfish-encode",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "7d9bdd1e1f681600163a52c3c0aa420cebb5769c31b0780881554a3c2d996ac5",
+      "native_digest_run2": "7d9bdd1e1f681600163a52c3c0aa420cebb5769c31b0780881554a3c2d996ac5",
+      "lli_digest": "7d9bdd1e1f681600163a52c3c0aa420cebb5769c31b0780881554a3c2d996ac5",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "487b16b945df4e5db564632d919c9e2c28b65a6fb657f9ca48cbac69dc99178c",
+      "canonical_bytes": "24080",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/blowfish-encode",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/security/blowfish/bf.c",
+          "data/benchmarks/mibench_v1/security/blowfish/bf_skey.c",
+          "data/benchmarks/mibench_v1/security/blowfish/bf_ecb.c",
+          "data/benchmarks/mibench_v1/security/blowfish/bf_enc.c",
+          "data/benchmarks/mibench_v1/security/blowfish/bf_cbc.c",
+          "data/benchmarks/mibench_v1/security/blowfish/bf_cfb64.c",
+          "data/benchmarks/mibench_v1/security/blowfish/bf_ofb64.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/security/blowfish",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types",
+          "-ftrivial-auto-var-init=zero"
+        ],
+        "link_libraries": [],
+        "run_directory": "data/benchmarks/mibench_v1/security/blowfish",
+        "program_name": "bf",
+        "arguments": [
+          "e",
+          "input_small.asc",
+          "output_small.enc",
+          "1234567890abcdeffedcba0987654321"
+        ],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/blowfish-decode",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "33f7159829049faf6b56acf5a93c407a4eb85489aab9582fca0297e7473ece8d",
+      "native_digest_run2": "33f7159829049faf6b56acf5a93c407a4eb85489aab9582fca0297e7473ece8d",
+      "lli_digest": "33f7159829049faf6b56acf5a93c407a4eb85489aab9582fca0297e7473ece8d",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "487b16b945df4e5db564632d919c9e2c28b65a6fb657f9ca48cbac69dc99178c",
+      "canonical_bytes": "24080",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/blowfish-decode",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/security/blowfish/bf.c",
+          "data/benchmarks/mibench_v1/security/blowfish/bf_skey.c",
+          "data/benchmarks/mibench_v1/security/blowfish/bf_ecb.c",
+          "data/benchmarks/mibench_v1/security/blowfish/bf_enc.c",
+          "data/benchmarks/mibench_v1/security/blowfish/bf_cbc.c",
+          "data/benchmarks/mibench_v1/security/blowfish/bf_cfb64.c",
+          "data/benchmarks/mibench_v1/security/blowfish/bf_ofb64.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/security/blowfish",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types",
+          "-ftrivial-auto-var-init=zero"
+        ],
+        "link_libraries": [],
+        "run_directory": "data/benchmarks/mibench_v1/security/blowfish",
+        "program_name": "bf",
+        "arguments": [
+          "d",
+          "output_small.enc",
+          "output_small.asc",
+          "1234567890abcdeffedcba0987654321"
+        ],
+        "stdin_file": "",
+        "setup_arguments": [
+          [
+            "e",
+            "input_small.asc",
+            "output_small.enc",
+            "1234567890abcdeffedcba0987654321"
+          ]
+        ],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/rijndael-encode",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "1c98fe3aeb5da1fcc85196dfec1ca272040e38862fefa4a3e9bc61640070d6ef",
+      "native_digest_run2": "1c98fe3aeb5da1fcc85196dfec1ca272040e38862fefa4a3e9bc61640070d6ef",
+      "lli_digest": "1c98fe3aeb5da1fcc85196dfec1ca272040e38862fefa4a3e9bc61640070d6ef",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "a854d154a151c119a60ddd6484e51f3c32814fdc2c48deae6f6d24ec92bc4edb",
+      "canonical_bytes": "53744",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/rijndael-encode",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/security/rijndael/aes.c",
+          "data/benchmarks/mibench_v1/security/rijndael/aesxam.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/security/rijndael",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types"
+        ],
+        "link_libraries": [],
+        "run_directory": "data/benchmarks/mibench_v1/security/rijndael",
+        "program_name": "rijndael",
+        "arguments": [
+          "input_small.asc",
+          "output_small.enc",
+          "e",
+          "1234567890abcdeffedcba09876543211234567890abcdeffedcba0987654321"
+        ],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/rijndael-decode",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "10cb0a1169b357a27f777359f29a208bbe1488db26455b8e56ab961fa503cb2f",
+      "native_digest_run2": "10cb0a1169b357a27f777359f29a208bbe1488db26455b8e56ab961fa503cb2f",
+      "lli_digest": "10cb0a1169b357a27f777359f29a208bbe1488db26455b8e56ab961fa503cb2f",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "a854d154a151c119a60ddd6484e51f3c32814fdc2c48deae6f6d24ec92bc4edb",
+      "canonical_bytes": "53744",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/rijndael-decode",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/security/rijndael/aes.c",
+          "data/benchmarks/mibench_v1/security/rijndael/aesxam.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/security/rijndael",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types"
+        ],
+        "link_libraries": [],
+        "run_directory": "data/benchmarks/mibench_v1/security/rijndael",
+        "program_name": "rijndael",
+        "arguments": [
+          "output_small.enc",
+          "output_small.dec",
+          "d",
+          "1234567890abcdeffedcba09876543211234567890abcdeffedcba0987654321"
+        ],
+        "stdin_file": "",
+        "setup_arguments": [
+          [
+            "input_small.asc",
+            "output_small.enc",
+            "e",
+            "1234567890abcdeffedcba09876543211234567890abcdeffedcba0987654321"
+          ]
+        ],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/sha",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "2a284670e097cdf87bfccdc44a6c4f9092603b2be79e98407bf0f1b9657f8cfe",
+      "native_digest_run2": "2a284670e097cdf87bfccdc44a6c4f9092603b2be79e98407bf0f1b9657f8cfe",
+      "lli_digest": "2a284670e097cdf87bfccdc44a6c4f9092603b2be79e98407bf0f1b9657f8cfe",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "c4ab1c284357c09e0a19c5e1122c090af40b3bcb208b68787c31e9c7677faf74",
+      "canonical_bytes": "9200",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/sha",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/security/sha/sha_driver.c",
+          "data/benchmarks/mibench_v1/security/sha/sha.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/security/sha",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types",
+          "-ftrivial-auto-var-init=zero"
+        ],
+        "link_libraries": [],
+        "run_directory": "data/benchmarks/mibench_v1/security/sha",
+        "program_name": "sha",
+        "arguments": [
+          "input_small.asc"
+        ],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/crc32",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "05d2c44f8984f4547adf53556c5881949c2aa3e921a46095b549fc37c2cbf224",
+      "native_digest_run2": "05d2c44f8984f4547adf53556c5881949c2aa3e921a46095b549fc37c2cbf224",
+      "lli_digest": "05d2c44f8984f4547adf53556c5881949c2aa3e921a46095b549fc37c2cbf224",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "e837d5cffe6c7751642338b0654cfea426cfa685ae2cbfbef7fad11f7a768d08",
+      "canonical_bytes": "7120",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/crc32",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/telecomm/CRC32/crc_32.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/telecomm/CRC32",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types"
+        ],
+        "link_libraries": [],
+        "run_directory": "data/benchmarks/mibench_v1/telecomm/CRC32",
+        "program_name": "crc",
+        "arguments": [
+          "large.pcm"
+        ],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [
+          [
+            "data/benchmarks/mibench_v1/telecomm/adpcm/data/large.pcm",
+            "large.pcm"
+          ]
+        ],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/fft-forward",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "22f895942ab03addc9c34947e18c5c41509f40833452dcb40f09daf29d5a2670",
+      "native_digest_run2": "22f895942ab03addc9c34947e18c5c41509f40833452dcb40f09daf29d5a2670",
+      "lli_digest": "22f895942ab03addc9c34947e18c5c41509f40833452dcb40f09daf29d5a2670",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "c2fc3de88113984f97cd2455fbcd0b9594d8896f86e054b5e6438a729741d4a4",
+      "canonical_bytes": "10928",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/fft-forward",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/telecomm/FFT/main.c",
+          "data/benchmarks/mibench_v1/telecomm/FFT/fftmisc.c",
+          "data/benchmarks/mibench_v1/telecomm/FFT/fourierf.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/telecomm/FFT",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "data/benchmarks/mibench_v1/telecomm/FFT",
+        "program_name": "fft",
+        "arguments": [
+          "4",
+          "4096"
+        ],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/fft-inverse",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "9e35e623881127843d00ca277159bae88d23ad9d15e74532593894d9d4a44c25",
+      "native_digest_run2": "9e35e623881127843d00ca277159bae88d23ad9d15e74532593894d9d4a44c25",
+      "lli_digest": "9e35e623881127843d00ca277159bae88d23ad9d15e74532593894d9d4a44c25",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "c2fc3de88113984f97cd2455fbcd0b9594d8896f86e054b5e6438a729741d4a4",
+      "canonical_bytes": "10928",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/fft-inverse",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/telecomm/FFT/main.c",
+          "data/benchmarks/mibench_v1/telecomm/FFT/fftmisc.c",
+          "data/benchmarks/mibench_v1/telecomm/FFT/fourierf.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/telecomm/FFT",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "data/benchmarks/mibench_v1/telecomm/FFT",
+        "program_name": "fft",
+        "arguments": [
+          "4",
+          "8192",
+          "-i"
+        ],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/adpcm-rawcaudio",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "e738e4f4d1aed3686022f40b6063623c3075396f807834076b6dd7f6c4289373",
+      "native_digest_run2": "e738e4f4d1aed3686022f40b6063623c3075396f807834076b6dd7f6c4289373",
+      "lli_digest": "e738e4f4d1aed3686022f40b6063623c3075396f807834076b6dd7f6c4289373",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "bb4f96b5b4cf805cb3b336f23a9c83f902831e9614e81f1dffb94db8661b9e6c",
+      "canonical_bytes": "8304",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/adpcm-rawcaudio",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/telecomm/adpcm/src/rawcaudio.c",
+          "data/benchmarks/mibench_v1/telecomm/adpcm/src/adpcm.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/telecomm/adpcm/src",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types"
+        ],
+        "link_libraries": [],
+        "run_directory": "data/benchmarks/mibench_v1/telecomm/adpcm",
+        "program_name": "rawcaudio",
+        "arguments": [],
+        "stdin_file": "data/small.pcm",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/adpcm-rawdaudio",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "3296fbf20f9398d3c0672e5075f2046d59d529999d5123e10550863af5645394",
+      "native_digest_run2": "3296fbf20f9398d3c0672e5075f2046d59d529999d5123e10550863af5645394",
+      "lli_digest": "3296fbf20f9398d3c0672e5075f2046d59d529999d5123e10550863af5645394",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "d8007fbfc9d9baf9b327d3f5f0463c5ea9302bbc43df6fc3f7d1a1cfe4c259d0",
+      "canonical_bytes": "8304",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/adpcm-rawdaudio",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/telecomm/adpcm/src/rawdaudio.c",
+          "data/benchmarks/mibench_v1/telecomm/adpcm/src/adpcm.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/telecomm/adpcm/src",
+          "src/compat/include"
+        ],
+        "defines": [],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types"
+        ],
+        "link_libraries": [],
+        "run_directory": "data/benchmarks/mibench_v1/telecomm/adpcm",
+        "program_name": "rawdaudio",
+        "arguments": [],
+        "stdin_file": "data/small.adpcm",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/gsm-toast",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "962cb9249acb6cc10c98021289bbdb8de5b7d2ed51eebd3caa5d4afbdaa6985e",
+      "native_digest_run2": "962cb9249acb6cc10c98021289bbdb8de5b7d2ed51eebd3caa5d4afbdaa6985e",
+      "lli_digest": "962cb9249acb6cc10c98021289bbdb8de5b7d2ed51eebd3caa5d4afbdaa6985e",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "0159e56a6ca8a8d8f9272c01975f54259320c6a11b77ebeaffe9067c00749fa1",
+      "canonical_bytes": "100912",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/gsm-toast",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/add.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/code.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/debug.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/decode.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/long_term.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/lpc.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/preprocess.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/rpe.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/gsm_destroy.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/gsm_decode.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/gsm_encode.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/gsm_explode.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/gsm_implode.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/gsm_create.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/gsm_print.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/gsm_option.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/short_term.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/table.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/toast.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/toast_lin.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/toast_ulaw.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/toast_alaw.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/toast_audio.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/telecomm/gsm/inc",
+          "src/compat/include"
+        ],
+        "defines": [
+          "SASR",
+          "STUPID_COMPILER",
+          "NeedFunctionPrototypes=1"
+        ],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "data/benchmarks/mibench_v1/telecomm/gsm",
+        "program_name": "toast",
+        "arguments": [
+          "-fps",
+          "-c",
+          "data/small.au"
+        ],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "mibench/gsm-untoast",
+      "suite": "mibench",
+      "status": "verified",
+      "native_digest_run1": "f861414a3be4cfea7ea8c34b55207bbdf0a8f1d146663267dc085a5b4d1443da",
+      "native_digest_run2": "f861414a3be4cfea7ea8c34b55207bbdf0a8f1d146663267dc085a5b4d1443da",
+      "lli_digest": "f861414a3be4cfea7ea8c34b55207bbdf0a8f1d146663267dc085a5b4d1443da",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "0159e56a6ca8a8d8f9272c01975f54259320c6a11b77ebeaffe9067c00749fa1",
+      "canonical_bytes": "100912",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "mibench/gsm-untoast",
+        "suite": "mibench",
+        "sources": [
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/add.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/code.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/debug.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/decode.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/long_term.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/lpc.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/preprocess.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/rpe.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/gsm_destroy.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/gsm_decode.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/gsm_encode.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/gsm_explode.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/gsm_implode.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/gsm_create.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/gsm_print.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/gsm_option.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/short_term.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/table.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/toast.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/toast_lin.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/toast_ulaw.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/toast_alaw.c",
+          "data/benchmarks/mibench_v1/telecomm/gsm/src/toast_audio.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/mibench_v1/telecomm/gsm/inc",
+          "src/compat/include"
+        ],
+        "defines": [
+          "SASR",
+          "STUPID_COMPILER",
+          "NeedFunctionPrototypes=1"
+        ],
+        "extra_flags": [
+          "-std=gnu89",
+          "-w",
+          "-Wno-incompatible-pointer-types"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "data/benchmarks/mibench_v1/telecomm/gsm",
+        "program_name": "untoast",
+        "arguments": [
+          "-fps",
+          "-c",
+          "data/small.au.run.gsm"
+        ],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "tsvc/s000",
+      "suite": "tsvc_coremark",
+      "status": "verified",
+      "native_digest_run1": "56aa37491643fadee2d51eed4355638a2221c19abb7e5421cbd9117b9d4c9ff2",
+      "native_digest_run2": "56aa37491643fadee2d51eed4355638a2221c19abb7e5421cbd9117b9d4c9ff2",
+      "lli_digest": "56aa37491643fadee2d51eed4355638a2221c19abb7e5421cbd9117b9d4c9ff2",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "2ca1b299005fdb72883d7ebdc40f7a8a98ea126ea4e814a7316e53f04bee7f00",
+      "canonical_bytes": "38064",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "tsvc/s000",
+        "suite": "tsvc_coremark",
+        "sources": [
+          "src/harnesses/tsvc_kernel_harness.c",
+          "data/benchmarks/tsvc_coremark/tsvc/LinearDependence-flt/dummy.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/tsvc_coremark/tsvc"
+        ],
+        "defines": [
+          "KERNEL_FUNCTION=s000",
+          "TESTS=LINEAR_DEPENDENCE",
+          "HARNESS_NTIMES=10"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "s000",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "tsvc/s111",
+      "suite": "tsvc_coremark",
+      "status": "verified",
+      "native_digest_run1": "18885679669042e351109bf0ae675c5400754d7a8ee72505b12e7b0beed56a88",
+      "native_digest_run2": "18885679669042e351109bf0ae675c5400754d7a8ee72505b12e7b0beed56a88",
+      "lli_digest": "18885679669042e351109bf0ae675c5400754d7a8ee72505b12e7b0beed56a88",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "af58e34af44838ba42d12f50c6a58f8e86b0ebf2ed2bc1cacb653a28c2ace64d",
+      "canonical_bytes": "38064",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "tsvc/s111",
+        "suite": "tsvc_coremark",
+        "sources": [
+          "src/harnesses/tsvc_kernel_harness.c",
+          "data/benchmarks/tsvc_coremark/tsvc/LinearDependence-flt/dummy.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/tsvc_coremark/tsvc"
+        ],
+        "defines": [
+          "KERNEL_FUNCTION=s111",
+          "TESTS=LINEAR_DEPENDENCE",
+          "HARNESS_NTIMES=10"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "s111",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "tsvc/s271",
+      "suite": "tsvc_coremark",
+      "status": "verified",
+      "native_digest_run1": "9a608ba8aa5e347ec499108f5612bb5a063ec9b408e41ecd93f47c4c4cc41225",
+      "native_digest_run2": "9a608ba8aa5e347ec499108f5612bb5a063ec9b408e41ecd93f47c4c4cc41225",
+      "lli_digest": "9a608ba8aa5e347ec499108f5612bb5a063ec9b408e41ecd93f47c4c4cc41225",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "1a7d3ba09d92ae81e57fbe1cad3e71cec88b437503836ae146219b741a56bbba",
+      "canonical_bytes": "43920",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "tsvc/s271",
+        "suite": "tsvc_coremark",
+        "sources": [
+          "src/harnesses/tsvc_kernel_harness.c",
+          "data/benchmarks/tsvc_coremark/tsvc/ControlFlow-flt/dummy.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/tsvc_coremark/tsvc"
+        ],
+        "defines": [
+          "KERNEL_FUNCTION=s271",
+          "TESTS=CONTROL_FLOW",
+          "HARNESS_NTIMES=10"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "s271",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "tsvc/s311",
+      "suite": "tsvc_coremark",
+      "status": "verified",
+      "native_digest_run1": "2c45f2c774cbc23b6290f66158c93c7e0e5e20e88ca037f7589845dbcd9397df",
+      "native_digest_run2": "2c45f2c774cbc23b6290f66158c93c7e0e5e20e88ca037f7589845dbcd9397df",
+      "lli_digest": "2c45f2c774cbc23b6290f66158c93c7e0e5e20e88ca037f7589845dbcd9397df",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "7be8079844fa2599dbd5707eb7a6a8f4c8b87611e5348776b667d742b39e52b8",
+      "canonical_bytes": "39872",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "tsvc/s311",
+        "suite": "tsvc_coremark",
+        "sources": [
+          "src/harnesses/tsvc_kernel_harness.c",
+          "data/benchmarks/tsvc_coremark/tsvc/Reductions-flt/dummy.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/tsvc_coremark/tsvc"
+        ],
+        "defines": [
+          "KERNEL_FUNCTION=s311",
+          "TESTS=REDUCTIONS",
+          "HARNESS_NTIMES=10"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "s311",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "tsvc/s321",
+      "suite": "tsvc_coremark",
+      "status": "verified",
+      "native_digest_run1": "0091fcdef4130ec7aa52dd1bb39004c8ff339812b299570de9f6a076a0503294",
+      "native_digest_run2": "0091fcdef4130ec7aa52dd1bb39004c8ff339812b299570de9f6a076a0503294",
+      "lli_digest": "0091fcdef4130ec7aa52dd1bb39004c8ff339812b299570de9f6a076a0503294",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "7f7eebd0f160d778139faf3809b6738f29ef09b4ad8297400f236996fccc7292",
+      "canonical_bytes": "32704",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "tsvc/s321",
+        "suite": "tsvc_coremark",
+        "sources": [
+          "src/harnesses/tsvc_kernel_harness.c",
+          "data/benchmarks/tsvc_coremark/tsvc/Recurrences-flt/dummy.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/tsvc_coremark/tsvc"
+        ],
+        "defines": [
+          "KERNEL_FUNCTION=s321",
+          "TESTS=RECURRENCES",
+          "HARNESS_NTIMES=10"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "s321",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "coremark/core_bench_list",
+      "suite": "tsvc_coremark",
+      "status": "verified",
+      "native_digest_run1": "264f7bb99bc5eb2367ac09280c1188e8de44ba2facd905e0ee4956036abc50a8",
+      "native_digest_run2": "264f7bb99bc5eb2367ac09280c1188e8de44ba2facd905e0ee4956036abc50a8",
+      "lli_digest": "264f7bb99bc5eb2367ac09280c1188e8de44ba2facd905e0ee4956036abc50a8",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "2d62668aa10f02bd5d878469656404ff4acb5761bdfac606470863436840a497",
+      "canonical_bytes": "21952",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "coremark/core_bench_list",
+        "suite": "tsvc_coremark",
+        "sources": [
+          "src/harnesses/coremark_kernel_harness.c",
+          "data/benchmarks/tsvc_coremark/coremark/posix/core_portme.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_list_join.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_matrix.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_state.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_util.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/tsvc_coremark/coremark",
+          "data/benchmarks/tsvc_coremark/coremark/posix"
+        ],
+        "defines": [
+          "RUN_LIST=1"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "core_bench_list",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "coremark/core_bench_matrix",
+      "suite": "tsvc_coremark",
+      "status": "verified",
+      "native_digest_run1": "fe5af7194fdded56a3987adc56f8478790c807804ea9f19d4a99c4709bc4476f",
+      "native_digest_run2": "fe5af7194fdded56a3987adc56f8478790c807804ea9f19d4a99c4709bc4476f",
+      "lli_digest": "fe5af7194fdded56a3987adc56f8478790c807804ea9f19d4a99c4709bc4476f",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "b4c2a468f5f5311f4edce2f949e9608e668d29169dc00637603e65f3705c3348",
+      "canonical_bytes": "21968",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "coremark/core_bench_matrix",
+        "suite": "tsvc_coremark",
+        "sources": [
+          "src/harnesses/coremark_kernel_harness.c",
+          "data/benchmarks/tsvc_coremark/coremark/posix/core_portme.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_list_join.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_matrix.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_state.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_util.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/tsvc_coremark/coremark",
+          "data/benchmarks/tsvc_coremark/coremark/posix"
+        ],
+        "defines": [
+          "RUN_MATRIX=1"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "core_bench_matrix",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "coremark/core_bench_state",
+      "suite": "tsvc_coremark",
+      "status": "verified",
+      "native_digest_run1": "a99555a98749415aaeb2e40d52659f23712e7b66a440b2ab19116cd23511614f",
+      "native_digest_run2": "a99555a98749415aaeb2e40d52659f23712e7b66a440b2ab19116cd23511614f",
+      "lli_digest": "a99555a98749415aaeb2e40d52659f23712e7b66a440b2ab19116cd23511614f",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "2ed8da0c0f77cefc091dc972b139a3fe414beb43b8ca687c1c74070878fba97b",
+      "canonical_bytes": "22000",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "coremark/core_bench_state",
+        "suite": "tsvc_coremark",
+        "sources": [
+          "src/harnesses/coremark_kernel_harness.c",
+          "data/benchmarks/tsvc_coremark/coremark/posix/core_portme.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_list_join.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_matrix.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_state.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_util.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/tsvc_coremark/coremark",
+          "data/benchmarks/tsvc_coremark/coremark/posix"
+        ],
+        "defines": [
+          "RUN_STATE=1"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "core_bench_state",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "coremark/crcu8",
+      "suite": "tsvc_coremark",
+      "status": "verified",
+      "native_digest_run1": "7e3f7a386dad4af375125592a98da23683fa0c0f91da706ef68ea568e356e431",
+      "native_digest_run2": "7e3f7a386dad4af375125592a98da23683fa0c0f91da706ef68ea568e356e431",
+      "lli_digest": "7e3f7a386dad4af375125592a98da23683fa0c0f91da706ef68ea568e356e431",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "d0a24b0788d1aa264dabc6c8773f48b965fc4df6ad4fb8883d554414e8a993f9",
+      "canonical_bytes": "22144",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "coremark/crcu8",
+        "suite": "tsvc_coremark",
+        "sources": [
+          "src/harnesses/coremark_kernel_harness.c",
+          "data/benchmarks/tsvc_coremark/coremark/posix/core_portme.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_list_join.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_matrix.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_state.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_util.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/tsvc_coremark/coremark",
+          "data/benchmarks/tsvc_coremark/coremark/posix"
+        ],
+        "defines": [
+          "RUN_CRCU8=1"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "crcu8",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    },
+    {
+      "kernel_id": "coremark/matrix_mul_matrix_bitextract",
+      "suite": "tsvc_coremark",
+      "status": "verified",
+      "native_digest_run1": "78ee429016d113705d9a2bf4738533782d7bffa48fbd373feb497dff83308cb6",
+      "native_digest_run2": "78ee429016d113705d9a2bf4738533782d7bffa48fbd373feb497dff83308cb6",
+      "lli_digest": "78ee429016d113705d9a2bf4738533782d7bffa48fbd373feb497dff83308cb6",
+      "native_deterministic": true,
+      "lli_matches_native": true,
+      "canonical_sha256": "9b2de71ad1366fec3e632261b1509e798eeb3db44b4a74ec361aa65f198b378a",
+      "canonical_bytes": "22352",
+      "llvm_dis_valid": true,
+      "spec": {
+        "kernel_id": "coremark/matrix_mul_matrix_bitextract",
+        "suite": "tsvc_coremark",
+        "sources": [
+          "src/harnesses/coremark_kernel_harness.c",
+          "data/benchmarks/tsvc_coremark/coremark/posix/core_portme.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_list_join.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_matrix.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_state.c",
+          "data/benchmarks/tsvc_coremark/coremark/core_util.c"
+        ],
+        "include_dirs": [
+          "data/benchmarks/tsvc_coremark/coremark",
+          "data/benchmarks/tsvc_coremark/coremark/posix"
+        ],
+        "defines": [
+          "RUN_MATMUL=1"
+        ],
+        "extra_flags": [
+          "-w"
+        ],
+        "link_libraries": [
+          "-lm"
+        ],
+        "run_directory": "",
+        "program_name": "matrix_mul_matrix_bitextract",
+        "arguments": [],
+        "stdin_file": "",
+        "setup_arguments": [],
+        "staged_files": [],
+        "volatile_patterns": []
+      }
+    }
+  ]
+}

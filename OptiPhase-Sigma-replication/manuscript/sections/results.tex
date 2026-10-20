@@ -1,0 +1,200 @@
+\section{Results}
+\label{sec:results}
+
+We report what the telemetry supports, and we state where it does not support a claim. Every number below is a macro
+generated from the stored outputs (Section~\ref{sec:methods}).
+
+\subsection{Campaign and measurement validity}
+
+All \NumSweeps{} sweeps have a complete telemetry row, and each row comes from the code path described in
+Section~\ref{sec:methods}. Every sweep completed on its first attempt (\FirstPassFailures{} failures). In an earlier campaign with the same pass set, \texttt{opt} crashed on \ArchivedCrashes{} gsm kernels with \texttt{unify-loop-exits}. The pass
+is replaced by \texttt{newgvn} in its R2 slot on every kernel, so no R2 sweep crashes. Table~\ref{tab:regimes} gives the sweeps
+per regime.
+
+\input{generated/table_regimes}
+
+Benchmark outputs were compared with the canonical output of each kernel. Of the \OutputsChecked{} sweeps, \OutputsAgreeing{}
+produced the canonical output. The \OutputsDiffering{} exceptions are sweeps of \texttt{mibench/\allowbreak{}susan-smoothing}, and each writes
+an output image that differs from the canonical image in most of its bytes. Section~\ref{sec:threats} reports the investigation.
+For each of the exceptions, the same optimized module lowered at \texttt{-O2} and interpreted with \texttt{lli} gives the canonical output, so the difference appears only in the \texttt{-O0} lowering. These comparisons are reproduced in the replication package. We have not identified the cause, and we report
+these sweeps as exceptions rather than as matching outputs. For the bitcount kernel, the comparison was repeated under the
+corrected masking rule, and \BitcountRecheckMatching{} of \BitcountRecheckChecked{} sweeps matched. Each kernel runs on one input,
+so this agreement is evidence about those inputs only.
+
+\subsection{Instruction-count interactions}
+\label{sec:results-instcount}
+
+The instruction count is exact and is measured before lowering, so these results do not depend on the timing noise or on the
+lowering level. Figure~\ref{fig:instcount} shows the tensor of instruction-count interactions over the \NumThreePasses{} R3 passes,
+averaged over the kernels. Of its \InstInteractionCells{} ordered pairs, \InstInteractionConsistentCells{} have a mean that
+exceeds two standard errors across the kernels. The standard errors measure how much the kernels differ, because each
+kernel's count is exact. Table~\ref{tab:instcount} lists the largest entries. The largest magnitude is
+\InstInteractionMaxAbsPct{}\% of the canonical instruction count, and it belongs to a self-pair. In Figure~\ref{fig:instcount}, rows are the first pass and columns the second. Positive values mean that the combined change of a pair is larger than the sum of its single changes. The diagonal holds the self-interactions, which are left blank in the figure and reported in Table~\ref{tab:instcount}.
+
+\PaperFigure{fig1_instcount_interaction_heatmap.pdf}{Instruction-count interaction of the \NumThreePasses{} R3 passes, averaged over kernels. \label{fig:instcount}}
+
+\input{generated/table_instcount}
+
+Several of the largest entries involve passes that remove redundant instructions. The two orders of \texttt{early-cse} and
+\texttt{gvn} are both positive, which is what overlapping removals would produce: when the two passes remove the same redundant
+instructions, the pair removes fewer than the sum of its single removals.
+
+\textbf{Self-interactions.} The identity of Remark~\ref{rem:identity} holds wherever a second application leaves the bitcode
+unchanged. Section~\ref{sec:results-canonical} counts \InstSelfIdentityCases{} such kernel-pass cases, and the identity holds
+exactly in all of them, with \InstSelfIdentityMismatches{} mismatches. On those kernels, a positive self-interaction marks a
+pass whose first application removes instructions, and a negative one marks a pass whose first application adds them. The sign
+of a self-interaction is therefore not evidence of a second effect, and the self-pairs of \texttt{gvn}, \texttt{early-cse}, and
+\texttt{loop-vectorize} in Table~\ref{tab:instcount} are read this way. Where the second application changes the IR again, the
+identity does not hold, and the self-interaction mixes the second change with the first.
+
+\subsection{Canonical form and repeated application}
+\label{sec:results-canonical}
+
+Table~\ref{tab:passchecks} reports the IR-level checks over \PassChecksKernels{} kernels. Each pass of the R3 set is applied to a
+module, and then again to the result. The table compares two canonical forms as a controlled ablation of the canonicalization: the sweep canonical form, which applies \texttt{mem2reg}, \texttt{loop-simplify}, and \texttt{lcssa}, and the \texttt{mem2reg}-only form, which omits the \texttt{loop-simplify} and \texttt{lcssa} steps.
+
+On the \texttt{mem2reg}-only form, every loop pass of the set changes every kernel, and the smallest count among the five loop
+passes is \PassChecksLoopMinMemTwoReg{}. On the sweep canonical form, the smallest count is \PassChecksLoopMinCanonical{}, for
+\texttt{loop-unroll}, which changes \PassChecksUnrollCanonicalChanged{} of \PassChecksKernels{} kernels there. So the canonical
+form changes the effect of \texttt{loop-unroll} in particular. For every other pass, the two forms differ by at most
+\PassChecksOtherMaxDiff{} kernels.
+
+\input{generated/table_pass_checks}
+
+Repeated application changes the IR again in \PassChecksRepeatMinPct{}\% to \PassChecksRepeatMaxPct{}\% of the kernels where the
+first application changed it. So a pass that changes the module is not, in general, idempotent on these kernels. The identity of
+Remark~\ref{rem:identity} is therefore used only where a second application is unchanged, and the \InstSelfIdentityCases{} such
+cases are the ones on which it is tested.
+
+\subsection{Timing interactions}
+\label{sec:results-timing}
+
+The timing measure is secondary, because its noise is large relative to the interactions. The median absolute paired delta of
+the identical-IR sweeps is \NoiseMedianAbsPct{}\% of the canonical cost, and the ninety-fifth percentile is
+\NoiseNinetyFifthAbsPct{}\%. Of the \InteractionCells{} entries of the normalized timing interaction (Equation~\ref{eq:timing}),
+\InteractionSignificantCells{} exceed two standard errors (Table~\ref{tab:interaction}). Under a normal approximation, two
+standard errors flag about five percent of entries by chance, so this count is larger than chance alone would give. The largest
+magnitude is \InteractionMaxAbsPct{}\% of the canonical cost, which lies below the ninety-fifth percentile of the noise. The
+entries that pass the test are therefore small, and we do not treat them as established interactions.
+
+\input{generated/table_interaction}
+
+The single-effect ratio baseline (Equation~\ref{eq:ratio}) puts most of its largest values on self-pairs, with standard
+errors as large as their means, and none of its five largest entries passes the two-standard-error test (Table~\ref{tab:mpass}).
+Table~\ref{tab:comparison} compares it with the canonical-cost normalized estimator on the same pairs.
+
+\input{generated/table_mpass}
+
+\input{generated/table_comparison}
+
+The commutators are antisymmetric by construction (Table~\ref{tab:lie}). Of the \LieCells{} pairs, \LieSignificantCells{} differ
+from zero by more than two standard errors, and the largest mean magnitude is \LieMaxAbs{} of the canonical cost, which lies
+below the ninety-fifth percentile of the timing noise.
+
+\input{generated/table_lie}
+
+\subsection{Cleanup sequences around loop-vectorize}
+
+Table~\ref{tab:r5} gives the timing effect of each cleanup sequence on \texttt{loop-vectorize}. Of the \RFiveSequencesJudged{}
+sequences, \RFiveSequencesSignificant{} have a mean effect beyond two standard errors. Single kernels do show effects larger than
+their noise, and up to \RFiveKernelsBeyondNoiseMax{} of the \NumKernels{} kernels exceed two noise standard deviations for one
+sequence. The identical-IR noise estimate covers binaries that are identical, so it does not cover the differences in code layout
+and alignment that distinct binaries can show. We therefore read single-kernel effects of a few percent as unresolved.
+
+\input{generated/table_r5}
+
+\subsection{Redundant passes and compile-time waste}
+\label{sec:results-rpb}
+
+A pass execution is redundant when the IR it leaves unchanged. Across all sweeps the mean redundant-pass ratio is
+\RpbOverallMean{}. Table~\ref{tab:rpb} shows it per regime. The standard levels have the highest ratio, \RpbOneMean{}, and the
+\texttt{-O3} prefixes have \RpbFourMean{}. Figure~\ref{fig:entropy} shows the ratio and the opcode entropy along the prefixes.
+Charging each redundant execution with its share of its sweep's pass time (Equation~\ref{eq:waste}) gives
+\WasteTotalSeconds{} seconds in total across all sweeps. That share is an assumption, because the telemetry records the pass time
+of each sweep and not of each execution.
+
+\PaperFigure{fig3_shannon_entropy_rpb_trajectory.pdf}{Mean opcode entropy (top) and mean redundant-pass ratio (bottom) along the stages of the \texttt{-O3} pipeline. \label{fig:entropy}}
+
+\input{generated/table_rpb}
+
+\subsection{Pareto fronts and hypervolume}
+
+Across the \NumKernels{} kernels, the three-objective fronts contain \ParetoPoints{} non-dominated points. Table~\ref{tab:pareto}
+gives the hypervolume per suite at the reference point of the canonical build, in units of $10^{-6}$. The mean over all kernels is
+\MeanHypervolumeMicro{} in those units. These values are small because the reference point is the canonical build, and the
+objective gains over it are small. Figure~\ref{fig:hv} shows how the hypervolume changes with the reference point. The compile reference is fixed, so the hypervolume is a reference-dependent summary. The speed
+objective uses the timing, and the compile objective uses the optimizer wall time, so both carry the limits of
+Section~\ref{sec:threats}.
+
+\input{generated/table_pareto}
+
+\PaperFigure{fig4_pareto_3d_hypervolume_surface.pdf}{Mean exact hypervolume of the per-kernel fronts as the speedup and size reference points are lowered. \label{fig:hv}}
+
+Of the \ParetoPoints{} front members, \ParetoMemberUnsatPct{}\% are UNSAT, \ParetoMemberNotComparablePct{}\% are not comparable,
+and \ParetoMemberSatPct{}\% are SAT. The study therefore does not establish that every Pareto schedule refines its canonical
+build, and the paper does not claim it.
+
+\subsection{Refinement outcomes}
+\label{sec:results-refinement}
+
+Table~\ref{tab:smt} gives the block-local verdict of each sweep per regime. Over all sweeps, \SmtUnsatPct{}\% are UNSAT
+(\SmtUnsatCount{} sweeps), \SmtSatPct{}\% are SAT (\SmtSatCount{}), and \SmtNotComparablePct{}\% are not comparable
+(\SmtNotComparableCount{}). No sweep is UNKNOWN or ERROR, and every sweep's optimized IR was reproduced by re-running \texttt{opt}
+(\SmtIrNotReproducedCount{} failures).
+
+\input{generated/table_smt}
+
+The verdicts are limited by coverage. Of the \BlocksMatched{} matched block pairs, \BlocksEncodablePct{}\% lie inside the fragment
+of Section~\ref{sec:unsat}, and the rest contain an instruction the fragment does not model. Every not-comparable sweep has matched
+labels, but none of its matched blocks lies in the fragment. Within the encodable blocks, \NamesRefine{} names refine and
+\NamesViolated{} are violated. The share of not-comparable sweeps is highest in R1 and R4 and lowest in R2, as
+Table~\ref{tab:smt} shows. The analysis does not classify which instructions cause the exclusion in each case.
+
+Every SAT witness falls into exactly one of three categories, and the categories cover all \WitnessCatTotal{} SAT witnesses. Category
+A is a flag gain: the optimized instruction differs from its canonical instruction only in wrap or exactness flags, and it carries
+at least one flag that the canonical one lacks. Category B is a flag loss only. Category C is every other witness, which keeps its
+text or changes it in some way other than flags. There are \WitnessCatA{} witnesses in A, \WitnessCatB{} in B, and \WitnessCatC{} in C.
+Most SAT answers (\WitnessFlagOnly{} of \WitnessTotal{}, \WitnessFlagOnlyPct{}\%) name an instruction whose only change is in its
+flags. Of the \SatSweeps{} SAT sweeps, \WitnessGainSweeps{} (\WitnessGainSweepsPct{}\%) contain a witness in category A. Across all
+\WitnessTotal{} SAT witnesses, the optimizer added \WitnessGainedFlags{} flags: \texttt{nuw} \GainedNuw{} times, \texttt{nsw}
+\GainedNsw{}, \texttt{nneg} \GainedNneg{}, and \texttt{samesign} \GainedSamesign{}. No witness gained an \texttt{exact} or
+\texttt{disjoint} flag. The other witnesses changed the instruction in other ways (\WitnessOtherChange{}, of which
+\WitnessRenamedOnly{} differ only in operand names), kept its text so that an upstream value explains the difference
+(\WitnessUnchangedText{}), or lost a flag (\WitnessFlagLoss{}). A witness that only loses a flag cannot be a poison counterexample,
+so its answer also depends on an upstream value.
+
+Replaying each sweep one stage at a time locates the first stage that carries each gained flag on the same name. The replay
+reproduces the optimized IR exactly in \ReplaysExact{} of \Replays{} replayed sweeps. Of the \IntroLocated{} located flag
+introductions, \texttt{instcombine} accounts for \IntroInstcombine{} (\IntroInstcombinePct{}\%), \texttt{sccp} for \IntroSccp{}
+(\IntroSccpPct{}\%), and \texttt{indvars} for \IntroIndvars{} (\IntroIndvarsPct{}\%). The other \IntroOther{} come from five passes.
+For \IntroUntracked{} introductions, no stage kept the name, so they are not located. These counts identify the passes that add the
+flags. They do not show why each flag is justified.
+
+One justification is inspected in full. Sweep \texttt{K37-R2-018} runs \texttt{indvars} alone on the \texttt{patricia} kernel. Its
+SAT witness is \texttt{\%157} in block \texttt{156} of \texttt{pat\_\allowbreak{}insert}, where the canonical instruction
+\texttt{add nsw i32 \%.\allowbreak{}3, 1} becomes \texttt{add nuw nsw i32 \%.\allowbreak{}3, 1}. The counterexample is \texttt{\%.\allowbreak{}3 = -1}, for which the
+unsigned increment wraps. The value \texttt{\%.\allowbreak{}3} is a loop counter, however. Its phi takes the value \texttt{1} on entry and
+\texttt{\%157} on the back edge, and \texttt{\%157} is the only increment, so the counter never takes a negative value. The
+block-local checker treats \texttt{\%.\allowbreak{}3} as a free input and admits \texttt{-1}, which the loop cannot produce. The same fact also
+justifies the \texttt{samesign} flag that \texttt{indvars} gives the loop-header comparison, which contains a phi and so lies
+outside the checker's fragment. This case is a false alarm of the block-local check, not a miscompilation. We have not inspected
+the other sweeps, and this case does not show that they behave the same way.
+
+A coarser count compares the number of flag tokens in each optimized module with the canonical module. By that count,
+\SatAddingFlagPct{}\% of the SAT sweeps (\SatAddingFlagCount{} sweeps) gain a flag. We do not use it. It rises whenever a flagged
+instruction appears anywhere in the module, including code that no witness names, so it cannot separate inference from copying.
+
+Of the \OutputsChecked{} sweeps, \OutputsAgreeing{} matched the canonical output on the one input their kernel runs. None of the
+\OutputsDiffering{} exceptions is a SAT sweep: all of them are UNSAT on their encodable blocks, so the block-local verdict does not
+account for their output difference. The UNSAT verdicts are proofs only for the blocks that were compared, and the block-local
+check does not cover floating-point or memory operations outside its fragment, so the verdicts do not show that the rest of each
+program is unchanged. Figure~\ref{fig:z3} shows the validation time per sweep. It includes the re-derivation of the optimized IR
+with \texttt{opt}, and it grows with the number of names compared.
+
+Every refinement query of the Pareto-front sweeps is also exported as an \texttt{SMT-LIB 2} certificate. The export covers
+\CertSweeps{} sweeps and \CertQueries{} queries, of which \CertSolverUnsat{} are UNSAT and \CertSolverSat{} are SAT. The z3
+command-line binary, run independently on the exported text, returned the same verdict for \CertCliAgreement{} queries. The number of
+sweeps whose status disagrees with the telemetry is \CertStatusDisagreements{}. The certificates are in the repository, one
+gzip-compressed file per sweep.
+
+\PaperFigure{fig5_z3_solver_scaling_profile.pdf}{Validation time per sweep against the number of names compared; sweeps with no compared name are plotted at one. \label{fig:z3}}

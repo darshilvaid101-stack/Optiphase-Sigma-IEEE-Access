@@ -1,0 +1,592 @@
+{
+  "passes": [
+    {
+      "name": "mem2reg",
+      "level": "Function",
+      "stage": "function(mem2reg)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "sroa",
+      "level": "Function",
+      "stage": "function(sroa)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "instcombine",
+      "level": "Function",
+      "stage": "function(instcombine)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "simplifycfg",
+      "level": "Function",
+      "stage": "function(simplifycfg)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "early-cse",
+      "level": "Function",
+      "stage": "function(early-cse)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "early-cse<memssa>",
+      "level": "Function",
+      "stage": "function(early-cse<memssa>)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "gvn",
+      "level": "Function",
+      "stage": "function(gvn)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "licm",
+      "level": "Loop",
+      "stage": "function(loop-mssa(loop(licm)))",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "loop-rotate",
+      "level": "Loop",
+      "stage": "function(loop(loop-rotate))",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "loop-unroll",
+      "level": "Function",
+      "stage": "function(loop-unroll)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "loop-vectorize",
+      "level": "Function",
+      "stage": "function(loop-vectorize)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "slp-vectorizer",
+      "level": "Function",
+      "stage": "function(slp-vectorizer)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "indvars",
+      "level": "Loop",
+      "stage": "function(loop(indvars))",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "loop-simplify",
+      "level": "Function",
+      "stage": "function(loop-simplify)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "lcssa",
+      "level": "Function",
+      "stage": "function(lcssa)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "jump-threading",
+      "level": "Function",
+      "stage": "function(jump-threading)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "reassociate",
+      "level": "Function",
+      "stage": "function(reassociate)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "correlated-propagation",
+      "level": "Function",
+      "stage": "function(correlated-propagation)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "dce",
+      "level": "Function",
+      "stage": "function(dce)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "adce",
+      "level": "Function",
+      "stage": "function(adce)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "bdce",
+      "level": "Function",
+      "stage": "function(bdce)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "dse",
+      "level": "Function",
+      "stage": "function(dse)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "memcpyopt",
+      "level": "Function",
+      "stage": "function(memcpyopt)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "sccp",
+      "level": "Function",
+      "stage": "function(sccp)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "ipsccp",
+      "level": "Module",
+      "stage": "ipsccp",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "tailcallelim",
+      "level": "Function",
+      "stage": "function(tailcallelim)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "float2int",
+      "level": "Function",
+      "stage": "function(float2int)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "loop-deletion",
+      "level": "Loop",
+      "stage": "function(loop(loop-deletion))",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "loop-idiom",
+      "level": "Loop",
+      "stage": "function(loop(loop-idiom))",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "loop-load-elim",
+      "level": "Function",
+      "stage": "function(loop-load-elim)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "loop-distribute",
+      "level": "Function",
+      "stage": "function(loop-distribute)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "loop-sink",
+      "level": "Function",
+      "stage": "function(loop-sink)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "sink",
+      "level": "Function",
+      "stage": "function(sink)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "alignment-from-assumptions",
+      "level": "Function",
+      "stage": "function(alignment-from-assumptions)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "div-rem-pairs",
+      "level": "Function",
+      "stage": "function(div-rem-pairs)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "aggressive-instcombine",
+      "level": "Function",
+      "stage": "function(aggressive-instcombine)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "separate-const-offset-from-gep",
+      "level": "Function",
+      "stage": "function(separate-const-offset-from-gep)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "speculative-execution",
+      "level": "Function",
+      "stage": "function(speculative-execution)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "nary-reassociate",
+      "level": "Function",
+      "stage": "function(nary-reassociate)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "mergeicmps",
+      "level": "Function",
+      "stage": "function(mergeicmps)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "lower-constant-intrinsics",
+      "level": "Function",
+      "stage": "function(lower-constant-intrinsics)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "constmerge",
+      "level": "Module",
+      "stage": "constmerge",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "globalopt",
+      "level": "Module",
+      "stage": "globalopt",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "globaldce",
+      "level": "Module",
+      "stage": "globaldce",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "deadargelim",
+      "level": "Module",
+      "stage": "deadargelim",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "prune-eh",
+      "level": "CGSCC",
+      "stage": "cgscc(prune-eh)",
+      "valid": false,
+      "error": "/opt/homebrew/opt/llvm/bin/opt -passes=cgscc(prune-eh) /Users/raffe/Documents/GitHub/Compiler-/data/benchmarks/bitcode_O0_canon/polybench__gemm.bc -o /dev/null exited 1: /opt/homebrew/opt/llvm/bin/opt: unknown cgscc pass 'prune-eh'\n"
+    },
+    {
+      "name": "inline",
+      "level": "CGSCC",
+      "stage": "cgscc(inline)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "strip-dead-prototypes",
+      "level": "Module",
+      "stage": "strip-dead-prototypes",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "callsite-splitting",
+      "level": "Function",
+      "stage": "function(callsite-splitting)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "constraint-elimination",
+      "level": "Function",
+      "stage": "function(constraint-elimination)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "dfsan",
+      "level": "Module",
+      "stage": "dfsan",
+      "valid": false,
+      "error": "/opt/homebrew/opt/llvm/bin/opt -passes=dfsan /Users/raffe/Documents/GitHub/Compiler-/data/benchmarks/bitcode_O0_canon/polybench__gemm.bc -o /dev/null exited -6: _c.dylib+0x180405978)\n #5 0x000000010f2a8134 llvm::reportFatalUsageError(char const*) (/opt/homebrew/Cellar/llvm/23.1.3_1/lib/libLLVM.23.1."
+    },
+    {
+      "name": "inferattrs",
+      "level": "Module",
+      "stage": "inferattrs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "openmp-opt",
+      "level": "Module",
+      "stage": "openmp-opt",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "partially-inline-libcalls",
+      "level": "Function",
+      "stage": "function(partially-inline-libcalls)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "post-inline-ee-instrument",
+      "level": "Function",
+      "stage": "function(post-inline-ee-instrument)",
+      "valid": false,
+      "error": "/opt/homebrew/opt/llvm/bin/opt -passes=function(post-inline-ee-instrument) /Users/raffe/Documents/GitHub/Compiler-/data/benchmarks/bitcode_O0_canon/polybench__gemm.bc -o /dev/null exited 1: /opt/homebrew/opt/llvm/bin/opt: unknown function pass 'post-inline-ee-instrument'\n"
+    },
+    {
+      "name": "redundant-dbg-inst-elim",
+      "level": "Function",
+      "stage": "function(redundant-dbg-inst-elim)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "rel-lookup-table-converter",
+      "level": "Module",
+      "stage": "rel-lookup-table-converter",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "rewrite-statepoints-for-gc",
+      "level": "Module",
+      "stage": "rewrite-statepoints-for-gc",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "scalarizer",
+      "level": "Function",
+      "stage": "function(scalarizer)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "simple-loop-unswitch",
+      "level": "Loop",
+      "stage": "function(loop(simple-loop-unswitch))",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "strip",
+      "level": "Module",
+      "stage": "strip",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "strip-nondebug",
+      "level": "Module",
+      "stage": "strip-nondebug",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "unify-loop-exits",
+      "level": "Function",
+      "stage": "function(unify-loop-exits)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "vec-merger",
+      "level": "Function",
+      "stage": "function(vec-merger)",
+      "valid": false,
+      "error": "/opt/homebrew/opt/llvm/bin/opt -passes=function(vec-merger) /Users/raffe/Documents/GitHub/Compiler-/data/benchmarks/bitcode_O0_canon/polybench__gemm.bc -o /dev/null exited 1: /opt/homebrew/opt/llvm/bin/opt: unknown function pass 'vec-merger'\n"
+    },
+    {
+      "name": "warn-missed-transformations",
+      "level": "Function",
+      "stage": "function(warn-missed-transformations)",
+      "valid": false,
+      "error": "/opt/homebrew/opt/llvm/bin/opt -passes=function(warn-missed-transformations) /Users/raffe/Documents/GitHub/Compiler-/data/benchmarks/bitcode_O0_canon/polybench__gemm.bc -o /dev/null exited 1: /opt/homebrew/opt/llvm/bin/opt: unknown function pass 'warn-missed-transformations'\n"
+    },
+    {
+      "name": "annotation2metadata",
+      "level": "Module",
+      "stage": "annotation2metadata",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "barrier",
+      "level": "Module",
+      "stage": "barrier",
+      "valid": false,
+      "error": "/opt/homebrew/opt/llvm/bin/opt -passes=barrier /Users/raffe/Documents/GitHub/Compiler-/data/benchmarks/bitcode_O0_canon/polybench__gemm.bc -o /dev/null exited 1: /opt/homebrew/opt/llvm/bin/opt: unknown pass name 'barrier'\n"
+    },
+    {
+      "name": "canonicalize-aliases",
+      "level": "Module",
+      "stage": "canonicalize-aliases",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "cross-dso-cfi",
+      "level": "Module",
+      "stage": "cross-dso-cfi",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "elim-avail-extern",
+      "level": "Module",
+      "stage": "elim-avail-extern",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "extract-blocks",
+      "level": "Module",
+      "stage": "extract-blocks",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "forceattrs",
+      "level": "Module",
+      "stage": "forceattrs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "function-specialization",
+      "level": "Module",
+      "stage": "function-specialization",
+      "valid": false,
+      "error": "/opt/homebrew/opt/llvm/bin/opt -passes=function-specialization /Users/raffe/Documents/GitHub/Compiler-/data/benchmarks/bitcode_O0_canon/polybench__gemm.bc -o /dev/null exited 1: /opt/homebrew/opt/llvm/bin/opt: unknown pass name 'function-specialization'\n"
+    },
+    {
+      "name": "internalize",
+      "level": "Module",
+      "stage": "internalize",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "loop-flatten",
+      "level": "Function",
+      "stage": "function(loop-flatten)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "loop-fusion",
+      "level": "Function",
+      "stage": "function(loop-fusion)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "loop-interchange",
+      "level": "Loop",
+      "stage": "function(loop(loop-interchange))",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "loop-predication",
+      "level": "Loop",
+      "stage": "function(loop(loop-predication))",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "loop-reroll",
+      "level": "Function",
+      "stage": "function(loop-reroll)",
+      "valid": false,
+      "error": "/opt/homebrew/opt/llvm/bin/opt -passes=function(loop-reroll) /Users/raffe/Documents/GitHub/Compiler-/data/benchmarks/bitcode_O0_canon/polybench__gemm.bc -o /dev/null exited 1: /opt/homebrew/opt/llvm/bin/opt: unknown function pass 'loop-reroll'\n"
+    },
+    {
+      "name": "loop-versioning",
+      "level": "Function",
+      "stage": "function(loop-versioning)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "loop-versioning-licm",
+      "level": "Function",
+      "stage": "function(loop-versioning-licm)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "lower-atomic",
+      "level": "Function",
+      "stage": "function(lower-atomic)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "lower-expect",
+      "level": "Function",
+      "stage": "function(lower-expect)",
+      "valid": true,
+      "error": null
+    },
+    {
+      "name": "lower-guard-intrinsic",
+      "level": "Function",
+      "stage": "function(lower-guard-intrinsic)",
+      "valid": true,
+      "error": null
+    }
+  ]
+}

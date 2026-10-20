@@ -1,0 +1,2062 @@
+[
+  {
+    "regime_id": "R1",
+    "label": "O0",
+    "pass_sequence": "default<O0>"
+  },
+  {
+    "regime_id": "R1",
+    "label": "O1",
+    "pass_sequence": "default<O1>"
+  },
+  {
+    "regime_id": "R1",
+    "label": "O2",
+    "pass_sequence": "default<O2>"
+  },
+  {
+    "regime_id": "R1",
+    "label": "O3",
+    "pass_sequence": "default<O3>"
+  },
+  {
+    "regime_id": "R1",
+    "label": "Os",
+    "pass_sequence": "forceattrs,default<O2>[force-attribute=optsize]"
+  },
+  {
+    "regime_id": "R1",
+    "label": "Oz",
+    "pass_sequence": "forceattrs,default<O2>[force-attribute=minsize]"
+  },
+  {
+    "regime_id": "R2",
+    "label": "mem2reg",
+    "pass_sequence": "function(mem2reg)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "sroa",
+    "pass_sequence": "function(sroa)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "instcombine",
+    "pass_sequence": "function(instcombine)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "simplifycfg",
+    "pass_sequence": "function(simplifycfg)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "early-cse",
+    "pass_sequence": "function(early-cse)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "early-cse<memssa>",
+    "pass_sequence": "function(early-cse<memssa>)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "gvn",
+    "pass_sequence": "function(gvn)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "licm",
+    "pass_sequence": "function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R2",
+    "label": "loop-rotate",
+    "pass_sequence": "function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R2",
+    "label": "loop-unroll",
+    "pass_sequence": "function(loop-unroll)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "loop-vectorize",
+    "pass_sequence": "function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "slp-vectorizer",
+    "pass_sequence": "function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "indvars",
+    "pass_sequence": "function(loop(indvars))"
+  },
+  {
+    "regime_id": "R2",
+    "label": "loop-simplify",
+    "pass_sequence": "function(loop-simplify)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "lcssa",
+    "pass_sequence": "function(lcssa)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "jump-threading",
+    "pass_sequence": "function(jump-threading)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "reassociate",
+    "pass_sequence": "function(reassociate)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "correlated-propagation",
+    "pass_sequence": "function(correlated-propagation)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "dce",
+    "pass_sequence": "function(dce)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "adce",
+    "pass_sequence": "function(adce)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "bdce",
+    "pass_sequence": "function(bdce)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "dse",
+    "pass_sequence": "function(dse)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "memcpyopt",
+    "pass_sequence": "function(memcpyopt)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "sccp",
+    "pass_sequence": "function(sccp)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "ipsccp",
+    "pass_sequence": "ipsccp"
+  },
+  {
+    "regime_id": "R2",
+    "label": "tailcallelim",
+    "pass_sequence": "function(tailcallelim)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "float2int",
+    "pass_sequence": "function(float2int)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "loop-deletion",
+    "pass_sequence": "function(loop(loop-deletion))"
+  },
+  {
+    "regime_id": "R2",
+    "label": "loop-idiom",
+    "pass_sequence": "function(loop(loop-idiom))"
+  },
+  {
+    "regime_id": "R2",
+    "label": "loop-load-elim",
+    "pass_sequence": "function(loop-load-elim)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "loop-distribute",
+    "pass_sequence": "function(loop-distribute)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "loop-sink",
+    "pass_sequence": "function(loop-sink)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "sink",
+    "pass_sequence": "function(sink)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "alignment-from-assumptions",
+    "pass_sequence": "function(alignment-from-assumptions)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "div-rem-pairs",
+    "pass_sequence": "function(div-rem-pairs)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "aggressive-instcombine",
+    "pass_sequence": "function(aggressive-instcombine)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "separate-const-offset-from-gep",
+    "pass_sequence": "function(separate-const-offset-from-gep)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "speculative-execution",
+    "pass_sequence": "function(speculative-execution)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "nary-reassociate",
+    "pass_sequence": "function(nary-reassociate)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "mergeicmps",
+    "pass_sequence": "function(mergeicmps)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "lower-constant-intrinsics",
+    "pass_sequence": "function(lower-constant-intrinsics)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "constmerge",
+    "pass_sequence": "constmerge"
+  },
+  {
+    "regime_id": "R2",
+    "label": "globalopt",
+    "pass_sequence": "globalopt"
+  },
+  {
+    "regime_id": "R2",
+    "label": "globaldce",
+    "pass_sequence": "globaldce"
+  },
+  {
+    "regime_id": "R2",
+    "label": "deadargelim",
+    "pass_sequence": "deadargelim"
+  },
+  {
+    "regime_id": "R2",
+    "label": "inline",
+    "pass_sequence": "cgscc(inline)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "strip-dead-prototypes",
+    "pass_sequence": "strip-dead-prototypes"
+  },
+  {
+    "regime_id": "R2",
+    "label": "callsite-splitting",
+    "pass_sequence": "function(callsite-splitting)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "constraint-elimination",
+    "pass_sequence": "function(constraint-elimination)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "inferattrs",
+    "pass_sequence": "inferattrs"
+  },
+  {
+    "regime_id": "R2",
+    "label": "openmp-opt",
+    "pass_sequence": "openmp-opt"
+  },
+  {
+    "regime_id": "R2",
+    "label": "partially-inline-libcalls",
+    "pass_sequence": "function(partially-inline-libcalls)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "redundant-dbg-inst-elim",
+    "pass_sequence": "function(redundant-dbg-inst-elim)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "rel-lookup-table-converter",
+    "pass_sequence": "rel-lookup-table-converter"
+  },
+  {
+    "regime_id": "R2",
+    "label": "rewrite-statepoints-for-gc",
+    "pass_sequence": "rewrite-statepoints-for-gc"
+  },
+  {
+    "regime_id": "R2",
+    "label": "scalarizer",
+    "pass_sequence": "function(scalarizer)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "simple-loop-unswitch",
+    "pass_sequence": "function(loop(simple-loop-unswitch))"
+  },
+  {
+    "regime_id": "R2",
+    "label": "strip",
+    "pass_sequence": "strip"
+  },
+  {
+    "regime_id": "R2",
+    "label": "strip-nondebug",
+    "pass_sequence": "strip-nondebug"
+  },
+  {
+    "regime_id": "R2",
+    "label": "unify-loop-exits",
+    "pass_sequence": "function(unify-loop-exits)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "annotation2metadata",
+    "pass_sequence": "annotation2metadata"
+  },
+  {
+    "regime_id": "R2",
+    "label": "canonicalize-aliases",
+    "pass_sequence": "canonicalize-aliases"
+  },
+  {
+    "regime_id": "R2",
+    "label": "cross-dso-cfi",
+    "pass_sequence": "cross-dso-cfi"
+  },
+  {
+    "regime_id": "R2",
+    "label": "elim-avail-extern",
+    "pass_sequence": "elim-avail-extern"
+  },
+  {
+    "regime_id": "R2",
+    "label": "extract-blocks",
+    "pass_sequence": "extract-blocks"
+  },
+  {
+    "regime_id": "R2",
+    "label": "forceattrs",
+    "pass_sequence": "forceattrs"
+  },
+  {
+    "regime_id": "R2",
+    "label": "internalize",
+    "pass_sequence": "internalize[-internalize-public-api-list=main]"
+  },
+  {
+    "regime_id": "R2",
+    "label": "loop-flatten",
+    "pass_sequence": "function(loop-flatten)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "loop-fusion",
+    "pass_sequence": "function(loop-fusion)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "loop-interchange",
+    "pass_sequence": "function(loop(loop-interchange))"
+  },
+  {
+    "regime_id": "R2",
+    "label": "loop-predication",
+    "pass_sequence": "function(loop(loop-predication))"
+  },
+  {
+    "regime_id": "R2",
+    "label": "loop-versioning",
+    "pass_sequence": "function(loop-versioning)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "loop-versioning-licm",
+    "pass_sequence": "function(loop-versioning-licm)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "lower-atomic",
+    "pass_sequence": "function(lower-atomic)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "lower-expect",
+    "pass_sequence": "function(lower-expect)"
+  },
+  {
+    "regime_id": "R2",
+    "label": "lower-guard-intrinsic",
+    "pass_sequence": "function(lower-guard-intrinsic)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "instcombine>instcombine",
+    "pass_sequence": "function(instcombine),function(instcombine)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "instcombine>simplifycfg",
+    "pass_sequence": "function(instcombine),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "instcombine>early-cse",
+    "pass_sequence": "function(instcombine),function(early-cse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "instcombine>gvn",
+    "pass_sequence": "function(instcombine),function(gvn)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "instcombine>licm",
+    "pass_sequence": "function(instcombine),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "instcombine>loop-rotate",
+    "pass_sequence": "function(instcombine),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "instcombine>indvars",
+    "pass_sequence": "function(instcombine),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "instcombine>loop-unroll",
+    "pass_sequence": "function(instcombine),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "instcombine>loop-vectorize",
+    "pass_sequence": "function(instcombine),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "instcombine>slp-vectorizer",
+    "pass_sequence": "function(instcombine),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "instcombine>sccp",
+    "pass_sequence": "function(instcombine),function(sccp)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "instcombine>dce",
+    "pass_sequence": "function(instcombine),function(dce)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "instcombine>dse",
+    "pass_sequence": "function(instcombine),function(dse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "instcombine>reassociate",
+    "pass_sequence": "function(instcombine),function(reassociate)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "instcombine>jump-threading",
+    "pass_sequence": "function(instcombine),function(jump-threading)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "simplifycfg>instcombine",
+    "pass_sequence": "function(simplifycfg),function(instcombine)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "simplifycfg>simplifycfg",
+    "pass_sequence": "function(simplifycfg),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "simplifycfg>early-cse",
+    "pass_sequence": "function(simplifycfg),function(early-cse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "simplifycfg>gvn",
+    "pass_sequence": "function(simplifycfg),function(gvn)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "simplifycfg>licm",
+    "pass_sequence": "function(simplifycfg),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "simplifycfg>loop-rotate",
+    "pass_sequence": "function(simplifycfg),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "simplifycfg>indvars",
+    "pass_sequence": "function(simplifycfg),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "simplifycfg>loop-unroll",
+    "pass_sequence": "function(simplifycfg),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "simplifycfg>loop-vectorize",
+    "pass_sequence": "function(simplifycfg),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "simplifycfg>slp-vectorizer",
+    "pass_sequence": "function(simplifycfg),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "simplifycfg>sccp",
+    "pass_sequence": "function(simplifycfg),function(sccp)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "simplifycfg>dce",
+    "pass_sequence": "function(simplifycfg),function(dce)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "simplifycfg>dse",
+    "pass_sequence": "function(simplifycfg),function(dse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "simplifycfg>reassociate",
+    "pass_sequence": "function(simplifycfg),function(reassociate)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "simplifycfg>jump-threading",
+    "pass_sequence": "function(simplifycfg),function(jump-threading)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "early-cse>instcombine",
+    "pass_sequence": "function(early-cse),function(instcombine)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "early-cse>simplifycfg",
+    "pass_sequence": "function(early-cse),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "early-cse>early-cse",
+    "pass_sequence": "function(early-cse),function(early-cse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "early-cse>gvn",
+    "pass_sequence": "function(early-cse),function(gvn)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "early-cse>licm",
+    "pass_sequence": "function(early-cse),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "early-cse>loop-rotate",
+    "pass_sequence": "function(early-cse),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "early-cse>indvars",
+    "pass_sequence": "function(early-cse),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "early-cse>loop-unroll",
+    "pass_sequence": "function(early-cse),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "early-cse>loop-vectorize",
+    "pass_sequence": "function(early-cse),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "early-cse>slp-vectorizer",
+    "pass_sequence": "function(early-cse),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "early-cse>sccp",
+    "pass_sequence": "function(early-cse),function(sccp)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "early-cse>dce",
+    "pass_sequence": "function(early-cse),function(dce)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "early-cse>dse",
+    "pass_sequence": "function(early-cse),function(dse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "early-cse>reassociate",
+    "pass_sequence": "function(early-cse),function(reassociate)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "early-cse>jump-threading",
+    "pass_sequence": "function(early-cse),function(jump-threading)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "gvn>instcombine",
+    "pass_sequence": "function(gvn),function(instcombine)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "gvn>simplifycfg",
+    "pass_sequence": "function(gvn),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "gvn>early-cse",
+    "pass_sequence": "function(gvn),function(early-cse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "gvn>gvn",
+    "pass_sequence": "function(gvn),function(gvn)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "gvn>licm",
+    "pass_sequence": "function(gvn),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "gvn>loop-rotate",
+    "pass_sequence": "function(gvn),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "gvn>indvars",
+    "pass_sequence": "function(gvn),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "gvn>loop-unroll",
+    "pass_sequence": "function(gvn),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "gvn>loop-vectorize",
+    "pass_sequence": "function(gvn),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "gvn>slp-vectorizer",
+    "pass_sequence": "function(gvn),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "gvn>sccp",
+    "pass_sequence": "function(gvn),function(sccp)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "gvn>dce",
+    "pass_sequence": "function(gvn),function(dce)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "gvn>dse",
+    "pass_sequence": "function(gvn),function(dse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "gvn>reassociate",
+    "pass_sequence": "function(gvn),function(reassociate)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "gvn>jump-threading",
+    "pass_sequence": "function(gvn),function(jump-threading)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "licm>instcombine",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(instcombine)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "licm>simplifycfg",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "licm>early-cse",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(early-cse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "licm>gvn",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(gvn)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "licm>licm",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "licm>loop-rotate",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "licm>indvars",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "licm>loop-unroll",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "licm>loop-vectorize",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "licm>slp-vectorizer",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "licm>sccp",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(sccp)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "licm>dce",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(dce)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "licm>dse",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(dse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "licm>reassociate",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(reassociate)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "licm>jump-threading",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(jump-threading)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-rotate>instcombine",
+    "pass_sequence": "function(loop(loop-rotate)),function(instcombine)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-rotate>simplifycfg",
+    "pass_sequence": "function(loop(loop-rotate)),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-rotate>early-cse",
+    "pass_sequence": "function(loop(loop-rotate)),function(early-cse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-rotate>gvn",
+    "pass_sequence": "function(loop(loop-rotate)),function(gvn)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-rotate>licm",
+    "pass_sequence": "function(loop(loop-rotate)),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-rotate>loop-rotate",
+    "pass_sequence": "function(loop(loop-rotate)),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-rotate>indvars",
+    "pass_sequence": "function(loop(loop-rotate)),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-rotate>loop-unroll",
+    "pass_sequence": "function(loop(loop-rotate)),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-rotate>loop-vectorize",
+    "pass_sequence": "function(loop(loop-rotate)),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-rotate>slp-vectorizer",
+    "pass_sequence": "function(loop(loop-rotate)),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-rotate>sccp",
+    "pass_sequence": "function(loop(loop-rotate)),function(sccp)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-rotate>dce",
+    "pass_sequence": "function(loop(loop-rotate)),function(dce)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-rotate>dse",
+    "pass_sequence": "function(loop(loop-rotate)),function(dse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-rotate>reassociate",
+    "pass_sequence": "function(loop(loop-rotate)),function(reassociate)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-rotate>jump-threading",
+    "pass_sequence": "function(loop(loop-rotate)),function(jump-threading)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "indvars>instcombine",
+    "pass_sequence": "function(loop(indvars)),function(instcombine)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "indvars>simplifycfg",
+    "pass_sequence": "function(loop(indvars)),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "indvars>early-cse",
+    "pass_sequence": "function(loop(indvars)),function(early-cse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "indvars>gvn",
+    "pass_sequence": "function(loop(indvars)),function(gvn)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "indvars>licm",
+    "pass_sequence": "function(loop(indvars)),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "indvars>loop-rotate",
+    "pass_sequence": "function(loop(indvars)),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "indvars>indvars",
+    "pass_sequence": "function(loop(indvars)),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "indvars>loop-unroll",
+    "pass_sequence": "function(loop(indvars)),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "indvars>loop-vectorize",
+    "pass_sequence": "function(loop(indvars)),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "indvars>slp-vectorizer",
+    "pass_sequence": "function(loop(indvars)),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "indvars>sccp",
+    "pass_sequence": "function(loop(indvars)),function(sccp)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "indvars>dce",
+    "pass_sequence": "function(loop(indvars)),function(dce)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "indvars>dse",
+    "pass_sequence": "function(loop(indvars)),function(dse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "indvars>reassociate",
+    "pass_sequence": "function(loop(indvars)),function(reassociate)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "indvars>jump-threading",
+    "pass_sequence": "function(loop(indvars)),function(jump-threading)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-unroll>instcombine",
+    "pass_sequence": "function(loop-unroll),function(instcombine)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-unroll>simplifycfg",
+    "pass_sequence": "function(loop-unroll),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-unroll>early-cse",
+    "pass_sequence": "function(loop-unroll),function(early-cse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-unroll>gvn",
+    "pass_sequence": "function(loop-unroll),function(gvn)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-unroll>licm",
+    "pass_sequence": "function(loop-unroll),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-unroll>loop-rotate",
+    "pass_sequence": "function(loop-unroll),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-unroll>indvars",
+    "pass_sequence": "function(loop-unroll),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-unroll>loop-unroll",
+    "pass_sequence": "function(loop-unroll),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-unroll>loop-vectorize",
+    "pass_sequence": "function(loop-unroll),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-unroll>slp-vectorizer",
+    "pass_sequence": "function(loop-unroll),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-unroll>sccp",
+    "pass_sequence": "function(loop-unroll),function(sccp)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-unroll>dce",
+    "pass_sequence": "function(loop-unroll),function(dce)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-unroll>dse",
+    "pass_sequence": "function(loop-unroll),function(dse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-unroll>reassociate",
+    "pass_sequence": "function(loop-unroll),function(reassociate)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-unroll>jump-threading",
+    "pass_sequence": "function(loop-unroll),function(jump-threading)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-vectorize>instcombine",
+    "pass_sequence": "function(loop-vectorize),function(instcombine)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-vectorize>simplifycfg",
+    "pass_sequence": "function(loop-vectorize),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-vectorize>early-cse",
+    "pass_sequence": "function(loop-vectorize),function(early-cse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-vectorize>gvn",
+    "pass_sequence": "function(loop-vectorize),function(gvn)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-vectorize>licm",
+    "pass_sequence": "function(loop-vectorize),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-vectorize>loop-rotate",
+    "pass_sequence": "function(loop-vectorize),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-vectorize>indvars",
+    "pass_sequence": "function(loop-vectorize),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-vectorize>loop-unroll",
+    "pass_sequence": "function(loop-vectorize),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-vectorize>loop-vectorize",
+    "pass_sequence": "function(loop-vectorize),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-vectorize>slp-vectorizer",
+    "pass_sequence": "function(loop-vectorize),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-vectorize>sccp",
+    "pass_sequence": "function(loop-vectorize),function(sccp)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-vectorize>dce",
+    "pass_sequence": "function(loop-vectorize),function(dce)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-vectorize>dse",
+    "pass_sequence": "function(loop-vectorize),function(dse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-vectorize>reassociate",
+    "pass_sequence": "function(loop-vectorize),function(reassociate)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "loop-vectorize>jump-threading",
+    "pass_sequence": "function(loop-vectorize),function(jump-threading)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "slp-vectorizer>instcombine",
+    "pass_sequence": "function(slp-vectorizer),function(instcombine)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "slp-vectorizer>simplifycfg",
+    "pass_sequence": "function(slp-vectorizer),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "slp-vectorizer>early-cse",
+    "pass_sequence": "function(slp-vectorizer),function(early-cse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "slp-vectorizer>gvn",
+    "pass_sequence": "function(slp-vectorizer),function(gvn)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "slp-vectorizer>licm",
+    "pass_sequence": "function(slp-vectorizer),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "slp-vectorizer>loop-rotate",
+    "pass_sequence": "function(slp-vectorizer),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "slp-vectorizer>indvars",
+    "pass_sequence": "function(slp-vectorizer),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "slp-vectorizer>loop-unroll",
+    "pass_sequence": "function(slp-vectorizer),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "slp-vectorizer>loop-vectorize",
+    "pass_sequence": "function(slp-vectorizer),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "slp-vectorizer>slp-vectorizer",
+    "pass_sequence": "function(slp-vectorizer),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "slp-vectorizer>sccp",
+    "pass_sequence": "function(slp-vectorizer),function(sccp)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "slp-vectorizer>dce",
+    "pass_sequence": "function(slp-vectorizer),function(dce)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "slp-vectorizer>dse",
+    "pass_sequence": "function(slp-vectorizer),function(dse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "slp-vectorizer>reassociate",
+    "pass_sequence": "function(slp-vectorizer),function(reassociate)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "slp-vectorizer>jump-threading",
+    "pass_sequence": "function(slp-vectorizer),function(jump-threading)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "sccp>instcombine",
+    "pass_sequence": "function(sccp),function(instcombine)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "sccp>simplifycfg",
+    "pass_sequence": "function(sccp),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "sccp>early-cse",
+    "pass_sequence": "function(sccp),function(early-cse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "sccp>gvn",
+    "pass_sequence": "function(sccp),function(gvn)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "sccp>licm",
+    "pass_sequence": "function(sccp),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "sccp>loop-rotate",
+    "pass_sequence": "function(sccp),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "sccp>indvars",
+    "pass_sequence": "function(sccp),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "sccp>loop-unroll",
+    "pass_sequence": "function(sccp),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "sccp>loop-vectorize",
+    "pass_sequence": "function(sccp),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "sccp>slp-vectorizer",
+    "pass_sequence": "function(sccp),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "sccp>sccp",
+    "pass_sequence": "function(sccp),function(sccp)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "sccp>dce",
+    "pass_sequence": "function(sccp),function(dce)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "sccp>dse",
+    "pass_sequence": "function(sccp),function(dse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "sccp>reassociate",
+    "pass_sequence": "function(sccp),function(reassociate)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "sccp>jump-threading",
+    "pass_sequence": "function(sccp),function(jump-threading)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dce>instcombine",
+    "pass_sequence": "function(dce),function(instcombine)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dce>simplifycfg",
+    "pass_sequence": "function(dce),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dce>early-cse",
+    "pass_sequence": "function(dce),function(early-cse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dce>gvn",
+    "pass_sequence": "function(dce),function(gvn)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dce>licm",
+    "pass_sequence": "function(dce),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dce>loop-rotate",
+    "pass_sequence": "function(dce),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dce>indvars",
+    "pass_sequence": "function(dce),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dce>loop-unroll",
+    "pass_sequence": "function(dce),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dce>loop-vectorize",
+    "pass_sequence": "function(dce),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dce>slp-vectorizer",
+    "pass_sequence": "function(dce),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dce>sccp",
+    "pass_sequence": "function(dce),function(sccp)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dce>dce",
+    "pass_sequence": "function(dce),function(dce)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dce>dse",
+    "pass_sequence": "function(dce),function(dse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dce>reassociate",
+    "pass_sequence": "function(dce),function(reassociate)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dce>jump-threading",
+    "pass_sequence": "function(dce),function(jump-threading)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dse>instcombine",
+    "pass_sequence": "function(dse),function(instcombine)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dse>simplifycfg",
+    "pass_sequence": "function(dse),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dse>early-cse",
+    "pass_sequence": "function(dse),function(early-cse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dse>gvn",
+    "pass_sequence": "function(dse),function(gvn)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dse>licm",
+    "pass_sequence": "function(dse),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dse>loop-rotate",
+    "pass_sequence": "function(dse),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dse>indvars",
+    "pass_sequence": "function(dse),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dse>loop-unroll",
+    "pass_sequence": "function(dse),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dse>loop-vectorize",
+    "pass_sequence": "function(dse),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dse>slp-vectorizer",
+    "pass_sequence": "function(dse),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dse>sccp",
+    "pass_sequence": "function(dse),function(sccp)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dse>dce",
+    "pass_sequence": "function(dse),function(dce)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dse>dse",
+    "pass_sequence": "function(dse),function(dse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dse>reassociate",
+    "pass_sequence": "function(dse),function(reassociate)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "dse>jump-threading",
+    "pass_sequence": "function(dse),function(jump-threading)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "reassociate>instcombine",
+    "pass_sequence": "function(reassociate),function(instcombine)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "reassociate>simplifycfg",
+    "pass_sequence": "function(reassociate),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "reassociate>early-cse",
+    "pass_sequence": "function(reassociate),function(early-cse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "reassociate>gvn",
+    "pass_sequence": "function(reassociate),function(gvn)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "reassociate>licm",
+    "pass_sequence": "function(reassociate),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "reassociate>loop-rotate",
+    "pass_sequence": "function(reassociate),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "reassociate>indvars",
+    "pass_sequence": "function(reassociate),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "reassociate>loop-unroll",
+    "pass_sequence": "function(reassociate),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "reassociate>loop-vectorize",
+    "pass_sequence": "function(reassociate),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "reassociate>slp-vectorizer",
+    "pass_sequence": "function(reassociate),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "reassociate>sccp",
+    "pass_sequence": "function(reassociate),function(sccp)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "reassociate>dce",
+    "pass_sequence": "function(reassociate),function(dce)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "reassociate>dse",
+    "pass_sequence": "function(reassociate),function(dse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "reassociate>reassociate",
+    "pass_sequence": "function(reassociate),function(reassociate)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "reassociate>jump-threading",
+    "pass_sequence": "function(reassociate),function(jump-threading)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "jump-threading>instcombine",
+    "pass_sequence": "function(jump-threading),function(instcombine)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "jump-threading>simplifycfg",
+    "pass_sequence": "function(jump-threading),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "jump-threading>early-cse",
+    "pass_sequence": "function(jump-threading),function(early-cse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "jump-threading>gvn",
+    "pass_sequence": "function(jump-threading),function(gvn)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "jump-threading>licm",
+    "pass_sequence": "function(jump-threading),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "jump-threading>loop-rotate",
+    "pass_sequence": "function(jump-threading),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "jump-threading>indvars",
+    "pass_sequence": "function(jump-threading),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R3",
+    "label": "jump-threading>loop-unroll",
+    "pass_sequence": "function(jump-threading),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "jump-threading>loop-vectorize",
+    "pass_sequence": "function(jump-threading),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "jump-threading>slp-vectorizer",
+    "pass_sequence": "function(jump-threading),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "jump-threading>sccp",
+    "pass_sequence": "function(jump-threading),function(sccp)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "jump-threading>dce",
+    "pass_sequence": "function(jump-threading),function(dce)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "jump-threading>dse",
+    "pass_sequence": "function(jump-threading),function(dse)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "jump-threading>reassociate",
+    "pass_sequence": "function(jump-threading),function(reassociate)"
+  },
+  {
+    "regime_id": "R3",
+    "label": "jump-threading>jump-threading",
+    "pass_sequence": "function(jump-threading),function(jump-threading)"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-01",
+    "pass_sequence": "memprof-remove-attributes"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-02",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-03",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-04",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-05",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-06",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>)"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-07",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect)"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-08",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>)"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-09",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>)"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-10",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>)"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-11",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting)"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-12",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-13",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-14",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-15",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-16",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg)"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-17",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>)"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-18",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>)"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-19",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-20",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-21",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>)"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-22",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-23",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-24",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-25",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-26",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-27",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-28",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-29",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-30",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-31",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-32",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-33",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-34",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-35",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-36",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-37",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-38",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-39",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-40",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-41",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify))))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-42",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg))))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-43",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>))))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-44",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>))))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-45",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>))))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-46",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>))))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-47",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-48",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-49",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,loop(loop-idiom))))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-50",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,loop(loop-idiom,indvars))))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-51",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,loop(loop-idiom,indvars,extra-simple-loop-unswitch-passes))))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-52",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,loop(loop-idiom,indvars,extra-simple-loop-unswitch-passes,loop-idiom-vectorize))))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-53",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,loop(loop-idiom,indvars,extra-simple-loop-unswitch-passes,loop-idiom-vectorize,loop-deletion))))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-54",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,loop(loop-idiom,indvars,extra-simple-loop-unswitch-passes,loop-idiom-vectorize,loop-deletion,loop-unroll-full))))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-55",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,loop(loop-idiom,indvars,extra-simple-loop-unswitch-passes,loop-idiom-vectorize,loop-deletion,loop-unroll-full),sroa<modify-cfg>)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-56",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,loop(loop-idiom,indvars,extra-simple-loop-unswitch-passes,loop-idiom-vectorize,loop-deletion,loop-unroll-full),sroa<modify-cfg>,vector-combine)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-57",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,loop(loop-idiom,indvars,extra-simple-loop-unswitch-passes,loop-idiom-vectorize,loop-deletion,loop-unroll-full),sroa<modify-cfg>,vector-combine,mldst-motion<no-split-footer-bb>)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-58",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,loop(loop-idiom,indvars,extra-simple-loop-unswitch-passes,loop-idiom-vectorize,loop-deletion,loop-unroll-full),sroa<modify-cfg>,vector-combine,mldst-motion<no-split-footer-bb>,gvn<>)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-59",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,loop(loop-idiom,indvars,extra-simple-loop-unswitch-passes,loop-idiom-vectorize,loop-deletion,loop-unroll-full),sroa<modify-cfg>,vector-combine,mldst-motion<no-split-footer-bb>,gvn<>,sccp)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-60",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,loop(loop-idiom,indvars,extra-simple-loop-unswitch-passes,loop-idiom-vectorize,loop-deletion,loop-unroll-full),sroa<modify-cfg>,vector-combine,mldst-motion<no-split-footer-bb>,gvn<>,sccp,bdce)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-61",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,loop(loop-idiom,indvars,extra-simple-loop-unswitch-passes,loop-idiom-vectorize,loop-deletion,loop-unroll-full),sroa<modify-cfg>,vector-combine,mldst-motion<no-split-footer-bb>,gvn<>,sccp,bdce,instcombine<max-iterations=1;no-verify-fixpoint>)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-62",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,loop(loop-idiom,indvars,extra-simple-loop-unswitch-passes,loop-idiom-vectorize,loop-deletion,loop-unroll-full),sroa<modify-cfg>,vector-combine,mldst-motion<no-split-footer-bb>,gvn<>,sccp,bdce,instcombine<max-iterations=1;no-verify-fixpoint>,dfa-jump-threading)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-63",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,loop(loop-idiom,indvars,extra-simple-loop-unswitch-passes,loop-idiom-vectorize,loop-deletion,loop-unroll-full),sroa<modify-cfg>,vector-combine,mldst-motion<no-split-footer-bb>,gvn<>,sccp,bdce,instcombine<max-iterations=1;no-verify-fixpoint>,dfa-jump-threading,jump-threading)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-64",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,loop(loop-idiom,indvars,extra-simple-loop-unswitch-passes,loop-idiom-vectorize,loop-deletion,loop-unroll-full),sroa<modify-cfg>,vector-combine,mldst-motion<no-split-footer-bb>,gvn<>,sccp,bdce,instcombine<max-iterations=1;no-verify-fixpoint>,dfa-jump-threading,jump-threading,correlated-propagation)))"
+  },
+  {
+    "regime_id": "R4",
+    "label": "O3-prefix-65",
+    "pass_sequence": "memprof-remove-attributes,annotation2metadata,forceattrs,inferattrs,coro-early,function<eager-inv>(ee-instrument<>,lower-expect,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;no-switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,sroa<modify-cfg>,early-cse<>,callsite-splitting),openmp-opt,ipsccp,called-value-propagation,globalopt,function<eager-inv>(mem2reg,instcombine<max-iterations=1;no-verify-fixpoint>,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>),always-inline,require<globals-aa>,function(invalidate<aa>),require<profile-summary>,cgscc(devirt<4>(inline,function-attrs<skip-non-recursive-function-attrs>,argpromotion,openmp-opt-cgscc,function<eager-inv;no-rerun>(sroa<modify-cfg>,early-cse<memssa>,speculative-execution<only-if-divergent-target>,jump-threading,correlated-propagation,jump-table-to-switch,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,aggressive-instcombine,libcalls-shrinkwrap,tailcallelim,simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,reassociate,constraint-elimination,loop-mssa(loop-instsimplify,loop-simplifycfg,licm<no-allowspeculation>,loop-rotate<header-duplication;no-prepare-for-lto;no-check-exit-count>,licm<allowspeculation>,simple-loop-unswitch<nontrivial;trivial>),simplifycfg<bonus-inst-threshold=1;no-forward-switch-cond;switch-range-to-icmp;no-switch-to-arithmetic;no-switch-to-lookup;keep-loops;no-hoist-common-insts;no-hoist-loads-stores-with-cond-faulting;no-sink-common-insts;speculate-blocks;simplify-cond-branch;no-speculate-unpredictables>,instcombine<max-iterations=1;no-verify-fixpoint>,loop(loop-idiom,indvars,extra-simple-loop-unswitch-passes,loop-idiom-vectorize,loop-deletion,loop-unroll-full),sroa<modify-cfg>,vector-combine,mldst-motion<no-split-footer-bb>,gvn<>,sccp,bdce,instcombine<max-iterations=1;no-verify-fixpoint>,dfa-jump-threading,jump-threading,correlated-propagation,adce)))"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=none|after=none",
+    "pass_sequence": "function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=none|after=simplifycfg",
+    "pass_sequence": "function(loop-vectorize),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=none|after=jump-threading",
+    "pass_sequence": "function(loop-vectorize),function(jump-threading)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=none|after=instcombine",
+    "pass_sequence": "function(loop-vectorize),function(instcombine)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=none|after=dce",
+    "pass_sequence": "function(loop-vectorize),function(dce)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=simplifycfg|after=none",
+    "pass_sequence": "function(simplifycfg),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=simplifycfg|after=simplifycfg",
+    "pass_sequence": "function(simplifycfg),function(loop-vectorize),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=simplifycfg|after=jump-threading",
+    "pass_sequence": "function(simplifycfg),function(loop-vectorize),function(jump-threading)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=simplifycfg|after=instcombine",
+    "pass_sequence": "function(simplifycfg),function(loop-vectorize),function(instcombine)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=simplifycfg|after=dce",
+    "pass_sequence": "function(simplifycfg),function(loop-vectorize),function(dce)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=jump-threading|after=none",
+    "pass_sequence": "function(jump-threading),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=jump-threading|after=simplifycfg",
+    "pass_sequence": "function(jump-threading),function(loop-vectorize),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=jump-threading|after=jump-threading",
+    "pass_sequence": "function(jump-threading),function(loop-vectorize),function(jump-threading)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=jump-threading|after=instcombine",
+    "pass_sequence": "function(jump-threading),function(loop-vectorize),function(instcombine)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=jump-threading|after=dce",
+    "pass_sequence": "function(jump-threading),function(loop-vectorize),function(dce)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=simplifycfg+jump-threading|after=none",
+    "pass_sequence": "function(simplifycfg),function(jump-threading),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=simplifycfg+jump-threading|after=simplifycfg",
+    "pass_sequence": "function(simplifycfg),function(jump-threading),function(loop-vectorize),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=simplifycfg+jump-threading|after=jump-threading",
+    "pass_sequence": "function(simplifycfg),function(jump-threading),function(loop-vectorize),function(jump-threading)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=simplifycfg+jump-threading|after=instcombine",
+    "pass_sequence": "function(simplifycfg),function(jump-threading),function(loop-vectorize),function(instcombine)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=simplifycfg+jump-threading|after=dce",
+    "pass_sequence": "function(simplifycfg),function(jump-threading),function(loop-vectorize),function(dce)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=jump-threading+simplifycfg|after=none",
+    "pass_sequence": "function(jump-threading),function(simplifycfg),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=jump-threading+simplifycfg|after=simplifycfg",
+    "pass_sequence": "function(jump-threading),function(simplifycfg),function(loop-vectorize),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=jump-threading+simplifycfg|after=jump-threading",
+    "pass_sequence": "function(jump-threading),function(simplifycfg),function(loop-vectorize),function(jump-threading)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=jump-threading+simplifycfg|after=instcombine",
+    "pass_sequence": "function(jump-threading),function(simplifycfg),function(loop-vectorize),function(instcombine)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=jump-threading+simplifycfg|after=dce",
+    "pass_sequence": "function(jump-threading),function(simplifycfg),function(loop-vectorize),function(dce)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=instcombine|after=none",
+    "pass_sequence": "function(instcombine),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=instcombine|after=simplifycfg",
+    "pass_sequence": "function(instcombine),function(loop-vectorize),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=instcombine|after=jump-threading",
+    "pass_sequence": "function(instcombine),function(loop-vectorize),function(jump-threading)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=instcombine|after=instcombine",
+    "pass_sequence": "function(instcombine),function(loop-vectorize),function(instcombine)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=instcombine|after=dce",
+    "pass_sequence": "function(instcombine),function(loop-vectorize),function(dce)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=simplifycfg+instcombine|after=none",
+    "pass_sequence": "function(simplifycfg),function(instcombine),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=simplifycfg+instcombine|after=simplifycfg",
+    "pass_sequence": "function(simplifycfg),function(instcombine),function(loop-vectorize),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=simplifycfg+instcombine|after=jump-threading",
+    "pass_sequence": "function(simplifycfg),function(instcombine),function(loop-vectorize),function(jump-threading)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=simplifycfg+instcombine|after=instcombine",
+    "pass_sequence": "function(simplifycfg),function(instcombine),function(loop-vectorize),function(instcombine)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=simplifycfg+instcombine|after=dce",
+    "pass_sequence": "function(simplifycfg),function(instcombine),function(loop-vectorize),function(dce)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=instcombine+jump-threading|after=none",
+    "pass_sequence": "function(instcombine),function(jump-threading),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=instcombine+jump-threading|after=simplifycfg",
+    "pass_sequence": "function(instcombine),function(jump-threading),function(loop-vectorize),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=instcombine+jump-threading|after=jump-threading",
+    "pass_sequence": "function(instcombine),function(jump-threading),function(loop-vectorize),function(jump-threading)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=instcombine+jump-threading|after=instcombine",
+    "pass_sequence": "function(instcombine),function(jump-threading),function(loop-vectorize),function(instcombine)"
+  },
+  {
+    "regime_id": "R5",
+    "label": "before=instcombine+jump-threading|after=dce",
+    "pass_sequence": "function(instcombine),function(jump-threading),function(loop-vectorize),function(dce)"
+  }
+]

@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{Redundant pass events and estimated compile-time waste per regime. The ratio is the mean over sweeps of the fraction of pass executions that -print-changed reports as unchanged. Waste is the sum over sweeps of compile time multiplied by that ratio.}
+\label{tab:rpb}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|l|l|r|r|}
+\hline
+Regime & Purpose & Mean ratio & Waste (s) \\
+\hline
+R1 & Standard and size levels & 0.844 & 0.36 \\
+\hline
+R2 & Single passes & 0.622 & 1.70 \\
+\hline
+R3 & Ordered pairs & 0.629 & 6.41 \\
+\hline
+R4 & O3 prefixes & 0.745 & 2.40 \\
+\hline
+R5 & Pass interference & 0.568 & 1.03 \\
+\hline
+R6 & M\_pass sequences & 0.559 & 1.49 \\
+\hline
+\end{tabular}
+\end{table}

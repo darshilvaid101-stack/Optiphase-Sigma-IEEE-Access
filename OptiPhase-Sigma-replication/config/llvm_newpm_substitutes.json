@@ -1,0 +1,21 @@
+{
+  "rule": "The eight canonical passes that LLVM 23 rejects are replaced by the first eight valid transforms, in alphabetical order, from a fixed whitelist of standard LLVM transformation passes that are not on the canonical list. The whitelist and rule were fixed before any sweep result was seen, so they cannot be tuned to the outcome.",
+  "rejected_canonical_passes": [
+    "prune-eh", "dfsan", "post-inline-ee-instrument", "vec-merger",
+    "warn-missed-transformations", "barrier", "function-specialization", "loop-reroll"
+  ],
+  "whitelist": [
+    "argpromotion", "break-crit-edges", "consthoist", "hotcoldsplit", "loop-unroll-and-jam",
+    "lower-matrix-intrinsics", "lower-switch", "mergefunc", "newgvn", "partial-inliner", "reg2mem"
+  ],
+  "passes": [
+    {"name": "argpromotion", "level": "cgscc", "stage": "cgscc(argpromotion)"},
+    {"name": "break-crit-edges", "level": "function", "stage": "function(break-crit-edges)"},
+    {"name": "consthoist", "level": "function", "stage": "function(consthoist)"},
+    {"name": "hotcoldsplit", "level": "module", "stage": "hotcoldsplit"},
+    {"name": "loop-unroll-and-jam", "level": "loop", "stage": "function(loop(loop-unroll-and-jam))"},
+    {"name": "lower-matrix-intrinsics", "level": "function", "stage": "function(lower-matrix-intrinsics)"},
+    {"name": "lower-switch", "level": "function", "stage": "function(lower-switch)"},
+    {"name": "mergefunc", "level": "module", "stage": "mergefunc"}
+  ]
+}

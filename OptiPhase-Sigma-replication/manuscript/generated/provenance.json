@@ -1,0 +1,26 @@
+{
+  "bibliography_entries": 39,
+  "generated_utc": "2026-10-20T17:56:51+00:00",
+  "inputs": {
+    "config/llvm_newpm_crash_replacements.json": "b1dd8375a3229eff8f0a8f232abb21beca364ebffdb170952ca29749ce481d07",
+    "config/llvm_newpm_pass_validity.json": "1a8e76ff87e67b567e47d43b10e60ca5aeae955680ef414da4d1f2a46299c2e7",
+    "config/llvm_newpm_substitutes.json": "4bbea29858211dc6b9ca9e0a86f247cc55a24cca4e4eda6b24b6bbb44b17fb8f",
+    "data/benchmarks/bitcode_O0_canon/MANIFEST.json": "69c2a11a8bd740ce42112d392a6ad38d03a066b3a251f87cd448fed74e5bed59",
+    "data/smt2_certificates/manifest.json": "ec22c1e083239049f8111b3529ec1576d95933a60981555141a2a785b2d72edf",
+    "data/telemetry/canonical_baselines.json": "a2263c16b052ba9fc48f62d063c1982ed9321522e29f60d5cc70e3a7a4c2c910",
+    "data/telemetry/lie_bracket_mean.csv": "f75f03cc5b9610b90dff5fea2996f821f81805676cfbef477bcdb3ea73c7bc0e",
+    "data/telemetry/lowering_pilot.json": "06b65a5bce97aa34a5d6b64cfe35ba4a766f531b4c432b51d97ae8345ba695ae",
+    "data/telemetry/m_pass_transition_matrix.csv": "eeeb5fc6b75804f853f845bd1f0a193f63bd6e5c0e320bbc26c7588e9a85b414",
+    "data/telemetry/master_sweeps_28800.csv": "54ce02d40a1ac20a7c9289c7ace1a75466800737b1ddd62d6e1dc90b9f9957ea",
+    "data/telemetry/pareto_3d_frontiers.csv": "c90df086050a6efe9a85864c6a9466681ac49aa4d1677a95b0a0614a7c9556ff",
+    "data/telemetry/pass_checks.json": "a071a834c05bd81c71787fb8fbe2ad3392f8000b90d495e7e7e7a98008dac671",
+    "data/telemetry/refinement_analysis.json": "b5fc793b7796370938d709819eda8966df891de2ac4b5af9463268294727edfe",
+    "data/telemetry/rpb_summary.json": "4e9b588991d7bf8611554a91e8d1cc861593a07f12193e78482ec31a7001de1c",
+    "data/telemetry/sat_witness_attribution.json": "2ce9482f7f8c678e425be8e4dbfc43a0c8ebd694c213de68a8c2034c3ecc6388",
+    "data/telemetry/sweep_audit.jsonl": "55b8f6724d96d3b5921cb5a008219b6acfc445b318577ba8730baa6a4b6e5157",
+    "data/telemetry/sweep_variant_checks.json": "0b2d00db86574d6efdcaa70ceab1e2a6ad1b6443cd1b4456259f886b7b14829f",
+    "data/telemetry/z3_encoding_agreement.json": "455735dd5262aa64840a7125dc8e9490ad12d4e8b85b99a037b0294ec07a3801",
+    "data/telemetry/z3_verification_proofs.csv": "b33bd45782d1942ec440045f862002cb61c467f6dc33e881a7b22d149ef6d5d5",
+    "manuscript/references_curated.bib": "4597dda169ca7d93b9519a7ca333016c19ec12aefbc2e89032bce6debd99e1a1"
+  }
+}

@@ -1,0 +1,90 @@
+\documentclass{ieeeaccess}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+
+\input{generated/macros}
+
+\graphicspath{{figures/}{../figures/}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+
+% The class's no-photo biography environment uses a counter and a conditional that ieeeaccess.cls does not declare. IEEEtran
+% declares its own under other names, so they are declared here, with the same starting values.
+\newcounter{biography}
+\makeatletter
+\newif\if@biographyTOCentrynotmade
+\@biographyTOCentrynotmadetrue
+\makeatother
+
+% Tables span both columns of the two-column layout, so that wide tables keep their rows readable.
+\renewenvironment{table}[1][]{\begin{table*}[#1]}{\end{table*}}
+
+% The template's figure command, with the figure width as its only option; the caption of each figure is one line.
+\newcommand{\PaperFigure}[2]{\Figure[t!](topskip=0pt, botskip=0pt, midskip=0pt)[width=\textwidth]{#1}{#2}}
+
+\emergencystretch=3em
+\sloppy
+
+\begin{document}
+\history{Date of publication xxxx 00, 0000, date of current version xxxx 00, 0000.}
+\doi{10.1109/ACCESS.2017.DOI}
+
+\title{OptiPhase-$\Sigma$: Measured Pass Interference and Bounded Refinement Checks in the LLVM New Pass Manager}
+\author{\uppercase{Devarsh Patel\authorrefmark{1}, Darshil Vaid\authorrefmark{2}, and Kanagaraj R\authorrefmark{3}}}
+\address[1]{School of Computer Science and Engineering, Vellore Institute of Technology, Vellore, India (e-mail: devarsh.patel2024@vitstudent.ac.in)}
+\address[2]{School of Computer Science and Engineering, Vellore Institute of Technology, Vellore, India (e-mail: darshil.vaid2024@vitstudent.ac.in)}
+\address[3]{School of Computer Science and Engineering, Vellore Institute of Technology, Vellore, India (e-mail: kanagaraj.r@vit.ac.in)}
+\tfootnote{Funding information is given in the Funding statement at the end of this article.}
+
+\markboth
+{Patel \headeretal: Measured Pass Interference in the LLVM New Pass Manager}
+{Patel \headeretal: Measured Pass Interference in the LLVM New Pass Manager}
+
+\corresp{Corresponding author: Kanagaraj R (e-mail: kanagaraj.r@vit.ac.in).}
+
+\begin{abstract}
+\input{sections/abstract_body}
+\end{abstract}
+
+\begin{keywords}
+compiler optimization, LLVM new pass manager, pass interference, phase ordering
+\end{keywords}
+
+\titlepgskip=-15pt
+
+\maketitle
+
+\input{sections/introduction}
+\input{sections/background}
+\input{sections/framework}
+\input{sections/methods}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/declarations}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references_curated}
+
+\begin{IEEEbiographynophoto}{Devarsh Patel}
+[Biography to be supplied by the author.]
+\end{IEEEbiographynophoto}
+
+\begin{IEEEbiographynophoto}{Darshil Vaid}
+[Biography to be supplied by the author.]
+\end{IEEEbiographynophoto}
+
+\begin{IEEEbiographynophoto}{Kanagaraj R}
+[Biography to be supplied by the author.]
+\end{IEEEbiographynophoto}
+
+\EOD
+
+\end{document}

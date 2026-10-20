@@ -1,0 +1,302 @@
+[
+  {
+    "regime_id": "R6",
+    "label": "gvn>early-cse>instcombine",
+    "pass_sequence": "function(gvn),function(early-cse),function(instcombine)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>gvn>instcombine",
+    "pass_sequence": "function(early-cse),function(gvn),function(instcombine)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "instcombine>early-cse>gvn",
+    "pass_sequence": "function(instcombine),function(early-cse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "instcombine>gvn>early-cse",
+    "pass_sequence": "function(instcombine),function(gvn),function(early-cse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>gvn>indvars",
+    "pass_sequence": "function(early-cse),function(gvn),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R6",
+    "label": "gvn>early-cse>indvars",
+    "pass_sequence": "function(gvn),function(early-cse),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>gvn>loop-vectorize",
+    "pass_sequence": "function(early-cse),function(gvn),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>gvn>jump-threading",
+    "pass_sequence": "function(early-cse),function(gvn),function(jump-threading)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "simplifycfg>gvn>early-cse",
+    "pass_sequence": "function(simplifycfg),function(gvn),function(early-cse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "indvars>early-cse>gvn",
+    "pass_sequence": "function(loop(indvars)),function(early-cse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>gvn>simplifycfg",
+    "pass_sequence": "function(early-cse),function(gvn),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "jump-threading>gvn>early-cse",
+    "pass_sequence": "function(jump-threading),function(gvn),function(early-cse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "indvars>gvn>early-cse",
+    "pass_sequence": "function(loop(indvars)),function(gvn),function(early-cse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "gvn>early-cse>loop-vectorize",
+    "pass_sequence": "function(gvn),function(early-cse),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>gvn>licm",
+    "pass_sequence": "function(early-cse),function(gvn),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>gvn>loop-unroll",
+    "pass_sequence": "function(early-cse),function(gvn),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "gvn>early-cse>licm",
+    "pass_sequence": "function(gvn),function(early-cse),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>gvn>loop-rotate",
+    "pass_sequence": "function(early-cse),function(gvn),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R6",
+    "label": "gvn>early-cse>loop-unroll",
+    "pass_sequence": "function(gvn),function(early-cse),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "gvn>early-cse>loop-rotate",
+    "pass_sequence": "function(gvn),function(early-cse),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>gvn>slp-vectorizer",
+    "pass_sequence": "function(early-cse),function(gvn),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "reassociate>early-cse>gvn",
+    "pass_sequence": "function(reassociate),function(early-cse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "sccp>early-cse>gvn",
+    "pass_sequence": "function(sccp),function(early-cse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "slp-vectorizer>early-cse>gvn",
+    "pass_sequence": "function(slp-vectorizer),function(early-cse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "slp-vectorizer>gvn>early-cse",
+    "pass_sequence": "function(slp-vectorizer),function(gvn),function(early-cse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dce>early-cse>gvn",
+    "pass_sequence": "function(dce),function(early-cse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "simplifycfg>early-cse>gvn",
+    "pass_sequence": "function(simplifycfg),function(early-cse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>gvn>sccp",
+    "pass_sequence": "function(early-cse),function(gvn),function(sccp)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "jump-threading>early-cse>gvn",
+    "pass_sequence": "function(jump-threading),function(early-cse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dse>early-cse>gvn",
+    "pass_sequence": "function(dse),function(early-cse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "gvn>early-cse>slp-vectorizer",
+    "pass_sequence": "function(gvn),function(early-cse),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>gvn>reassociate",
+    "pass_sequence": "function(early-cse),function(gvn),function(reassociate)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "reassociate>gvn>early-cse",
+    "pass_sequence": "function(reassociate),function(gvn),function(early-cse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "gvn>early-cse>reassociate",
+    "pass_sequence": "function(gvn),function(early-cse),function(reassociate)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "sccp>gvn>early-cse",
+    "pass_sequence": "function(sccp),function(gvn),function(early-cse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "gvn>early-cse>sccp",
+    "pass_sequence": "function(gvn),function(early-cse),function(sccp)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "gvn>early-cse>jump-threading",
+    "pass_sequence": "function(gvn),function(early-cse),function(jump-threading)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "loop-unroll>early-cse>gvn",
+    "pass_sequence": "function(loop-unroll),function(early-cse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dse>gvn>early-cse",
+    "pass_sequence": "function(dse),function(gvn),function(early-cse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dce>gvn>early-cse",
+    "pass_sequence": "function(dce),function(gvn),function(early-cse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "gvn>early-cse>dse",
+    "pass_sequence": "function(gvn),function(early-cse),function(dse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "loop-rotate>gvn>early-cse",
+    "pass_sequence": "function(loop(loop-rotate)),function(gvn),function(early-cse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "gvn>early-cse>simplifycfg",
+    "pass_sequence": "function(gvn),function(early-cse),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>gvn>dce",
+    "pass_sequence": "function(early-cse),function(gvn),function(dce)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>gvn>dse",
+    "pass_sequence": "function(early-cse),function(gvn),function(dse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "gvn>early-cse>dce",
+    "pass_sequence": "function(gvn),function(early-cse),function(dce)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "licm>early-cse>gvn",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(early-cse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "loop-vectorize>early-cse>gvn",
+    "pass_sequence": "function(loop-vectorize),function(early-cse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "licm>gvn>early-cse",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(gvn),function(early-cse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "loop-rotate>early-cse>gvn",
+    "pass_sequence": "function(loop(loop-rotate)),function(early-cse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "loop-unroll>gvn>early-cse",
+    "pass_sequence": "function(loop-unroll),function(gvn),function(early-cse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "loop-vectorize>gvn>early-cse",
+    "pass_sequence": "function(loop-vectorize),function(gvn),function(early-cse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>instcombine>gvn",
+    "pass_sequence": "function(early-cse),function(instcombine),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "gvn>instcombine>early-cse",
+    "pass_sequence": "function(gvn),function(instcombine),function(early-cse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "instcombine>early-cse>indvars",
+    "pass_sequence": "function(instcombine),function(early-cse),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R6",
+    "label": "instcombine>gvn>indvars",
+    "pass_sequence": "function(instcombine),function(gvn),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R6",
+    "label": "indvars>early-cse>instcombine",
+    "pass_sequence": "function(loop(indvars)),function(early-cse),function(instcombine)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "simplifycfg>gvn>instcombine",
+    "pass_sequence": "function(simplifycfg),function(gvn),function(instcombine)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "jump-threading>gvn>instcombine",
+    "pass_sequence": "function(jump-threading),function(gvn),function(instcombine)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "indvars>gvn>instcombine",
+    "pass_sequence": "function(loop(indvars)),function(gvn),function(instcombine)"
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "generated_utc": "2026-10-15T19:08:48+00:00",
+  "records_total": 4338,
+  "records_with_abstract": 1705,
+  "abstract_sources": {
+    "arxiv": 2,
+    "crossref": 945,
+    "none": 2633,
+    "openalex": 758
+  },
+  "patterns_in_config": 30,
+  "strict_tier_rows": 17,
+  "union_rows": 1436,
+  "rows_tier_strict_only": 11,
+  "rows_tier_extended_only": 1419,
+  "rows_tier_both": 6,
+  "rows_by_confidence": {
+    "candidate": 1227,
+    "refined": 192,
+    "strict": 17
+  },
+  "rows_high_confidence": 209,
+  "rows_high_confidence_compiler_topic": 112,
+  "rows_compiler_topic": 384,
+  "rows_by_cluster_compiler_topic": {
+    "G1": 63,
+    "G2": 22,
+    "G3": 95,
+    "G4": 91,
+    "G5": 26,
+    "G6": 87
+  },
+  "rows_by_cluster": {
+    "G1": 217,
+    "G2": 31,
+    "G3": 212,
+    "G4": 454,
+    "G5": 165,
+    "G6": 357
+  },
+  "rows_by_venue": {
+    "ASPLOS": 314,
+    "CC": 47,
+    "CGO": 104,
+    "PACT": 72,
+    "PLDI": 274,
+    "Supercomputing": 129,
+    "TACO": 496
+  },
+  "rows_by_year": {
+    "2024": 397,
+    "2025": 452,
+    "2026": 587
+  },
+  "null_fields": 0,
+  "gate_2": {
+    "required_rows": 1000,
+    "rows": 1436,
+    "passed": true
+  },
+  "limitations": [
+    "Only abstracts were mined. Conclusions are not in the harvested metadata, and full text was not collected.",
+    "config/gap_regex_patterns.json defines 30 patterns, while the design notes give 32; the config was used as shipped for the strict tier.",
+    "The extended tier's markers and cluster keywords are a documented heuristic. Its precision is estimated on a fixed sample and reported in the summary.",
+    "mathematical_remediation is the cluster-level remedy for each gap cluster, not a sentence extracted from any paper."
+  ]
+}

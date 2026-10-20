@@ -1,0 +1,302 @@
+[
+  {
+    "regime_id": "R6",
+    "label": "simplifycfg>dse>gvn",
+    "pass_sequence": "function(simplifycfg),function(dse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "slp-vectorizer>dse>gvn",
+    "pass_sequence": "function(slp-vectorizer),function(dse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dse>gvn>loop-unroll",
+    "pass_sequence": "function(dse),function(gvn),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dse>gvn>slp-vectorizer",
+    "pass_sequence": "function(dse),function(gvn),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dse>gvn>reassociate",
+    "pass_sequence": "function(dse),function(gvn),function(reassociate)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "indvars>dse>gvn",
+    "pass_sequence": "function(loop(indvars)),function(dse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "reassociate>dse>gvn",
+    "pass_sequence": "function(reassociate),function(dse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>dse>gvn",
+    "pass_sequence": "function(early-cse),function(dse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "loop-unroll>dse>gvn",
+    "pass_sequence": "function(loop-unroll),function(dse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "jump-threading>dse>gvn",
+    "pass_sequence": "function(jump-threading),function(dse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dce>dse>gvn",
+    "pass_sequence": "function(dce),function(dse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dse>gvn>dce",
+    "pass_sequence": "function(dse),function(gvn),function(dce)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "loop-rotate>dse>gvn",
+    "pass_sequence": "function(loop(loop-rotate)),function(dse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dse>gvn>simplifycfg",
+    "pass_sequence": "function(dse),function(gvn),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dse>gvn>indvars",
+    "pass_sequence": "function(dse),function(gvn),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dse>gvn>instcombine",
+    "pass_sequence": "function(dse),function(gvn),function(instcombine)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "indvars>slp-vectorizer>loop-unroll",
+    "pass_sequence": "function(loop(indvars)),function(slp-vectorizer),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dse>gvn>loop-vectorize",
+    "pass_sequence": "function(dse),function(gvn),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dse>gvn>licm",
+    "pass_sequence": "function(dse),function(gvn),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dse>gvn>sccp",
+    "pass_sequence": "function(dse),function(gvn),function(sccp)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "sccp>dse>gvn",
+    "pass_sequence": "function(sccp),function(dse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "simplifycfg>dse>reassociate",
+    "pass_sequence": "function(simplifycfg),function(dse),function(reassociate)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "licm>dse>gvn",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(dse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dse>gvn>early-cse",
+    "pass_sequence": "function(dse),function(gvn),function(early-cse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dse>gvn>loop-rotate",
+    "pass_sequence": "function(dse),function(gvn),function(loop(loop-rotate))"
+  },
+  {
+    "regime_id": "R6",
+    "label": "indvars>slp-vectorizer>dse",
+    "pass_sequence": "function(loop(indvars)),function(slp-vectorizer),function(dse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "loop-unroll>slp-vectorizer>dse",
+    "pass_sequence": "function(loop-unroll),function(slp-vectorizer),function(dse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "instcombine>jump-threading>loop-vectorize",
+    "pass_sequence": "function(instcombine),function(jump-threading),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dse>gvn>jump-threading",
+    "pass_sequence": "function(dse),function(gvn),function(jump-threading)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>loop-vectorize>jump-threading",
+    "pass_sequence": "function(early-cse),function(loop-vectorize),function(jump-threading)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "sccp>early-cse>loop-vectorize",
+    "pass_sequence": "function(sccp),function(early-cse),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "instcombine>dse>gvn",
+    "pass_sequence": "function(instcombine),function(dse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "jump-threading>early-cse>loop-vectorize",
+    "pass_sequence": "function(jump-threading),function(early-cse),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "slp-vectorizer>dse>reassociate",
+    "pass_sequence": "function(slp-vectorizer),function(dse),function(reassociate)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "licm>instcombine>jump-threading",
+    "pass_sequence": "function(loop-mssa(loop(licm))),function(instcombine),function(jump-threading)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>loop-vectorize>sccp",
+    "pass_sequence": "function(early-cse),function(loop-vectorize),function(sccp)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>loop-vectorize>loop-unroll",
+    "pass_sequence": "function(early-cse),function(loop-vectorize),function(loop-unroll)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "sccp>loop-unroll>slp-vectorizer",
+    "pass_sequence": "function(sccp),function(loop-unroll),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "indvars>loop-unroll>slp-vectorizer",
+    "pass_sequence": "function(loop(indvars)),function(loop-unroll),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>loop-vectorize>reassociate",
+    "pass_sequence": "function(early-cse),function(loop-vectorize),function(reassociate)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>loop-vectorize>slp-vectorizer",
+    "pass_sequence": "function(early-cse),function(loop-vectorize),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "simplifycfg>loop-unroll>slp-vectorizer",
+    "pass_sequence": "function(simplifycfg),function(loop-unroll),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "loop-vectorize>dse>gvn",
+    "pass_sequence": "function(loop-vectorize),function(dse),function(gvn)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "instcombine>jump-threading>indvars",
+    "pass_sequence": "function(instcombine),function(jump-threading),function(loop(indvars))"
+  },
+  {
+    "regime_id": "R6",
+    "label": "instcombine>jump-threading>early-cse",
+    "pass_sequence": "function(instcombine),function(jump-threading),function(early-cse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dse>reassociate>dce",
+    "pass_sequence": "function(dse),function(reassociate),function(dce)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "indvars>early-cse>loop-vectorize",
+    "pass_sequence": "function(loop(indvars)),function(early-cse),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dse>reassociate>sccp",
+    "pass_sequence": "function(dse),function(reassociate),function(sccp)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "simplifycfg>instcombine>jump-threading",
+    "pass_sequence": "function(simplifycfg),function(instcombine),function(jump-threading)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "gvn>loop-unroll>slp-vectorizer",
+    "pass_sequence": "function(gvn),function(loop-unroll),function(slp-vectorizer)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "instcombine>jump-threading>licm",
+    "pass_sequence": "function(instcombine),function(jump-threading),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R6",
+    "label": "dce>early-cse>loop-vectorize",
+    "pass_sequence": "function(dce),function(early-cse),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "early-cse>loop-vectorize>licm",
+    "pass_sequence": "function(early-cse),function(loop-vectorize),function(loop-mssa(loop(licm)))"
+  },
+  {
+    "regime_id": "R6",
+    "label": "loop-unroll>simplifycfg>dse",
+    "pass_sequence": "function(loop-unroll),function(simplifycfg),function(dse)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "instcombine>jump-threading>sccp",
+    "pass_sequence": "function(instcombine),function(jump-threading),function(sccp)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "reassociate>early-cse>loop-vectorize",
+    "pass_sequence": "function(reassociate),function(early-cse),function(loop-vectorize)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "indvars>slp-vectorizer>dce",
+    "pass_sequence": "function(loop(indvars)),function(slp-vectorizer),function(dce)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "loop-unroll>slp-vectorizer>dce",
+    "pass_sequence": "function(loop-unroll),function(slp-vectorizer),function(dce)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "slp-vectorizer>loop-unroll>simplifycfg",
+    "pass_sequence": "function(slp-vectorizer),function(loop-unroll),function(simplifycfg)"
+  },
+  {
+    "regime_id": "R6",
+    "label": "jump-threading>indvars>slp-vectorizer",
+    "pass_sequence": "function(jump-threading),function(loop(indvars)),function(slp-vectorizer)"
+  }
+]

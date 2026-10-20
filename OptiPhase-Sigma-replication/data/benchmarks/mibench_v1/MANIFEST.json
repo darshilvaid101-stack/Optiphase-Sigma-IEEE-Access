@@ -1,0 +1,1903 @@
+{
+  "suite": "MiBench v1.0 (official per-category archives)",
+  "requiredVersion": "1.0",
+  "resolvedVersion": "1.0 (as distributed by vhosts.eecs.umich.edu/mibench; no upstream checksum published)",
+  "sourceUrl": "https://vhosts.eecs.umich.edu/mibench/source.html",
+  "archives": {
+    "automotive": {
+      "url": "https://vhosts.eecs.umich.edu/mibench/automotive.tar.gz",
+      "bytes": 889630,
+      "sha256": "d63e8dc1f15d93d1b7ee59aed4dfb38659cb78819ce94bd26f8ceaf4d149fad9"
+    },
+    "network": {
+      "url": "https://vhosts.eecs.umich.edu/mibench/network.tar.gz",
+      "bytes": 470094,
+      "sha256": "e23b6b744ad3056a0e6f4674c9a867007d99a1bb11306e3803813c0734cdcae2"
+    },
+    "security": {
+      "url": "https://vhosts.eecs.umich.edu/mibench/security.tar.gz",
+      "bytes": 1819787,
+      "sha256": "866f4a36d53e285824a2b9f513f125d4aaaffef3eb2cd264a9cb675eaa554222"
+    },
+    "telecomm": {
+      "url": "https://vhosts.eecs.umich.edu/mibench/telecomm.tar.gz",
+      "bytes": 33614854,
+      "sha256": "cdcdc9bfa8ef7c78a91b9b682ad611ce762920e06a3b39140c22ded0e2e634aa"
+    }
+  },
+  "retrievedAtUtc": "2026-10-15T17:57:30+00:00",
+  "kernelRule": "Each invocation in the official runme_small.sh of the four required categories is one kernel. security/pgp is excluded: it ships only runme.sh, which depends on a configured keyring, and has no small/large dataset script. Result: 20 kernels.",
+  "kernelCount": 20,
+  "kernels": [
+    {
+      "id": "automotive/basicmath#1",
+      "program": "automotive/basicmath",
+      "command": "basicmath_small > output_small.txt"
+    },
+    {
+      "id": "automotive/bitcount#2",
+      "program": "automotive/bitcount",
+      "command": "bitcnts 75000 > output_small.txt"
+    },
+    {
+      "id": "automotive/qsort#3",
+      "program": "automotive/qsort",
+      "command": "qsort_small input_small.dat > output_small.txt"
+    },
+    {
+      "id": "automotive/susan#4",
+      "program": "automotive/susan",
+      "command": "susan input_small.pgm output_small.smoothing.pgm -s"
+    },
+    {
+      "id": "automotive/susan#5",
+      "program": "automotive/susan",
+      "command": "susan input_small.pgm output_small.edges.pgm -e"
+    },
+    {
+      "id": "automotive/susan#6",
+      "program": "automotive/susan",
+      "command": "susan input_small.pgm output_small.corners.pgm -c"
+    },
+    {
+      "id": "network/dijkstra#7",
+      "program": "network/dijkstra",
+      "command": "dijkstra_small input.dat > output_small.dat"
+    },
+    {
+      "id": "network/patricia#8",
+      "program": "network/patricia",
+      "command": "patricia small.udp > output_small.txt"
+    },
+    {
+      "id": "security/blowfish#9",
+      "program": "security/blowfish",
+      "command": "bf e input_small.asc output_small.enc <key>"
+    },
+    {
+      "id": "security/blowfish#10",
+      "program": "security/blowfish",
+      "command": "bf d output_small.enc output_small.asc <key>"
+    },
+    {
+      "id": "security/rijndael#11",
+      "program": "security/rijndael",
+      "command": "rijndael input_small.asc output_small.enc e <key>"
+    },
+    {
+      "id": "security/rijndael#12",
+      "program": "security/rijndael",
+      "command": "rijndael output_small.enc output_small.dec d <key>"
+    },
+    {
+      "id": "security/sha#13",
+      "program": "security/sha",
+      "command": "sha input_small.asc > output_small.txt"
+    },
+    {
+      "id": "telecomm/CRC32#14",
+      "program": "telecomm/CRC32",
+      "command": "crc ../adpcm/data/large.pcm > output_small.txt"
+    },
+    {
+      "id": "telecomm/FFT#15",
+      "program": "telecomm/FFT",
+      "command": "fft 4 4096 > output_small.txt"
+    },
+    {
+      "id": "telecomm/FFT#16",
+      "program": "telecomm/FFT",
+      "command": "fft 4 8192 -i > output_small.inv.txt"
+    },
+    {
+      "id": "telecomm/adpcm#17",
+      "program": "telecomm/adpcm",
+      "command": "bin/rawcaudio < data/small.pcm > output_small.adpcm"
+    },
+    {
+      "id": "telecomm/adpcm#18",
+      "program": "telecomm/adpcm",
+      "command": "bin/rawdaudio < data/small.adpcm > output_small.pcm"
+    },
+    {
+      "id": "telecomm/gsm#19",
+      "program": "telecomm/gsm",
+      "command": "bin/toast -fps -c data/small.au > output_small.encode.gsm"
+    },
+    {
+      "id": "telecomm/gsm#20",
+      "program": "telecomm/gsm",
+      "command": "bin/untoast -fps -c data/small.au.run.gsm > output_small.decode.run"
+    }
+  ],
+  "knownQuirks": [
+    "telecomm/CRC32 runme_small.sh reads ../adpcm/data/large.pcm (the official script does this; kept as shipped)."
+  ],
+  "licenseNote": "Research use only per the LICENSE files; automotive/susan is research-only, network/dijkstra and network/patricia declare GPL, security/sha has attribution text only. Sources are gitignored and must not be redistributed without review.",
+  "notCommittedToGit": true,
+  "mirrorSuperseded": "The earlier llvm-test-suite MultiSource/Benchmarks/MiBench mirror (commit 95569a77) was replaced by these official archives on 2026-10-15.",
+  "manifestGeneratedAtUtc": "2026-10-15T17:57:30+00:00",
+  "fileCount": 440,
+  "files": [
+    {
+      "path": "automotive/basicmath/COMPILE",
+      "sha256": "77ab123dc4f0033b77562f0ca472cd6a037ed9f31fcde17e22b7bcd4c8d0b2ef"
+    },
+    {
+      "path": "automotive/basicmath/LICENSE",
+      "sha256": "d5433a2f12b96fb7dd1ec0e09f8268ce220a93859fa2c6441ac11724169dad95"
+    },
+    {
+      "path": "automotive/basicmath/Makefile",
+      "sha256": "980ba95d6b8809a8f6a8212d627df650e4487844df0379f184bd8ca7b18cf38d"
+    },
+    {
+      "path": "automotive/basicmath/basicmath_large.c",
+      "sha256": "a3b941819a0e8291afbed5f9c541c51d92d6f17cc2148541bd17f09ecc3ee70c"
+    },
+    {
+      "path": "automotive/basicmath/basicmath_small.c",
+      "sha256": "5e0dfb86419c4ce274cc49da2d94b908970f3a9aab242ca91d059bc18fa11b13"
+    },
+    {
+      "path": "automotive/basicmath/cubic.c",
+      "sha256": "c1f912993000a499f252c8646198190d83805b1f20fa78e9533082106593222c"
+    },
+    {
+      "path": "automotive/basicmath/isqrt.c",
+      "sha256": "b82dde15f35818a806fec5a6fa9d5cef7a157e2a22c8636665f0e4b73a4400b8"
+    },
+    {
+      "path": "automotive/basicmath/pi.h",
+      "sha256": "1dcce68d105cfaac5e251e5a098060e7897eff0672287e47f29c4c84b3929166"
+    },
+    {
+      "path": "automotive/basicmath/rad2deg.c",
+      "sha256": "261e3136f42871e1d76857898647990955dbe5c5b7eda2703068bb5ad71e3918"
+    },
+    {
+      "path": "automotive/basicmath/round.h",
+      "sha256": "238960c3874a4a27f2254e7e188a2b9c14e7d93dfa42e933f3d39dbccdf77666"
+    },
+    {
+      "path": "automotive/basicmath/runme_large.sh",
+      "sha256": "11953f808f60faf6185ca4801b21306f2248bdcbf5152627dc1e4cb049949974"
+    },
+    {
+      "path": "automotive/basicmath/runme_small.sh",
+      "sha256": "3ec159d01fcef9d583fed2b7f27bde4b8a0316021d706145f879fd56769bf8b7"
+    },
+    {
+      "path": "automotive/basicmath/snipmath.h",
+      "sha256": "0bedd69101d32186a5049cf44b3e985586b70a927bf66d0730d70931946846dd"
+    },
+    {
+      "path": "automotive/basicmath/sniptype.h",
+      "sha256": "3e8d116c99fa9021f1346b6c11394c29e6d38912c424fafb1f0b25e43b8da17a"
+    },
+    {
+      "path": "automotive/bitcount/COMPILE",
+      "sha256": "858ad15b7fd8f19812d866e6570e316b50ee29c150bd174596e8b8557010f0e9"
+    },
+    {
+      "path": "automotive/bitcount/LICENSE",
+      "sha256": "d5433a2f12b96fb7dd1ec0e09f8268ce220a93859fa2c6441ac11724169dad95"
+    },
+    {
+      "path": "automotive/bitcount/Makefile",
+      "sha256": "80685c6ea874ee3880d6187408e73c96b33a9dae27752a94abeac9f7a30d1ee2"
+    },
+    {
+      "path": "automotive/bitcount/bitarray.c",
+      "sha256": "85f5082e2dbb439c7ed7f8d68923605adb68d5d33a0a7b05ce833321789dc522"
+    },
+    {
+      "path": "automotive/bitcount/bitcnt_1.c",
+      "sha256": "3457fb88f0e29eaade73d6b42658478c43de1079329f04429dc35a835abeb152"
+    },
+    {
+      "path": "automotive/bitcount/bitcnt_2.c",
+      "sha256": "f63c05091096521c52b832a3f94e113845828964fa6f2571388aad9f5592793f"
+    },
+    {
+      "path": "automotive/bitcount/bitcnt_3.c",
+      "sha256": "6090d1785742f31046543b475becbe99f29169030ccef3f96934e09d2191faa0"
+    },
+    {
+      "path": "automotive/bitcount/bitcnt_4.c",
+      "sha256": "cf5c3f945f5908ad759f71847960ca90b92987242ffdaf926502a1325600b4a5"
+    },
+    {
+      "path": "automotive/bitcount/bitcnts.c",
+      "sha256": "71468d5ba6f469784733de587ed740df9c3a38097cb541e599db4a566ddf6cb8"
+    },
+    {
+      "path": "automotive/bitcount/bitfiles.c",
+      "sha256": "25c170d87d932fac68ac1779b1eef4a05fcf9c2a5e62013984de08a1f4e1684b"
+    },
+    {
+      "path": "automotive/bitcount/bitops.h",
+      "sha256": "1b1a0525296779a5c988eb1ff494cd7c1b4dd12f5c11ff169f85804bcb98e3af"
+    },
+    {
+      "path": "automotive/bitcount/bitstrng.c",
+      "sha256": "cb23cfdbfae3f5311f187a21507fce3460ec3bfe58dbbdf3e85f6d1bc9492bf1"
+    },
+    {
+      "path": "automotive/bitcount/bstr_i.c",
+      "sha256": "883695aec138ed0ce456c7c2d173f2eb521f60b54ffbeef599a61bb74b60116c"
+    },
+    {
+      "path": "automotive/bitcount/conio.h",
+      "sha256": "38316b39c31134f253699e484127c486d4cca29b69dc44db60fdee3ea6463ec6"
+    },
+    {
+      "path": "automotive/bitcount/extkword.h",
+      "sha256": "e6f28c6f9ea28a91fb1543a5dfd4c6fa53f62a072782230121b94a1b28d1f8cd"
+    },
+    {
+      "path": "automotive/bitcount/runme_large.sh",
+      "sha256": "1cc29f3aed40214b1ea1cf3e6033bbb09ce656a1e6658e18923c1ce41a231c97"
+    },
+    {
+      "path": "automotive/bitcount/runme_small.sh",
+      "sha256": "fc4cec19ecae3e389849f367b4e733f0e28dec6274687dc369de54cb66c278c3"
+    },
+    {
+      "path": "automotive/bitcount/sniptype.h",
+      "sha256": "28ced92f2b9a002fab0274a360678e479d738257a99c0b0d8fd896b9e3b4833a"
+    },
+    {
+      "path": "automotive/qsort/COMPILE",
+      "sha256": "77ab123dc4f0033b77562f0ca472cd6a037ed9f31fcde17e22b7bcd4c8d0b2ef"
+    },
+    {
+      "path": "automotive/qsort/LICENSE",
+      "sha256": "ebdf405e65ff7aadf6878c761d601be6a4d422c55769eebb962daa6f3fa6067d"
+    },
+    {
+      "path": "automotive/qsort/Makefile",
+      "sha256": "bf6d40f5779909093f029da14e2584bfec0f1cd37da101a5126b468a92ecb08e"
+    },
+    {
+      "path": "automotive/qsort/input_large.dat",
+      "sha256": "0ba987378069e634b2743cb7ddaf19afd411a8953ef94e57e002af8582825e2e"
+    },
+    {
+      "path": "automotive/qsort/input_small.dat",
+      "sha256": "1de1c6a5dc220baacba72c915ca9931400bb30c77e2451e0613df8fb2fcee50a"
+    },
+    {
+      "path": "automotive/qsort/qsort_large.c",
+      "sha256": "faac57fd6d5d8e8aec84d4f6a4bf60e7a124ca39944530b27ee79d4273f6b2c6"
+    },
+    {
+      "path": "automotive/qsort/qsort_small.c",
+      "sha256": "e0c2261e80ec22f4ce37bca3dbd15e76478bc94b360a70f15b90d4d20709dcc7"
+    },
+    {
+      "path": "automotive/qsort/runme_large.sh",
+      "sha256": "5010e95861c476035d0ad31ec48099b487efb2b69867edd6a412ccddb647b73f"
+    },
+    {
+      "path": "automotive/qsort/runme_small.sh",
+      "sha256": "0b737d1158cab809fe329d5769535e2721a6b5dc30d0228d1eb9bf293f9df789"
+    },
+    {
+      "path": "automotive/susan/COMPILE",
+      "sha256": "858ad15b7fd8f19812d866e6570e316b50ee29c150bd174596e8b8557010f0e9"
+    },
+    {
+      "path": "automotive/susan/LICENSE",
+      "sha256": "702bcfb69118191a1a543782d3087bda6c09157e07a82712c8533a1b456d68bc"
+    },
+    {
+      "path": "automotive/susan/Makefile",
+      "sha256": "609cd1fbf5cda57d05109b9f8a6961af9b6ce8d01928e0eebe66ace07baa0827"
+    },
+    {
+      "path": "automotive/susan/input_large.pgm",
+      "sha256": "712618ff550a1e0d4eca33e4da47674de493748885ad7f5ef45219f46bb174c8"
+    },
+    {
+      "path": "automotive/susan/input_small.pgm",
+      "sha256": "3980e33fe2d59a6070c741fad12f74e2939852e39cda655e6701d3feb0892915"
+    },
+    {
+      "path": "automotive/susan/runme_large.sh",
+      "sha256": "30cc4cc314bc06c0f1a6ad79d257b535d6141c4e166680019ecbd05eccfe0426"
+    },
+    {
+      "path": "automotive/susan/runme_small.sh",
+      "sha256": "7c709d086d59c5e52b3a44dc0c30803b2d0f9ccf31f54d809d786821c1d86ef2"
+    },
+    {
+      "path": "automotive/susan/susan.c",
+      "sha256": "5251b5c267d58b44f70d547d0f16be35616d9f707e67e737dcb448c3035fda9b"
+    },
+    {
+      "path": "network/dijkstra/COMPILE",
+      "sha256": "77ab123dc4f0033b77562f0ca472cd6a037ed9f31fcde17e22b7bcd4c8d0b2ef"
+    },
+    {
+      "path": "network/dijkstra/LICENSE",
+      "sha256": "0bb1d50d03b2676f4064644e72afa33790f5bf87b89387e15e638a2ff02fa9ff"
+    },
+    {
+      "path": "network/dijkstra/Makefile",
+      "sha256": "b63e9fec09d4b8de1f40b2fc3acbdd6da23714d0206e0a3df22438a9577f91ab"
+    },
+    {
+      "path": "network/dijkstra/dijkstra_large.c",
+      "sha256": "223b95173ca0bd59b961a5cd394840d27272a9455cbb58db28a4ac1c4f0fa0c2"
+    },
+    {
+      "path": "network/dijkstra/dijkstra_small.c",
+      "sha256": "07a5ed96ac742d658b3f6e7d3cd39990847bc8f98c5238c311942cd6bd65f67b"
+    },
+    {
+      "path": "network/dijkstra/input.dat",
+      "sha256": "2a88640108ad1917fec66a51ec5bef564d9c8f14ae23137fe67bf042142841de"
+    },
+    {
+      "path": "network/dijkstra/runme_large.sh",
+      "sha256": "763579752460bbbfe87642a183418f6162ebc75abeecf99b07f66a1c96bf5c04"
+    },
+    {
+      "path": "network/dijkstra/runme_small.sh",
+      "sha256": "471730a5b5eff4767573cd175f55045ac9596321de3fd8cba9c819b283cc5ef4"
+    },
+    {
+      "path": "network/patricia/COMPILE",
+      "sha256": "858ad15b7fd8f19812d866e6570e316b50ee29c150bd174596e8b8557010f0e9"
+    },
+    {
+      "path": "network/patricia/LICENSE",
+      "sha256": "68d40feb2abbfdeb1aeacac85045d3925c507b213ce2f208c006644eff09df65"
+    },
+    {
+      "path": "network/patricia/Makefile",
+      "sha256": "a4beebf00bb7b234356991f2524012c66a724bf7b793f5150c458204417683c0"
+    },
+    {
+      "path": "network/patricia/large.udp",
+      "sha256": "07d04080d9aaf1587bbbd76b282e1b2e8614ae68d135d840ebfca63261faecaf"
+    },
+    {
+      "path": "network/patricia/patricia.c",
+      "sha256": "3ae5993c32ab8f53dd2b76fcd82012a090b98eb1de9c27b86afe33c724266ed0"
+    },
+    {
+      "path": "network/patricia/patricia.h",
+      "sha256": "8cbd4e20fb4ee57cd777b7d4f7eb3e8ab0945c0f30598a2ce4824f3de68ab131"
+    },
+    {
+      "path": "network/patricia/patricia_test.c",
+      "sha256": "0b53de7bcab0b0971871b27f675432a1b852901a88147d607738d5d20c2cc1f2"
+    },
+    {
+      "path": "network/patricia/runme_large.sh",
+      "sha256": "1b9e3d6eca0cf36676f8886709c6b78fdc584bcddab02b43a30426fbf3cc9ff4"
+    },
+    {
+      "path": "network/patricia/runme_small.sh",
+      "sha256": "2bbf61a7b5f45c868c5708a869adc7b67858f15e6a0403f74d895747c345b0e2"
+    },
+    {
+      "path": "network/patricia/small.udp",
+      "sha256": "ed0c6a4791b07cad17bdff92893467c1b07f4d33014c3db6989a830408e37681"
+    },
+    {
+      "path": "security/blowfish/COMPILE",
+      "sha256": "77ab123dc4f0033b77562f0ca472cd6a037ed9f31fcde17e22b7bcd4c8d0b2ef"
+    },
+    {
+      "path": "security/blowfish/COPYRIGHT",
+      "sha256": "fc62f61ea979ebdc932053fe28708296f513700d055ae81d606eef5c3191614d"
+    },
+    {
+      "path": "security/blowfish/INSTALL",
+      "sha256": "efb1d7425c715bc09940daa77f983a861dd6f20449c332de6dc00703b349374a"
+    },
+    {
+      "path": "security/blowfish/LICENSE",
+      "sha256": "fc62f61ea979ebdc932053fe28708296f513700d055ae81d606eef5c3191614d"
+    },
+    {
+      "path": "security/blowfish/Makefile",
+      "sha256": "4debb4dca3c64e104f2a5d4ad9e5b995154bc5404e1735a069014990c741288d"
+    },
+    {
+      "path": "security/blowfish/Makefile.ssl",
+      "sha256": "88288637c70b51fe622eb4f5205d10044140d11558cee71788b311423097319a"
+    },
+    {
+      "path": "security/blowfish/Makefile.uni",
+      "sha256": "b90b093cd788b5d4c002caba36de00dc986bddf44e62449bb89a978d3216f0c1"
+    },
+    {
+      "path": "security/blowfish/asm/bf586.pl",
+      "sha256": "a210955b30ed067b949976b1fbad609d0fce06b2f3543f91991a0e256766f5f2"
+    },
+    {
+      "path": "security/blowfish/asm/bx86-cpp.s",
+      "sha256": "8113b2f6362736f204e5f6c66496e605120db8abfede91ff89ffe1aea4505550"
+    },
+    {
+      "path": "security/blowfish/asm/bx86unix.cpp",
+      "sha256": "b8e61ab0e7a5d40ed9d78fe17452da48d132d7ba4a9399cdba2fc79c80e07d0e"
+    },
+    {
+      "path": "security/blowfish/asm/readme",
+      "sha256": "cbcfd840e20f87dec21ee816d64708a453807f2a646b73aadb482e9f6640a6fa"
+    },
+    {
+      "path": "security/blowfish/asm/win32.asm",
+      "sha256": "9630807589aaefe5c0b8eb49e2c465e1e7ff0432231272890e1d5c6cce14871b"
+    },
+    {
+      "path": "security/blowfish/asm/x86ms.pl",
+      "sha256": "6d2af57df6aa7121d50e0604d6dd86467df29a0a7cffc6be3f47cbccd66bd65e"
+    },
+    {
+      "path": "security/blowfish/asm/x86unix.pl",
+      "sha256": "a2d53c4fc53d27d393b001f5fe52de34da99d9d2d18228c13b88dea40f54d74d"
+    },
+    {
+      "path": "security/blowfish/bf.c",
+      "sha256": "9f8fb1be972283ff5b00a9c6e68a4ef7a4c384647a1e9b29d2fbdbced98187d3"
+    },
+    {
+      "path": "security/blowfish/bf_cbc.c",
+      "sha256": "6adb7b2881a1703e3c403595a5fafdae05be9d8ac5666e19ac5bd310b1128158"
+    },
+    {
+      "path": "security/blowfish/bf_cfb64.c",
+      "sha256": "41cd5098e2c33246cdecb981edaa7555240a6677ef5b14851be78230ba9b2b14"
+    },
+    {
+      "path": "security/blowfish/bf_ecb.c",
+      "sha256": "ee8a26743db8ca33a8906ec9e54831a7e5668102be6bef577919a0e26467d75a"
+    },
+    {
+      "path": "security/blowfish/bf_enc.c",
+      "sha256": "99a949ae6624ce3f501a5633485f4d3fe8b443932fa16807ef34e11f467742ee"
+    },
+    {
+      "path": "security/blowfish/bf_encrypt.c",
+      "sha256": "8f881f6e3f85bf01d59f9741de131c451c8f1984225639d798814e46c546958f"
+    },
+    {
+      "path": "security/blowfish/bf_locl.h",
+      "sha256": "590ba9bd884f30d3359c87124d3647cb5a423170cd8ed46d3d2188948420ecfe"
+    },
+    {
+      "path": "security/blowfish/bf_locl.org",
+      "sha256": "590ba9bd884f30d3359c87124d3647cb5a423170cd8ed46d3d2188948420ecfe"
+    },
+    {
+      "path": "security/blowfish/bf_ofb64.c",
+      "sha256": "0a7a393829235af922141f28cdcc11bdd44dee3d5c5c9659e4d0123dac8d721d"
+    },
+    {
+      "path": "security/blowfish/bf_pi.h",
+      "sha256": "c5b4ebef50dc1c1a5f6452a2e55578326bb4287edb5bf72ec066f400dffabea3"
+    },
+    {
+      "path": "security/blowfish/bf_skey.c",
+      "sha256": "f5f7c14440aedb5bca8a22a18e574f55ddd0b98239a5b73485fae70c4d1cf7e9"
+    },
+    {
+      "path": "security/blowfish/bfspeed.c",
+      "sha256": "8c60ed4c1b134a82bd03f574e090cc980efcbe0801810c5308c84cee02229ed6"
+    },
+    {
+      "path": "security/blowfish/bftest.apha",
+      "sha256": "3363890651a3f8e05cb50c8745348754277f38dcb8827d9f2260dd4d8778455e"
+    },
+    {
+      "path": "security/blowfish/bftest.c",
+      "sha256": "85a5f47dd48c7ebbaec503ef899ff66cbdccf654a5f98f0348b293c17adda5fe"
+    },
+    {
+      "path": "security/blowfish/blowfish.doc",
+      "sha256": "12bee4658e537620b99365cc426d85f6612453c78311bbd6c1ae546fe668a119"
+    },
+    {
+      "path": "security/blowfish/blowfish.h",
+      "sha256": "0e9fec90d85117c022cb59050c01eac0d4df811fdfb3d640a10b69218faf7e9c"
+    },
+    {
+      "path": "security/blowfish/input_large.asc",
+      "sha256": "b7298fac2085bc462868e7de51dccfe71b55c05e238ca1dd957c45c864e0a151"
+    },
+    {
+      "path": "security/blowfish/input_small.asc",
+      "sha256": "e70de01be9119601583a3541b1645d552b6103a3a652ef35f8ac4f08667da7b0"
+    },
+    {
+      "path": "security/blowfish/runme_large.sh",
+      "sha256": "0375ea66575750181146bf9f112880fe5dd675c9301761e1657792e78c0440a1"
+    },
+    {
+      "path": "security/blowfish/runme_small.sh",
+      "sha256": "94eb45df3103a872a2f7443e1243c09d843caea73d38d102d95c87b5654f0117"
+    },
+    {
+      "path": "security/pgp/COMPILE",
+      "sha256": "1491d9b52bdde33ee22fd5d85f69653fdbd5a1feb6e3e660a3d879e7e714b507"
+    },
+    {
+      "path": "security/pgp/LICENSE",
+      "sha256": "9eb42dedb5c07a8f99f380f7281eceab75f3de2f62b6a761f67da71b85d01768"
+    },
+    {
+      "path": "security/pgp/config.txt",
+      "sha256": "6ac28637a2855792fa0cbd96fa64b7ef4883280936f047b8cc8846697ba43171"
+    },
+    {
+      "path": "security/pgp/contrib/langtool/charconv.c",
+      "sha256": "b20f51180d72a4d08d16b6a9f52ce41eca44a4cbddf9b4756fbc03a5ba8d3178"
+    },
+    {
+      "path": "security/pgp/contrib/langtool/crc.c",
+      "sha256": "cc5ecbd5cd428ab10f8140743cf031e44edf4b02e2e6b5379c0dab372146a722"
+    },
+    {
+      "path": "security/pgp/contrib/langtool/getopt.c",
+      "sha256": "c1289d2580f11d22b3f2922682f394e81bfdd9f74e284c4f40d965e8102763ab"
+    },
+    {
+      "path": "security/pgp/contrib/langtool/getopt.h",
+      "sha256": "46e4753b385914dcf9de5588171c7cc3e9c34ca0c8f370e03369365e2df2a29c"
+    },
+    {
+      "path": "security/pgp/contrib/langtool/killdups.c",
+      "sha256": "4c4c510efbf3168a4146c315d1678f1ec12d36ab6e8687ab25f6a4c352a361f8"
+    },
+    {
+      "path": "security/pgp/contrib/langtool/language.c",
+      "sha256": "8986d62e0f7099c6c70c7908917b921742dfa5d8e5e8c20590c92a5810a91d93"
+    },
+    {
+      "path": "security/pgp/contrib/langtool/makefile",
+      "sha256": "983157b39700b73d246d4ec22dd5cf6469c517cb0a84f5ce1dd643691f667bf1"
+    },
+    {
+      "path": "security/pgp/contrib/langtool/pickpstr.c",
+      "sha256": "95ea7f6b3026f93f873711119c5d6e3310274dcc3a0b7c1b1aa4806bec5817aa"
+    },
+    {
+      "path": "security/pgp/contrib/langtool/readme",
+      "sha256": "1b78dd8baae8f50124d1c2e189ea2da58125dfdb18b99b47c55f5f749914a61c"
+    },
+    {
+      "path": "security/pgp/contrib/langtool/usuals.h",
+      "sha256": "8a727430da1e6189a8aa21229f1b5d2882353cb120a8f3a001eebe29ccb15bd1"
+    },
+    {
+      "path": "security/pgp/contrib/md5sum/makefile",
+      "sha256": "4225fab029c3eaed6310a7247da4fcd8864f003c7790e4b84945c2d7902286c0"
+    },
+    {
+      "path": "security/pgp/contrib/md5sum/md5sum.c",
+      "sha256": "1668f902e77c32b8f24cf20900e37b0ef34848b29343f9151aafd61f688723dd"
+    },
+    {
+      "path": "security/pgp/contrib/md5sum/pgp263i.md5",
+      "sha256": "a30f5a5879c1b8f733be0e9ec2c12ec7b73e0a53070d11d58737b636b2d0b99d"
+    },
+    {
+      "path": "security/pgp/contrib/md5sum/readme",
+      "sha256": "8fc69076d6ee16447ae6fd9a13ca58a7188f2aa23cc14847e9d7dd677b85e845"
+    },
+    {
+      "path": "security/pgp/contrib/md5sum/smakefile",
+      "sha256": "b27fb49e8c119898254d81838d8720ea9b653b008e93de56e08cd42c29a71f66"
+    },
+    {
+      "path": "security/pgp/contrib/pgpsort/pgpsort.c",
+      "sha256": "4826624c19c8b73da2edf19acabce72ce6e1624a81c7e96334c0b8c2d39dec72"
+    },
+    {
+      "path": "security/pgp/contrib/readme",
+      "sha256": "b64bcae0d42aae864533d6c76c8ec014f132b3a0913e1b8d45627ffe214c8ab4"
+    },
+    {
+      "path": "security/pgp/contrib/stealth/appnotes",
+      "sha256": "c2c78459c32acefeb8b43c361fc0af6a8febeba7a27ac840adc555fe71f8c19f"
+    },
+    {
+      "path": "security/pgp/contrib/stealth/readme",
+      "sha256": "b85ead78405ebea0cac6471bbc885010c8fb595d23bace94c4273dff2e896dbc"
+    },
+    {
+      "path": "security/pgp/contrib/stealth/stealth.c",
+      "sha256": "f67c76805408e31e4df83815ae6f3425132c62cceb2b1f4fd7a89cd0a09bbe76"
+    },
+    {
+      "path": "security/pgp/contrib/stealth/stealth.man",
+      "sha256": "eee74792737771b13a44663195a2263138a5859c9f5e5f425e5e74e34afbb490"
+    },
+    {
+      "path": "security/pgp/de.hlp",
+      "sha256": "7c3b0b95affa191a23de4002450d62e24c7be5f995bcba5ca2c8828ad45b924e"
+    },
+    {
+      "path": "security/pgp/doc/appnote.doc",
+      "sha256": "9ee075850019888365e31314f503bcaed522f05423a92eab85bacc8d79733fa6"
+    },
+    {
+      "path": "security/pgp/doc/blurb.txt",
+      "sha256": "298b483d0bc801fe5a920bfdbfbb0420de09924067067df3567d0038fd0be87d"
+    },
+    {
+      "path": "security/pgp/doc/changes.doc",
+      "sha256": "1517a7bc5870953b79af8b1a842f27da34cd21e84f8f7c5b61319303136dd758"
+    },
+    {
+      "path": "security/pgp/doc/faq.txt",
+      "sha256": "4dfbbd4e06c93da4883f92bac2d1c77c202a7925b9f1f23979ac6ad707deca8f"
+    },
+    {
+      "path": "security/pgp/doc/keyserv.doc",
+      "sha256": "4adeccc45b6e30f1a15f13587c4c615484f30ee3d64dc0a889db4568364a1d6b"
+    },
+    {
+      "path": "security/pgp/doc/mitlicen.txt",
+      "sha256": "e5f2f2194e6bc8241656bb67e20ffd8f4552d3d14a91e63ad58bc1e11c197399"
+    },
+    {
+      "path": "security/pgp/doc/pgformat.doc",
+      "sha256": "6bffc6664643548b111689ad0d50d7841153aa07f42a3d723df6e460fc528c98"
+    },
+    {
+      "path": "security/pgp/doc/pgp.1",
+      "sha256": "2f784e57d72f9d5c3fdfcc25329b33be9bebd6779078eebcb3a07ca0a64f9157"
+    },
+    {
+      "path": "security/pgp/doc/pgp262i.dif",
+      "sha256": "c4bf80197a4153f80a06b43ef6a962229415264bee589adf6f6234cb7ee94b79"
+    },
+    {
+      "path": "security/pgp/doc/pgp263i.dif",
+      "sha256": "f06443758a079b36732bb4a4eb64156f63f181ff8a1c30ac77d8f28b823b7291"
+    },
+    {
+      "path": "security/pgp/doc/pgp_vms.hlp",
+      "sha256": "4396013d7d12ce95b8b16a5a921b315cefd6f2e578c1d81c144272d83edc9759"
+    },
+    {
+      "path": "security/pgp/doc/pgpdoc1.txt",
+      "sha256": "bf3e9b5c93844c2e0f5211a16b76009eb9ac5d172c348745748ee13c66226eca"
+    },
+    {
+      "path": "security/pgp/doc/pgpdoc2.txt",
+      "sha256": "70c21932fab3ef308d9a1526a605602fa51dc9f4193289a75e7c21fc4ccab93c"
+    },
+    {
+      "path": "security/pgp/doc/politic.doc",
+      "sha256": "8ab1c2383ddc05162bce44341378a18a0799c77dc90e7809e00317b26321c819"
+    },
+    {
+      "path": "security/pgp/doc/przon26i.asc",
+      "sha256": "c90bd4b10790adb85be1651192cf364230225d1a89300907d144e5a754e58e64"
+    },
+    {
+      "path": "security/pgp/en.hlp",
+      "sha256": "5fead7cab80d7631bd5b26e88811ba6099b2c3af8b1597af0008277142ff0df1"
+    },
+    {
+      "path": "security/pgp/es.hlp",
+      "sha256": "3d1de7cfb60fcc6daaa3df3f5f1fc75c654073bbbc5344867a125c69232c8038"
+    },
+    {
+      "path": "security/pgp/fr.hlp",
+      "sha256": "ee47afc9f4fa0ad28929e3972fd6d4e734eb680a12d48659a490aeb16bfb5fe8"
+    },
+    {
+      "path": "security/pgp/keys.asc",
+      "sha256": "62013243d64e036875db896306bcef828d1b7aa2fbdf7000fb18a18c8f5523a6"
+    },
+    {
+      "path": "security/pgp/language.txt",
+      "sha256": "6e239a38578ce814dd5ddc035be58ac6d47e16051d4827ed1d363555bbd6e08a"
+    },
+    {
+      "path": "security/pgp/pgp.hlp",
+      "sha256": "ba5669d640ea5c2d95690d19e6774ce1a1ec22e1ace0daacf1727778a4d79559"
+    },
+    {
+      "path": "security/pgp/readme.1st",
+      "sha256": "50b1a63a37a91d585a6c2ec1f2604d5d95bb5d5ef24707f16b7c9d09601a772d"
+    },
+    {
+      "path": "security/pgp/readme.usa",
+      "sha256": "b2c05ec588ddf780adcba1765bc2e61057f8bd8f36662a185ac36ce7ba42284f"
+    },
+    {
+      "path": "security/pgp/runme.sh",
+      "sha256": "911d680216c1a85c2adbc1b56ddfd8bf0d6669160b4b44d81f7096428908ba4d"
+    },
+    {
+      "path": "security/pgp/setup.doc",
+      "sha256": "617ac001a52544ba66abf8d8121a4d3335448b2ef9219bc481b89b7c9924e4b7"
+    },
+    {
+      "path": "security/pgp/src/3b168000.s",
+      "sha256": "ef36b781a2fc51d0072bbfdca957c0a56cb193503bf8f08128b4567970ca9789"
+    },
+    {
+      "path": "security/pgp/src/68000.s",
+      "sha256": "a854370397417c2dba7c2c022ea7e884e6e79caa16a8e69f4acba8d8aba17cb8"
+    },
+    {
+      "path": "security/pgp/src/68000_32.s",
+      "sha256": "dc117ce1856f0a708552e093c0ca6ab17675f334389e0d0042320c8d2b00e670"
+    },
+    {
+      "path": "security/pgp/src/80386.S",
+      "sha256": "45da0a3067c09aba3dd36c95edd4b8461c3e988de2df53e846e4459073f5d92e"
+    },
+    {
+      "path": "security/pgp/src/8086.asm",
+      "sha256": "f9f5fbfd6babecd9b3980d15eb93c00fad24f4e728c20f8ac305143a1b8b9b47"
+    },
+    {
+      "path": "security/pgp/src/8086.obj",
+      "sha256": "f29a60075c75363d95ddc2e87b82a4b8be657078b9913ab71bb95d0db55e8eb2"
+    },
+    {
+      "path": "security/pgp/src/Makefile",
+      "sha256": "eabf67e2958f97b0ecfed5f1639068400ea9453b835308b926ce51024862e14f"
+    },
+    {
+      "path": "security/pgp/src/SCOPTIONS",
+      "sha256": "e044cc72f27d7e398aeb6822eb22a577dd4b1015af689885be53a8ebd7865266"
+    },
+    {
+      "path": "security/pgp/src/_80386.o",
+      "sha256": "f3d6917f396ff291e3a6e2a561c75f00c0b875f24ac4b2c0dc1828b9f55c944a"
+    },
+    {
+      "path": "security/pgp/src/_zmatch.o",
+      "sha256": "1c7c58ad080ddc749ad3a4ddc5a03fb99a3ee7fe78c3de17b15354f3ba201850"
+    },
+    {
+      "path": "security/pgp/src/amiga__main.c",
+      "sha256": "04d093c7ff96ca9f2932c54342facee710dece802357d04328bba31a32649cfc"
+    },
+    {
+      "path": "security/pgp/src/amiga_asm.a",
+      "sha256": "286e5919222df2b21671c660bc6b6543bbf7b2ba89f10260998b14261fc505b6"
+    },
+    {
+      "path": "security/pgp/src/armor.c",
+      "sha256": "894de6451e46682b74a39418855de1c0a91ecfdf300c471e2b6b70b7fc50e3e9"
+    },
+    {
+      "path": "security/pgp/src/armor.h",
+      "sha256": "53b7c2168d88454d1a0109683b8359b128fb0e55d794b4ff7b0b6809e7e782a2"
+    },
+    {
+      "path": "security/pgp/src/armor.o",
+      "sha256": "f0ba70521c3ba27c3f14bf729d7a9581dd2da55ed6698742b0259308580a614d"
+    },
+    {
+      "path": "security/pgp/src/c370.c",
+      "sha256": "e338b13063d0e63c5de9fc1a517b13cbfa664a080e24915ebc58f1a68b876fa5"
+    },
+    {
+      "path": "security/pgp/src/c370.h",
+      "sha256": "51c52623d861002ff615dd48b4b1a770e44ad63088da522b5469644f2251030e"
+    },
+    {
+      "path": "security/pgp/src/ccc",
+      "sha256": "a343d48e9bce50948c849f84186797d35376c747396ce891fa8aa99e55c0fbb4"
+    },
+    {
+      "path": "security/pgp/src/ccc.x28",
+      "sha256": "072abd22c683c462fea7a3dd9dcafd8fec8f145c5bb8cd1f7d8f3759d34f9e59"
+    },
+    {
+      "path": "security/pgp/src/cdefs.h",
+      "sha256": "41f474b3fc1569977cc9aa283d934e2f894dd0e5a2fa6af755aaf4def1d5f5e1"
+    },
+    {
+      "path": "security/pgp/src/charset.c",
+      "sha256": "e7485c7677e498ed801f6522b9598ec00720238f100b6ff46f158bb65f71195f"
+    },
+    {
+      "path": "security/pgp/src/charset.h",
+      "sha256": "fbc1f81c81744d930b253565656ea9e20793824842caf7db007583567345c28b"
+    },
+    {
+      "path": "security/pgp/src/charset.o",
+      "sha256": "c9d5b01d93602a3dc81c6e77508ef3a5cf1e6ed27529231c14da6a68b3fd9050"
+    },
+    {
+      "path": "security/pgp/src/config.c",
+      "sha256": "2746edd1f071a4ab859956c9baa04470987a3a383c812caec80fa096e454ae03"
+    },
+    {
+      "path": "security/pgp/src/config.h",
+      "sha256": "35c19cc1c087a592e93f1b4063e8aa17480c4d04447c8d559f7c3a9a271c45fc"
+    },
+    {
+      "path": "security/pgp/src/config.o",
+      "sha256": "eb4f8145a10ce13e2589dc115c6249336dea2670baed71874c3f6a6b510c3dfe"
+    },
+    {
+      "path": "security/pgp/src/crypto.c",
+      "sha256": "5e2790db794eb3f06052272969f194265f85b003a3e48a765991f0c28ec68408"
+    },
+    {
+      "path": "security/pgp/src/crypto.h",
+      "sha256": "1822c3289eff884601d4fa5a59ff4e1d69f51f85adb874a9356ff2799fc6a14a"
+    },
+    {
+      "path": "security/pgp/src/crypto.o",
+      "sha256": "a0935c1545f8d15b49e61cbc4e19d28419915761d5cdf3a8e4797eec46b2a1e6"
+    },
+    {
+      "path": "security/pgp/src/exitpgp.h",
+      "sha256": "5ec528f76b0f5c97e0bfd8f3e59fcd76c67554d063bd0406017fe5f3e946f789"
+    },
+    {
+      "path": "security/pgp/src/fileio.c",
+      "sha256": "b9e05a2fa4f9d33cdf69de7914e52fbd4ba3040700cf8e2ad0da4d33e86b4054"
+    },
+    {
+      "path": "security/pgp/src/fileio.h",
+      "sha256": "df621f2f4c47f9eb85803ee3fd2e9f10203dc2ba363807a9d3026a67fe482f87"
+    },
+    {
+      "path": "security/pgp/src/fileio.o",
+      "sha256": "ca1b649060cf226e8511d2552217ebacae7f396caaba6f2f7bc5ed3afb3dd4e0"
+    },
+    {
+      "path": "security/pgp/src/genprime.c",
+      "sha256": "88910e4f5a84d01727b49eae9749c91b1602e34b9a6289358c9333d79b621455"
+    },
+    {
+      "path": "security/pgp/src/genprime.h",
+      "sha256": "fa51c0bf227238262ec3b9579a4a5d46b5c71dc8c3d2bc8cd7d316adb8c0ed56"
+    },
+    {
+      "path": "security/pgp/src/genprime.o",
+      "sha256": "3ebc0683e7f300d22f212bd2748cd4961eaf346d7ebb0ee6fcc8d92e098ada22"
+    },
+    {
+      "path": "security/pgp/src/getopt.c",
+      "sha256": "d913e6d07af310e6f2b6adc2f07e79d725dadf2023c5734230cee1bbd0f9d681"
+    },
+    {
+      "path": "security/pgp/src/getopt.h",
+      "sha256": "2712297ac331ba733a8adc9dff3cd2b0a8d959d77ced97f3ccfc3eeacd25bb7d"
+    },
+    {
+      "path": "security/pgp/src/getopt.o",
+      "sha256": "c9b9008bfda39507a969d5fb11d082be5283757e1468174e43f9a340bc026eed"
+    },
+    {
+      "path": "security/pgp/src/gettime.c",
+      "sha256": "04d91f2432a23a418281b3454c2ae3ab1b82acfa22561fc01f40634c7bd8e6ab"
+    },
+    {
+      "path": "security/pgp/src/global.h",
+      "sha256": "c2cbb2841522f823328037f62831e05589d6f7801161a82798b8cdc0a6f6bade"
+    },
+    {
+      "path": "security/pgp/src/idea.c",
+      "sha256": "8684ba66e320309467a7c54d3c557b0ea59c872ecbfaf5619f876c6d85e662c0"
+    },
+    {
+      "path": "security/pgp/src/idea.h",
+      "sha256": "57e5bf3cb6607346cf1f002095fd47ce3d3d68fe8dfbf1538a1468c56ac2d103"
+    },
+    {
+      "path": "security/pgp/src/idea.o",
+      "sha256": "0a59b8928b8398e140935ce325de5a441422e299a9f7dca036281a34fae315ee"
+    },
+    {
+      "path": "security/pgp/src/idea68k.s",
+      "sha256": "19e7b5ae0026a1542a0dc6651eff50a4a7dad1aa53b74dd194fa570ee9857079"
+    },
+    {
+      "path": "security/pgp/src/jcl_make",
+      "sha256": "7d07eff5f689d4a75ff84569d0dc115e60af17aad57f6401d6ccf5187f690cf9"
+    },
+    {
+      "path": "security/pgp/src/jcl_proc",
+      "sha256": "42718bd102cf282c4390eda5e3e0af0229a5afe8e48d46fb354239c569be2eb0"
+    },
+    {
+      "path": "security/pgp/src/keyadd.c",
+      "sha256": "62d5d57addd0c53fd2f3abdcb4ea2b650a903c605ec0adb7a83f4c646f9754ae"
+    },
+    {
+      "path": "security/pgp/src/keyadd.h",
+      "sha256": "245dad6a867e108e685988d9f1c728842da0a29c9c7eac9d9a9ea172a89df422"
+    },
+    {
+      "path": "security/pgp/src/keyadd.o",
+      "sha256": "3ba093ca3d553c87108b7295d5cd2d50c8e31b9a928aed37276adc1e5a3ee333"
+    },
+    {
+      "path": "security/pgp/src/keymaint.c",
+      "sha256": "f37e5c3a2cbb2d649536c4d7801e5e64602efe432519fe30df7addcca3f37f63"
+    },
+    {
+      "path": "security/pgp/src/keymaint.h",
+      "sha256": "32f4a95756cbb0a7f0f84c9424669e454eab9af3425333af6aee9dcbeb735871"
+    },
+    {
+      "path": "security/pgp/src/keymaint.o",
+      "sha256": "3766c4762ef684b9c7e2b0c66eecdfe4900ffa8dc950a446e542091676e3130c"
+    },
+    {
+      "path": "security/pgp/src/keymgmt.c",
+      "sha256": "b2f66cf1ac20f08ea2de6f41e7c5a04655dec538f5e50dad5c7da2cddc5881bf"
+    },
+    {
+      "path": "security/pgp/src/keymgmt.h",
+      "sha256": "474eda5d6daf9805594bc11126a44d305eeb0279fb5540c4078c1ce2ae9bce3b"
+    },
+    {
+      "path": "security/pgp/src/keymgmt.o",
+      "sha256": "8895d3c1a17628ca7f632e526cb3f997ea2a42c7175c8647aa4e11d2347d4b60"
+    },
+    {
+      "path": "security/pgp/src/language.c",
+      "sha256": "ada20fc2fd479d2650b2cfb4e6a6f105e0611288cd99822202054954f58056f4"
+    },
+    {
+      "path": "security/pgp/src/language.h",
+      "sha256": "99b84f61f5f156d2e8fd611c66a9a8f664f2c7be8b03147dd1edcff4e1969d5e"
+    },
+    {
+      "path": "security/pgp/src/language.o",
+      "sha256": "d97ee54bbb5eff22942a07791ae3cd2eaf72be1c60b1f90d1554433331a35a05"
+    },
+    {
+      "path": "security/pgp/src/lmul.h",
+      "sha256": "6c70f29a85943eb76ab89dc793581567e821dea7c912f7d33050d4716cb88ab8"
+    },
+    {
+      "path": "security/pgp/src/makefile.msc",
+      "sha256": "e02701e6b199a03605a68ea4f2802094f6fdf36a88418efc3a4c1c74ef894ab1"
+    },
+    {
+      "path": "security/pgp/src/makefile.tc",
+      "sha256": "12ebbcc72fabf4781311ebb65ea0d9895ceff17920b07d04bc2fe22e56aed426"
+    },
+    {
+      "path": "security/pgp/src/mc68020.s",
+      "sha256": "c1cd890ad24ed6ef0162d85f16c7b6fe01ab8ccf24bfb257d9c6947afa34949f"
+    },
+    {
+      "path": "security/pgp/src/md5.c",
+      "sha256": "ee2316b671b81494135354420359c65463e0931dc2463504d65e6da4ba7f1f6d"
+    },
+    {
+      "path": "security/pgp/src/md5.h",
+      "sha256": "d89fbfb6dfd12c404b379f8f3013953879d6e2d562f7805aa9e9a61003a7c46c"
+    },
+    {
+      "path": "security/pgp/src/md5.o",
+      "sha256": "16a6f8f8b6859c78e710454472cf4a1620a4f78a9d59c8af8183ea302186cf33"
+    },
+    {
+      "path": "security/pgp/src/mdfile.c",
+      "sha256": "438f2573a62a1dfef2309259e4084ddf2f8d2fd41155b3312c9620678385f428"
+    },
+    {
+      "path": "security/pgp/src/mdfile.h",
+      "sha256": "d84c93ea5ba28bdec79f96411550a976fd3fcf52682f3e433a35c417343691c9"
+    },
+    {
+      "path": "security/pgp/src/mdfile.o",
+      "sha256": "9a487ca5e542ee6c92b4e43048e367adc7a303d1470488774a9f8d0aa59a58cb"
+    },
+    {
+      "path": "security/pgp/src/memmove.c",
+      "sha256": "6f83b122cdc06fe1ecb7823104f6bf08bc6714c499765979a16622d8cf195fb6"
+    },
+    {
+      "path": "security/pgp/src/more.c",
+      "sha256": "c57d2f9c81b66108958bbe1d67b4cc9ccee255de30d5b1c7157624b372ba5d2d"
+    },
+    {
+      "path": "security/pgp/src/more.h",
+      "sha256": "f93e81881ee0702a52fb44e0d53c6bc5de742e4fce68da776eb5a8e215673f0a"
+    },
+    {
+      "path": "security/pgp/src/more.o",
+      "sha256": "7a3f199fdcb6df4acd8c878576206b7d5920d42618b2cea8a20d77647d91460f"
+    },
+    {
+      "path": "security/pgp/src/mpiio.c",
+      "sha256": "be596a2e02e57ebfe0fb6fe3af3c40af2f2c57152ce4279cca3aa212b81e4b2d"
+    },
+    {
+      "path": "security/pgp/src/mpiio.h",
+      "sha256": "303b2de8aeb66e6e773fdb852705f513a7700a0e8df4a3bef37683e6b7a2c2f2"
+    },
+    {
+      "path": "security/pgp/src/mpiio.o",
+      "sha256": "cd12877f1cf34fc4f6a26a7c972edf74cfcefd0a425e96b824a0f17f093a2c25"
+    },
+    {
+      "path": "security/pgp/src/mpilib.c",
+      "sha256": "bb4d435098faf7c1052b14f7af72bf65aa0579b620ed0ea049e9734e7712f9d4"
+    },
+    {
+      "path": "security/pgp/src/mpilib.h",
+      "sha256": "8870c5ce3f073b3abeead11e3a051800d85fc8c879b3bed418d6c3d04abb864e"
+    },
+    {
+      "path": "security/pgp/src/mpilib.o",
+      "sha256": "de6a2291d6c1a3149eb3540a07c81cdd2d15fcb07fb3dce88ff239de6b171b7b"
+    },
+    {
+      "path": "security/pgp/src/mpw32asm.c",
+      "sha256": "c1090b7adfd3ae5f160f9fc41143b2e4dc2cb788e878320441e33dcd70066103"
+    },
+    {
+      "path": "security/pgp/src/mpw32asm.h",
+      "sha256": "a2f1d727f315a5ff241991951caea72367f748a7f218082c34fb571160f85ab0"
+    },
+    {
+      "path": "security/pgp/src/noise.c",
+      "sha256": "31b33ca8f4342301aaad2dc38712133b5c6c9d7698855d2aa61f2ed9bb485732"
+    },
+    {
+      "path": "security/pgp/src/noise.h",
+      "sha256": "f8e65e206fe3b4cac0d2a4997aba46a0ac3cc02800c929cdff606a62382548c1"
+    },
+    {
+      "path": "security/pgp/src/noise.o",
+      "sha256": "ce62f3fa7223e74c1f210142ded032a1531e5ff4c7d450cd3d17927a884ea371"
+    },
+    {
+      "path": "security/pgp/src/passwd.c",
+      "sha256": "656cecb70d038d256c666600c95dc84a384b8a52271cc882dad74f8e54b3ac9e"
+    },
+    {
+      "path": "security/pgp/src/passwd.o",
+      "sha256": "774af6d4c79193ba45ee2c0b6cdd82bb3b1c9508faae5ab9e3dff2c78ce69625"
+    },
+    {
+      "path": "security/pgp/src/pgp",
+      "sha256": "b055c6d02107495de2f106da22482b37c5183f7e6bbe5acedb4af54a71eb0d2b"
+    },
+    {
+      "path": "security/pgp/src/pgp.arm",
+      "sha256": "5c63b6a886330dd99fc2a5a3e5e43504524f0f7b5d64992746f2b79b9b273164"
+    },
+    {
+      "path": "security/pgp/src/pgp.c",
+      "sha256": "c522fd4f96aa549523670beb27cabe98a52900242190bf39fe942fbca08a1880"
+    },
+    {
+      "path": "security/pgp/src/pgp.def",
+      "sha256": "fa79458d408ad92ede0b861103bf20926fb5a0fd1e63eaf55d096171d6dbeb3a"
+    },
+    {
+      "path": "security/pgp/src/pgp.h",
+      "sha256": "049285f15132d65ab7875eb9e54fff95abcaffbd8c162bb488daa2beb03246b9"
+    },
+    {
+      "path": "security/pgp/src/pgp.mak",
+      "sha256": "e22a9e58b66d45cb54caadbe7e6327e986aa84c1d415e83b3f7d0cf1007dd1fd"
+    },
+    {
+      "path": "security/pgp/src/pgp.o",
+      "sha256": "c9fb486a35e176400b8ef471716a30e2e2d34f57b18a44057e23f95d4b149b85"
+    },
+    {
+      "path": "security/pgp/src/pgp.prj",
+      "sha256": "18654332a2ea4b6152be2e095ef8f0bb4d9893acd4c92924ade8aa90b00c1b5b"
+    },
+    {
+      "path": "security/pgp/src/pgpinstal.com",
+      "sha256": "7a97d3d4d2ca58a4145b9bfdf086de02a61a2a9aaabaece9501fda7818a61b4e"
+    },
+    {
+      "path": "security/pgp/src/pgppwb.mak",
+      "sha256": "3eebc3e8518219eaa460eb06a020cff3bde878c9048e074d6965bc417575d760"
+    },
+    {
+      "path": "security/pgp/src/pgpwin32.mak",
+      "sha256": "d3487a990f5c8d56894b296bec7ed6577600eda6088971c83556ac3a57801526"
+    },
+    {
+      "path": "security/pgp/src/pgpwin40.mak",
+      "sha256": "0dd2cb7ba946567cd3fd329e28d7b1afd370c9f927acd4f169ba3ef681d293f3"
+    },
+    {
+      "path": "security/pgp/src/pgpwin40.mdp",
+      "sha256": "57208023f40b41136631c9287961b965f909a225a14f4869f0ceb316f5378a16"
+    },
+    {
+      "path": "security/pgp/src/platform.h",
+      "sha256": "fa29763233a02702935e8a61bdcd8f66cc68cd37851d60fdb1c77734b763958b"
+    },
+    {
+      "path": "security/pgp/src/purec.prj",
+      "sha256": "0435bd7788f21f2a4236aebc344a613acc62e14a3d03230caecfadfea945be8e"
+    },
+    {
+      "path": "security/pgp/src/r3000.c",
+      "sha256": "dbb6bde9b409368e3bfb0d4983c11fe9fbb14ae9d9902c87333bdc01d4573eab"
+    },
+    {
+      "path": "security/pgp/src/r3000.s",
+      "sha256": "1c99e05febd8a148a4458790a48bab263c807e49b4a8d7c8f749d713b633e0a8"
+    },
+    {
+      "path": "security/pgp/src/r3kd.s",
+      "sha256": "fc3ae7f597dc62cfc9a106bd09bb61aac1695d323c5e08fa7b38844348056f7a"
+    },
+    {
+      "path": "security/pgp/src/random.c",
+      "sha256": "012c9c9af0d2ee79a9e011741edcbd353233ee36ddea5a22365cc67e5c6fc84a"
+    },
+    {
+      "path": "security/pgp/src/random.h",
+      "sha256": "38a54f0d5fc7521770153d50907749149efc9745f301400fb64ed2aee3920d0e"
+    },
+    {
+      "path": "security/pgp/src/random.o",
+      "sha256": "cc84d97de89d7629638914c54ec19fed687fbc1727cd7a6398607979dfd79b75"
+    },
+    {
+      "path": "security/pgp/src/randpool.c",
+      "sha256": "de4611bdbaefddaa0063ba97de57dd443062224181b80f609d06f0e1cbad5788"
+    },
+    {
+      "path": "security/pgp/src/randpool.h",
+      "sha256": "c3afd9a6973a6dfaa42572b723fc077e54d513dcc7e3a268ecd8992e8ee30d5c"
+    },
+    {
+      "path": "security/pgp/src/randpool.o",
+      "sha256": "363f277542de5d167899a847ef6737b6e049eaaff09ba40360375d214b7678a0"
+    },
+    {
+      "path": "security/pgp/src/rsagen.c",
+      "sha256": "940423e53e260462cd8d67a033b886305f6d42ead5b6a1cbcdecf0529121ccaa"
+    },
+    {
+      "path": "security/pgp/src/rsagen.h",
+      "sha256": "d97588458d746ee08ae7ccff36e766ac197cc781cc84eed0c696bed147d56327"
+    },
+    {
+      "path": "security/pgp/src/rsagen.o",
+      "sha256": "98a155685331d15c4411bd4cd7c0b956f66e9b488994115715202e55e800dfe9"
+    },
+    {
+      "path": "security/pgp/src/rsaglue.h",
+      "sha256": "49ba19b087da31321ec9d04b26720f9727a70534af58aecc46df867de88a942c"
+    },
+    {
+      "path": "security/pgp/src/rsaglue1.c",
+      "sha256": "5f3f48c058b18b0ef240f2dc99e32c171a36348778afe8ec1830971d9515b45e"
+    },
+    {
+      "path": "security/pgp/src/rsaglue1.o",
+      "sha256": "b508ef59848da9df02ee523f53fa200c8a94f84e52a06e5b3bc2596243df1674"
+    },
+    {
+      "path": "security/pgp/src/rsaglue2.c",
+      "sha256": "8268419eda2daf8fa713ad9ed49fd89be5a52e9b2ccdc5d7b626797c55f8c31d"
+    },
+    {
+      "path": "security/pgp/src/sleep.c",
+      "sha256": "de419f8acbb46d5d81bfdd0c8faa20b0823cc7da097c8c2a5a6509a7d02f4034"
+    },
+    {
+      "path": "security/pgp/src/smakefile",
+      "sha256": "e308b44604ff2a09808bb96d9457e5a673fdd4391016e6803ee7a2542573dac4"
+    },
+    {
+      "path": "security/pgp/src/sparc.S",
+      "sha256": "74a3d91faf6206a8cdaac06b5e9e81e1512f40200c365c8d126b9987ad45e192"
+    },
+    {
+      "path": "security/pgp/src/stdlib.h",
+      "sha256": "b79f8631d45d8a55d91695d22bfc7e15c193f2ad91579ae06d51c393e7728a32"
+    },
+    {
+      "path": "security/pgp/src/strtol.c",
+      "sha256": "ae46aaf05802a84a07c7e26a559c522269931b03b5d9857d19863bdd421dd966"
+    },
+    {
+      "path": "security/pgp/src/system.c",
+      "sha256": "27913ba3c4aa3adcc3f79e8e4c9ce3f2874bdd4843fe9b6f289b8f37a3351701"
+    },
+    {
+      "path": "security/pgp/src/system.h",
+      "sha256": "f5c8514094a89cf4242038fce81c47c947eee6b616a53ff76d9b379bea7ffb29"
+    },
+    {
+      "path": "security/pgp/src/system.o",
+      "sha256": "4456db6e576a0f867887137752fcd7920ef23e30357523eacd5060cddf2be16c"
+    },
+    {
+      "path": "security/pgp/src/usuals.h",
+      "sha256": "0375144ad7fa5e6f3757862661d9dfe762c345ae2d2b9d87929294c3bdeeefc0"
+    },
+    {
+      "path": "security/pgp/src/vax.mar",
+      "sha256": "7762c03e75959a68d61d0084d18cc0049635c18a2d72ca59ec8f8a2cd5b0dad8"
+    },
+    {
+      "path": "security/pgp/src/zbits.c",
+      "sha256": "68cc73f81a8167a16723fd918b53a42931ddcd824d33bb1069cea5c7e168e8d7"
+    },
+    {
+      "path": "security/pgp/src/zbits.o",
+      "sha256": "a2a25fbe247d62ef1274f91ed7a5c79c4ec4361e41de2a70b65927f2b27f4b31"
+    },
+    {
+      "path": "security/pgp/src/zdeflate.c",
+      "sha256": "f0db09861ed711d6cff21c1eefd3c13a0209ac186ba9eb932b86f894b1252d84"
+    },
+    {
+      "path": "security/pgp/src/zdeflate.o",
+      "sha256": "b429c7fab7af7cd2a0677ea21ae4a83b14b1ad0db3db3245497ff88733c44b74"
+    },
+    {
+      "path": "security/pgp/src/zfile_io.c",
+      "sha256": "aaaf97381082cb39e3e70d95ad7b5a7026704c250ec094908ced41cf36bbd480"
+    },
+    {
+      "path": "security/pgp/src/zfile_io.o",
+      "sha256": "0ab48f001939e6c90ccea451eb972023d970644136f8471c3a41021be065208a"
+    },
+    {
+      "path": "security/pgp/src/zglobals.c",
+      "sha256": "9f3644fd5fa3dbe2c07c2d54a6df532331a755e6c80c26ebc1bb459d9a768575"
+    },
+    {
+      "path": "security/pgp/src/zglobals.o",
+      "sha256": "6a1b3ea6683fad6e7d3f697c78238ea85ff225126bb78b72247550bcd330e2a6"
+    },
+    {
+      "path": "security/pgp/src/zinflate.c",
+      "sha256": "5d892aa445b723f9a9680be1377792d7344fffc737e0e03efecd804e650a4276"
+    },
+    {
+      "path": "security/pgp/src/zinflate.o",
+      "sha256": "4c77ec58172c74fe5ccd3c75eb9bc6c8eb4c449771dd9ed0bee6a2fbf8b270d5"
+    },
+    {
+      "path": "security/pgp/src/zip.c",
+      "sha256": "39171a378036b9633ef5dd77e3679ec919fe6df0729df642b532b7ab35921ab8"
+    },
+    {
+      "path": "security/pgp/src/zip.h",
+      "sha256": "5a6cc3298ffa96574a04b70c7a577d278167dfe2ebe25514eb4c95fb0bbba410"
+    },
+    {
+      "path": "security/pgp/src/zip.o",
+      "sha256": "5e700319666e41252c1b361e3b077cea43dfcee944463e59c8dca878bfb446b8"
+    },
+    {
+      "path": "security/pgp/src/ziperr.h",
+      "sha256": "f3442c029a377c3c4253a0a29ff3355b61a4ca6cb4e844c51a5a88f31b70bebb"
+    },
+    {
+      "path": "security/pgp/src/zipup.c",
+      "sha256": "95308ab55df49929dd70ad12a48106c39e1318b9f92239a7e8da101f84b5ac1b"
+    },
+    {
+      "path": "security/pgp/src/zipup.h",
+      "sha256": "f0593b42e43e19aec2339be47846382b05a772b8cca26e322b571cc56afd69b7"
+    },
+    {
+      "path": "security/pgp/src/zipup.o",
+      "sha256": "31841def4766e51ad1e3b1fc7999aab466c4ce61c8370694ad751aa624e44d86"
+    },
+    {
+      "path": "security/pgp/src/zmatch.S",
+      "sha256": "ac07d8199ba140dcf1d937c43c6d407a073a21f6769350be3527ec35151d2f2b"
+    },
+    {
+      "path": "security/pgp/src/zmatch.asm",
+      "sha256": "44e3e76dbafaa9677e91e6c1fe13321f8427bcf76f9f62723bf18f4af30064b8"
+    },
+    {
+      "path": "security/pgp/src/zmatch.obj",
+      "sha256": "a670cacc7757b7a9bf96d2fe1d9a0051348fc295871e16937fdb3987a7e040d4"
+    },
+    {
+      "path": "security/pgp/src/zrevisio.h",
+      "sha256": "dc63db5c05ff44052c8f59ee43094ad70e0ad1e327f780140b791f86ba426b41"
+    },
+    {
+      "path": "security/pgp/src/ztailor.h",
+      "sha256": "cb16da063e0d000c5c76c67a41790984386e701e8408ec85feaba5e386c48164"
+    },
+    {
+      "path": "security/pgp/src/ztrees.c",
+      "sha256": "180e8203612f7b5856cb426964725f766cbc2101d5db1c17003450a589b1637c"
+    },
+    {
+      "path": "security/pgp/src/ztrees.o",
+      "sha256": "784f67aacf1e04183d191327df76403c4e33c21385eaffc469bbe71ef2981f17"
+    },
+    {
+      "path": "security/pgp/src/zunzip.c",
+      "sha256": "8232c8c135609c40137f111c6e401a37cd22920cf479e8cb11497c7ff72b22b1"
+    },
+    {
+      "path": "security/pgp/src/zunzip.h",
+      "sha256": "b11ea9d4c57f2484c80cac40450c9f73f982fc4fa8b86ed40c56b5118499bbb8"
+    },
+    {
+      "path": "security/pgp/src/zunzip.o",
+      "sha256": "add009bcd9fb671d01d989117cfb89b024c4141b38bf7b966cfd582928907e17"
+    },
+    {
+      "path": "security/pgp/tests/PGPMacBinaryMappings.txt",
+      "sha256": "ca636086067a6e75f89a681d61b1a18a9cf83f7ccafb180ad0e706065f844897"
+    },
+    {
+      "path": "security/pgp/tests/PGPgroup.pgr",
+      "sha256": "1d395d3b182da76bc46a353ccd0721de8d72a40773db60dd403af16f4f26f52e"
+    },
+    {
+      "path": "security/pgp/tests/PGPsdkPreferences",
+      "sha256": "b8e2182710d29f5092fc5921d7a5234a60dd6a65df0a0d424ab29dc17c53897c"
+    },
+    {
+      "path": "security/pgp/tests/config.txt",
+      "sha256": "2493086f11856140ea118272d038e599d4d28e855272306f2ba80c5a06ffde44"
+    },
+    {
+      "path": "security/pgp/tests/pubring.bak",
+      "sha256": "d2a92ab61310e8a3c2b1ed0f6fc6ac5aa2c654b2112a43cdb925bb625c08c744"
+    },
+    {
+      "path": "security/pgp/tests/pubring.pgp",
+      "sha256": "a280bc85948cfce2d0bfb1de5c67d7ebb9d0d84b34f1b2a6a6c621cc53182db2"
+    },
+    {
+      "path": "security/pgp/tests/randseed.bin",
+      "sha256": "0abfd8e240ebb6b87eea1befc9bdc43769fbcc90b453b7fe828767dae8185f6d"
+    },
+    {
+      "path": "security/pgp/tests/randseed.rnd",
+      "sha256": "815c7054e2df1486030b667b2724671943388f9d40e05af98ad54294b47bf9a0"
+    },
+    {
+      "path": "security/pgp/tests/runme.sh",
+      "sha256": "baab1f1c32219bb4597ff4faed472d7439454278ca45566c80b8fd06f9b1e87f"
+    },
+    {
+      "path": "security/pgp/tests/secring.bak",
+      "sha256": "f151d65d508857c5c083e68319096d2e8b4c11b4769dba9fb7d36e396116f8fc"
+    },
+    {
+      "path": "security/pgp/tests/secring.pgp",
+      "sha256": "d361fe8590d83c5008718387510f284a385d5819fc3802cbad7c0f167dcc4bce"
+    },
+    {
+      "path": "security/pgp/tests/secring.skr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "security/pgp/tests/testin.txt",
+      "sha256": "078307811fcb25e5a92c4ab9b9d76dcb3d0893e005be66e7228230834ddbb3fa"
+    },
+    {
+      "path": "security/pgp/tests/testin.txt.asc.ref",
+      "sha256": "93d7fdc77abaef985162c81b8a3b16bc109684b0753a1b6282748cbb18b6fedb"
+    },
+    {
+      "path": "security/pgp/tests/testout.txt.asc",
+      "sha256": "930b3098c257c1fff7c2809c2795e950c310f690c43e1c7e303c8153eb5cf221"
+    },
+    {
+      "path": "security/pgp/tests/testout.txt.ref",
+      "sha256": "078307811fcb25e5a92c4ab9b9d76dcb3d0893e005be66e7228230834ddbb3fa"
+    },
+    {
+      "path": "security/rijndael/COMPILE",
+      "sha256": "858ad15b7fd8f19812d866e6570e316b50ee29c150bd174596e8b8557010f0e9"
+    },
+    {
+      "path": "security/rijndael/LICENSE",
+      "sha256": "aea9b8d824f6290bda1399b89c9b56b4532c16ea2b53ac7d16bca524dad3c067"
+    },
+    {
+      "path": "security/rijndael/Makefile",
+      "sha256": "3fa09fbdcf676c53c26670908aae5ae90f2d8d7001715687f4292cf893f7e7d5"
+    },
+    {
+      "path": "security/rijndael/aes.c",
+      "sha256": "047bc3f3e8260a3b5db39cb48a7f3286edbb8aab5d72d18e71742a6b82f8cb2d"
+    },
+    {
+      "path": "security/rijndael/aes.h",
+      "sha256": "8f9a5601d31225d107389aff5d33260488fc2c10ad88b9b06330d2725c65a849"
+    },
+    {
+      "path": "security/rijndael/aes.o",
+      "sha256": "2d37b9dddf6318e38a864db9b6d7944db0bfe7c345c5354131514eecf33226cb"
+    },
+    {
+      "path": "security/rijndael/aestab.h",
+      "sha256": "83bda5c8e066dbfdf4d3317b19663ee2bb21d8ba9befc2e2466f3ddd6fc85a61"
+    },
+    {
+      "path": "security/rijndael/aesxam.c",
+      "sha256": "9cc1d2bc3cffc188a8e150e7ee28b992a12f5b3ddb7a3ba1bc427e7952650eb2"
+    },
+    {
+      "path": "security/rijndael/aesxam.o",
+      "sha256": "e0a0e9984ec96612f2ec0771dbcd3f8f0d2447a83d4dbf94fe8a95cddc9d0d40"
+    },
+    {
+      "path": "security/rijndael/input_large.asc",
+      "sha256": "b7298fac2085bc462868e7de51dccfe71b55c05e238ca1dd957c45c864e0a151"
+    },
+    {
+      "path": "security/rijndael/input_small.asc",
+      "sha256": "e70de01be9119601583a3541b1645d552b6103a3a652ef35f8ac4f08667da7b0"
+    },
+    {
+      "path": "security/rijndael/runme_large.sh",
+      "sha256": "cb0b8e01aed691591c0bd04e7da80ab32d832ac78f7a041f44567513a4324da9"
+    },
+    {
+      "path": "security/rijndael/runme_small.sh",
+      "sha256": "6b18b5e228ace6956c1a4bb8281a03ea7b508d12e245115124f706cc7f500215"
+    },
+    {
+      "path": "security/sha/COMPILE",
+      "sha256": "858ad15b7fd8f19812d866e6570e316b50ee29c150bd174596e8b8557010f0e9"
+    },
+    {
+      "path": "security/sha/LICENSE",
+      "sha256": "92f5efcdd29ddb7381bf007753ced65fd33fb884e4170c67161848aa2090df6b"
+    },
+    {
+      "path": "security/sha/Makefile",
+      "sha256": "d6fe109a94ce3c67aaa61ed35c32e5f6e7ceb4390208fa0697a147c9888a8033"
+    },
+    {
+      "path": "security/sha/input_large.asc",
+      "sha256": "b7298fac2085bc462868e7de51dccfe71b55c05e238ca1dd957c45c864e0a151"
+    },
+    {
+      "path": "security/sha/input_small.asc",
+      "sha256": "e70de01be9119601583a3541b1645d552b6103a3a652ef35f8ac4f08667da7b0"
+    },
+    {
+      "path": "security/sha/runme_large.sh",
+      "sha256": "1f60ff2e9a0ce899950b9d5562ca75955873e23cff3c239bad9dd3087d2c36c2"
+    },
+    {
+      "path": "security/sha/runme_small.sh",
+      "sha256": "750056ced93f79cb8806769f80ad86a93bc518db0a5d1f52c0519c8144283e8e"
+    },
+    {
+      "path": "security/sha/sha.c",
+      "sha256": "a78fa96999b57d72d3bc6a8d0ac63b29e55ff3005c139120a9650986ba00e5c7"
+    },
+    {
+      "path": "security/sha/sha.h",
+      "sha256": "158f2415c0d97c94e93c51f69eecf5d9bd5f9c638f58ec80003ef04e2726bd9f"
+    },
+    {
+      "path": "security/sha/sha_driver.c",
+      "sha256": "8561eec407059960a43041f46f9619bfb8e3c04b1af5eda7dd8f59ae446ab6fc"
+    },
+    {
+      "path": "telecomm/CRC32/COMPILE",
+      "sha256": "858ad15b7fd8f19812d866e6570e316b50ee29c150bd174596e8b8557010f0e9"
+    },
+    {
+      "path": "telecomm/CRC32/LICENSE",
+      "sha256": "d5433a2f12b96fb7dd1ec0e09f8268ce220a93859fa2c6441ac11724169dad95"
+    },
+    {
+      "path": "telecomm/CRC32/Makefile",
+      "sha256": "92964f6e05a0afe36236e82b05e3f9a6598b39660ed91729d04cb0696388f1dd"
+    },
+    {
+      "path": "telecomm/CRC32/crc.h",
+      "sha256": "d8d53dae4f014e6693349b6dd1bdc3a55071203df699e65fb8e1243512da18d1"
+    },
+    {
+      "path": "telecomm/CRC32/crc_32.c",
+      "sha256": "06b5dc8f7a2e649924d381d5829e3d9607874dd6a9f35b55df203b6b130dac91"
+    },
+    {
+      "path": "telecomm/CRC32/runme_large.sh",
+      "sha256": "5b50f492e322164dd90e341f1fceaf2bc4c17aa7efeecd0029656617af35c435"
+    },
+    {
+      "path": "telecomm/CRC32/runme_small.sh",
+      "sha256": "71457a9eee6dbb26231d18b309a09f978df983552d3d05d5eac990e28cb423b9"
+    },
+    {
+      "path": "telecomm/CRC32/sniptype.h",
+      "sha256": "3e8d116c99fa9021f1346b6c11394c29e6d38912c424fafb1f0b25e43b8da17a"
+    },
+    {
+      "path": "telecomm/FFT/COMPILE",
+      "sha256": "858ad15b7fd8f19812d866e6570e316b50ee29c150bd174596e8b8557010f0e9"
+    },
+    {
+      "path": "telecomm/FFT/LICENSE",
+      "sha256": "177ee719fdb94ec770019538eafb0fc90e61ae47992445f90ac74843f862a9b2"
+    },
+    {
+      "path": "telecomm/FFT/Makefile",
+      "sha256": "562aee27bebc04fe4f7a3de5f8a0c8df40ad48d214edc674cd5bb324d0874244"
+    },
+    {
+      "path": "telecomm/FFT/README",
+      "sha256": "177ee719fdb94ec770019538eafb0fc90e61ae47992445f90ac74843f862a9b2"
+    },
+    {
+      "path": "telecomm/FFT/ddc.h",
+      "sha256": "1bbd4ee1c7dac91dd7de51685d7fa6a8030304e62c60a8c155affeb737340684"
+    },
+    {
+      "path": "telecomm/FFT/ddcmath.h",
+      "sha256": "20a169ae41c8d50bdf4e9a8a29adb9b939e6bdf30a373b91da14eccf7fd401d9"
+    },
+    {
+      "path": "telecomm/FFT/fftmisc.c",
+      "sha256": "525ece167ef31cdd9dff3e259939dd1e9fae2386db4e012d4d16c6690e0d507b"
+    },
+    {
+      "path": "telecomm/FFT/fourier.h",
+      "sha256": "cb59b83849c7d6c179abca656f520e9df8e75e48d1c0638e37815e3df4809cf5"
+    },
+    {
+      "path": "telecomm/FFT/fourierf.c",
+      "sha256": "bcdb9cc5d6d44de949196d4acdc5e64db077e9a6f21b9cfe0db0be29eeb0f429"
+    },
+    {
+      "path": "telecomm/FFT/main.c",
+      "sha256": "ede8c6269615f072b9fb3f1c46946af1ed9f35a2cdbe5b446414bb107b71675c"
+    },
+    {
+      "path": "telecomm/FFT/runme_large.sh",
+      "sha256": "a57c2d89c249624186c4b3570724c2d2b707090dea75d33e15d39d0feef45170"
+    },
+    {
+      "path": "telecomm/FFT/runme_small.sh",
+      "sha256": "3fcd0b6ae1b34f22dfa69b0d246987c39ab82aac62001e02f1426c63a9b3642b"
+    },
+    {
+      "path": "telecomm/adpcm/COMPILE",
+      "sha256": "e72339a30bb1a684cdfe1180ec6a4691030e6735596d95dc2659d66e3d6c4ff5"
+    },
+    {
+      "path": "telecomm/adpcm/LICENSE",
+      "sha256": "5a706f708697154145732776c83bf0fb26ede1bed767391d0a3e5f2786d76788"
+    },
+    {
+      "path": "telecomm/adpcm/README.MB",
+      "sha256": "ebf48fffe273122d5abfbec4936ff570a67598405c9dd659cf51b38dc2320dec"
+    },
+    {
+      "path": "telecomm/adpcm/data/large.adpcm",
+      "sha256": "1065a80370f78a70b4accb1a8219b6e804db39540ea5fc4ae91fb807b3a55a52"
+    },
+    {
+      "path": "telecomm/adpcm/data/large.pcm",
+      "sha256": "d448727993fcdf26fc3c6b124b49f09f996489d1436d5ee406d547e2e2bea21c"
+    },
+    {
+      "path": "telecomm/adpcm/data/small.adpcm",
+      "sha256": "d7d05588248b7a83d58aaea1d925f47f4950f851f642859c3cd1a350d720f7c7"
+    },
+    {
+      "path": "telecomm/adpcm/data/small.pcm",
+      "sha256": "2705978af13d893f334f747084ae5c6850227a2bf95db8844cd1779e3bf37a3d"
+    },
+    {
+      "path": "telecomm/adpcm/runme_large.sh",
+      "sha256": "5827bbfec73c63e083798819c2905a7356a8b22ee8f2a1f94728dfd26ddb677b"
+    },
+    {
+      "path": "telecomm/adpcm/runme_small.sh",
+      "sha256": "a248bb5dff49ad4fa062bf576348614a1d3e65920a429e977bcfeb4cff130c9e"
+    },
+    {
+      "path": "telecomm/adpcm/src/Makefile",
+      "sha256": "f2f89135181c75dff939eeaba5e91cca574fb29327a37c6c93d97bc52a099c22"
+    },
+    {
+      "path": "telecomm/adpcm/src/README",
+      "sha256": "b6b6709ba91517cdd2818402d9bcdca89c9bfcdb90243878398318842c0d6a5c"
+    },
+    {
+      "path": "telecomm/adpcm/src/adpcm.2",
+      "sha256": "0ed5932496244eb20061f08f7addd1472982383a3cad4e2e42e46b7af15b9bb2"
+    },
+    {
+      "path": "telecomm/adpcm/src/adpcm.c",
+      "sha256": "318b5636c0df6861a37f5a900c54283b7ff455c64804f6b256b123c310b3b207"
+    },
+    {
+      "path": "telecomm/adpcm/src/adpcm.h",
+      "sha256": "1aec627fb2379843ba30dd2d54e7232d615be7c0a3d4ea7fe072279386976dc2"
+    },
+    {
+      "path": "telecomm/adpcm/src/adpcm.shar",
+      "sha256": "7c76868b6db60347ea29437e4c43dfb06b4fff2a513f9ed3857118fd46d347c4"
+    },
+    {
+      "path": "telecomm/adpcm/src/hello.adpcm.uu",
+      "sha256": "c7494ccc3410bf3dff8996a943d32f2929ab901659e240879d806c32399bbfc3"
+    },
+    {
+      "path": "telecomm/adpcm/src/libst.h",
+      "sha256": "856bd761e22ea6653e9649a34c61cd1c2cbb6c4a2bd97b3d7e7f67d20a4cee03"
+    },
+    {
+      "path": "telecomm/adpcm/src/rawcaudio.c",
+      "sha256": "27e80d788738534c75d907a5369fd773a43ce15fabf4276ac8398f6b28df9081"
+    },
+    {
+      "path": "telecomm/adpcm/src/rawdaudio.c",
+      "sha256": "42f9249295068caf686db1b9b0e89fd44253f30671a5fedaa789d4b97f45d8db"
+    },
+    {
+      "path": "telecomm/adpcm/src/sgicaudio.c",
+      "sha256": "618e9685749fe6a3ec0060a8df2ffc570a9bb1405aa3819355a04dc6af840925"
+    },
+    {
+      "path": "telecomm/adpcm/src/sgidaudio.c",
+      "sha256": "073936e91a0ac2af7e7163c925c12656da45e495835d379c12fc7d5a1c77ec3b"
+    },
+    {
+      "path": "telecomm/adpcm/src/suncaudio.c",
+      "sha256": "b1907615ad5852ae6e9a0fd2daf7630b26a807aff654bfd123140334faa17c0c"
+    },
+    {
+      "path": "telecomm/adpcm/src/timing.c",
+      "sha256": "08f5538f9bd8c579cf209a0a999b534ced973177af46be94511fc7094b38542d"
+    },
+    {
+      "path": "telecomm/gsm/COMPILE",
+      "sha256": "05f604f7170673542d8527b70fb72688b2df0263f8b207d59694f672561ccc28"
+    },
+    {
+      "path": "telecomm/gsm/COPYRIGHT",
+      "sha256": "1bbe7119b1bcd1489e0f36cb95b8902f7f0ceec9a2f3a67394bc9f4709a4e0a7"
+    },
+    {
+      "path": "telecomm/gsm/INSTALL",
+      "sha256": "80624eeee1d35a6ff9466cc5f9245f15bf66d4b86ae3890af473431b36c64c2b"
+    },
+    {
+      "path": "telecomm/gsm/LICENSE",
+      "sha256": "1bbe7119b1bcd1489e0f36cb95b8902f7f0ceec9a2f3a67394bc9f4709a4e0a7"
+    },
+    {
+      "path": "telecomm/gsm/Makefile",
+      "sha256": "b374e84077e81377baad278c3f9bf6a214ab62b7d94f55c46f19c0f4329b0451"
+    },
+    {
+      "path": "telecomm/gsm/README",
+      "sha256": "d9e773b5ebe71c865da4e0ea0630f45f8a0c4abee626a54835c5573e35fd4e6a"
+    },
+    {
+      "path": "telecomm/gsm/add-test/add_test.c",
+      "sha256": "e37db7ca2980263801aca403044736385e1241d4a9b5e7a9088cbc5a73c85492"
+    },
+    {
+      "path": "telecomm/gsm/add-test/add_test.dta",
+      "sha256": "f971a23fd0646c508ca78710278a481df6a194710c619710b8fe1d94cdf1e7f4"
+    },
+    {
+      "path": "telecomm/gsm/data/correct_large.au.gsm",
+      "sha256": "1f34c3f909271cddbd11553d5d47f68ef0b69109a5c160dbebaad65e2e8f61b8"
+    },
+    {
+      "path": "telecomm/gsm/data/correct_large.au.run",
+      "sha256": "2bd9082e61ceb0d0d4d14db4b865ff4bca461bedc59b8acb1fd3fa20b69cbf19"
+    },
+    {
+      "path": "telecomm/gsm/data/correct_small.au.gsm",
+      "sha256": "b724eccffd37ad841969f4651c278a25146b4283686eae8bd35adf2363a4612e"
+    },
+    {
+      "path": "telecomm/gsm/data/correct_small.au.run",
+      "sha256": "c660c26590fad79340d7554e8e2fce6fcd941c4ab99a97fbfdc7ef4251986d47"
+    },
+    {
+      "path": "telecomm/gsm/data/large.au",
+      "sha256": "a06af88e71cb27b448a40f3b6591bc137a28e4a665e442d3a978edef242938cf"
+    },
+    {
+      "path": "telecomm/gsm/data/large.au.run.gsm",
+      "sha256": "1f34c3f909271cddbd11553d5d47f68ef0b69109a5c160dbebaad65e2e8f61b8"
+    },
+    {
+      "path": "telecomm/gsm/data/small.au",
+      "sha256": "b8e04b1b4f33a19251b760a0883f61e0368b29c30f0b97641ef1048f049c3c87"
+    },
+    {
+      "path": "telecomm/gsm/data/small.au.run.gsm",
+      "sha256": "b724eccffd37ad841969f4651c278a25146b4283686eae8bd35adf2363a4612e"
+    },
+    {
+      "path": "telecomm/gsm/inc/config.h",
+      "sha256": "391c992b571be94690b3a1aff1cb7c256c8d0e2c82618a2d04d0bdeacecc94b0"
+    },
+    {
+      "path": "telecomm/gsm/inc/gsm.h",
+      "sha256": "3c6f17c10372e12ab9c98237afbc16657fe3d3166a43a6b42eececd367f2cab5"
+    },
+    {
+      "path": "telecomm/gsm/inc/private.h",
+      "sha256": "7588a6b1fbf0cbc9080ebb0719d12628e6060bf751846a7f1f2f9a6654fc3e0d"
+    },
+    {
+      "path": "telecomm/gsm/inc/proto.h",
+      "sha256": "766bf0a9a8a80bcfbe26dcbc979eb693b93d68b8295454cceb0eea575b2bedb4"
+    },
+    {
+      "path": "telecomm/gsm/inc/toast.h",
+      "sha256": "412b72368845a98041564b3254710b1dc80959817f3a791ad853cf2db4e1c603"
+    },
+    {
+      "path": "telecomm/gsm/inc/unproto.h",
+      "sha256": "4163815115ddab080dc1e7a6f52d2f639069964ba6f83692dd742563d5d88c6d"
+    },
+    {
+      "path": "telecomm/gsm/runme_large.sh",
+      "sha256": "58a96e1793add314fdc2ea25431a90a0f31cf20e3b2887f53b6cb0d105e65f5b"
+    },
+    {
+      "path": "telecomm/gsm/runme_small.sh",
+      "sha256": "a2d982cb25278d11fb19847b545a29c16670b21986c29424c4265626b7a72c84"
+    },
+    {
+      "path": "telecomm/gsm/src/add.c",
+      "sha256": "7452344351548e7534fdf4fcf11fae398a8cbb8aa82709dee8bdde33d0e2bca3"
+    },
+    {
+      "path": "telecomm/gsm/src/code.c",
+      "sha256": "6411b7d3df8981df0e7db86efc7c70f777d3b43df1d342bea5416441a0da7671"
+    },
+    {
+      "path": "telecomm/gsm/src/debug.c",
+      "sha256": "aaace95feb72a1673f86fdd4ec66cd32973f09523f47c95f4fba0a58f2ee4005"
+    },
+    {
+      "path": "telecomm/gsm/src/decode.c",
+      "sha256": "7c3330ac256b3add8489c57d0e4ff90c5e1a0967f3d940dbcfd664d96039b2c5"
+    },
+    {
+      "path": "telecomm/gsm/src/gsm_create.c",
+      "sha256": "a5a75574840db677b1e4c16d567f7535b4884a89bc49ee2f6c1967b400b137f3"
+    },
+    {
+      "path": "telecomm/gsm/src/gsm_decode.c",
+      "sha256": "3ad8c2f5851c753c5d0e7ad99dd48a9ed1d207a523716623b9c8f95f44fca384"
+    },
+    {
+      "path": "telecomm/gsm/src/gsm_destroy.c",
+      "sha256": "2cd3554ee59bcf5c057428d97fb8dcc64eb748240bdcb2bbe6b6afb39b1fb883"
+    },
+    {
+      "path": "telecomm/gsm/src/gsm_encode.c",
+      "sha256": "ea82f80663f8e5a27ffd9a9c5d0de4f971dc91c353ac448110ac31006a547680"
+    },
+    {
+      "path": "telecomm/gsm/src/gsm_explode.c",
+      "sha256": "83a6c42b515c034d239736ceb5dc8bb7c410e3ab1e22075d9602569e0be0dccd"
+    },
+    {
+      "path": "telecomm/gsm/src/gsm_implode.c",
+      "sha256": "c342898beb5a6e5f9f76578d0e5dd07331bf01948224f7d3eecb8644ea892595"
+    },
+    {
+      "path": "telecomm/gsm/src/gsm_option.c",
+      "sha256": "2179b2cf17fd63eefe25701f67ef9ad14b2ca71e94dc55c512ad3a02357e925c"
+    },
+    {
+      "path": "telecomm/gsm/src/gsm_print.c",
+      "sha256": "4ffaf76976bb01b636270b90c9d5c2a80f7dc440520b92ddab5ff6bb9de19a48"
+    },
+    {
+      "path": "telecomm/gsm/src/long_term.c",
+      "sha256": "8308500f18a07840b048d7429e94cd1489262dec85b7b9763b10637cd63f2c9b"
+    },
+    {
+      "path": "telecomm/gsm/src/lpc.c",
+      "sha256": "6a1bd1b405ae321cc7a21e8314cdd8febdd34129fb4e0a341cfd36b558a951cf"
+    },
+    {
+      "path": "telecomm/gsm/src/preprocess.c",
+      "sha256": "5863c00439ec44b8cb5270025786d46c3090de84e824a0edb0a46245fc43c266"
+    },
+    {
+      "path": "telecomm/gsm/src/rpe.c",
+      "sha256": "e8938bf2937e9c309cff0d31397ff22e3928d1c3f0401b5b0c54d04704836fae"
+    },
+    {
+      "path": "telecomm/gsm/src/short_term.c",
+      "sha256": "1a3f510ce6057cf7c189f2e9171213001fef1fe62d3206d3e24517006eadce10"
+    },
+    {
+      "path": "telecomm/gsm/src/table.c",
+      "sha256": "8b999823b88c4c0325ff9649909d1ac928301e86418cea5afdaa14fec42c1826"
+    },
+    {
+      "path": "telecomm/gsm/src/toast.c",
+      "sha256": "600a0430cb0eec9f4dd5c1a868823859a73983a26895a627445037f182b6c50a"
+    },
+    {
+      "path": "telecomm/gsm/src/toast_alaw.c",
+      "sha256": "cfbc1da226cd94156317dca9e45c42c56e4539b912078f9b0455e47762865ba2"
+    },
+    {
+      "path": "telecomm/gsm/src/toast_audio.c",
+      "sha256": "4cc567f96772bf483e2a115eb2e3cbe13793b58d73077481d907d463f60ca00e"
+    },
+    {
+      "path": "telecomm/gsm/src/toast_lin.c",
+      "sha256": "29da7f67f9db40fb5c7afabc99802f2ab2533c2375aa1587d312cbf10678d325"
+    },
+    {
+      "path": "telecomm/gsm/src/toast_ulaw.c",
+      "sha256": "88808354718161ad0af5c78a759e9dce774ecdbbd122c01bb92b700cd9d4dcf7"
+    },
+    {
+      "path": "telecomm/gsm/tst/cod2lin.c",
+      "sha256": "47a84fb90df76c68dad07b6f4a9dc4d77e33a85f638e1cc28b914e8882948a51"
+    },
+    {
+      "path": "telecomm/gsm/tst/cod2txt.c",
+      "sha256": "1ab82ff250572d820516d999f26176fb7364eed0791f4e5eb2926159dec6149b"
+    },
+    {
+      "path": "telecomm/gsm/tst/gsm2cod.c",
+      "sha256": "1480e1763705b5aa90756aadf42c396556bcdd8d4d55fd2a5c1a81a2f70ac3e1"
+    },
+    {
+      "path": "telecomm/gsm/tst/lin2cod.c",
+      "sha256": "b2d943d21461e74adffafa296a5f90937ff603b5d993c122c356e2442de0faec"
+    },
+    {
+      "path": "telecomm/gsm/tst/lin2txt.c",
+      "sha256": "cc2887baa83db0dc97b4c087a3b2e6adfa4987ea9750bcc6fccdfbd4357e967d"
+    },
+    {
+      "path": "telecomm/gsm/tst/run",
+      "sha256": "5ca764f1869b6f873be24930e0a90598c64087f6cc504f2e13800f0a079a6350"
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+\section{Formal Framework}
+\label{sec:framework}
+
+\subsection{Schedules, costs, and interactions}
+
+Let $G$ be a kernel in canonical form, the module after \texttt{mem2reg}. A stage $\pi$ is one pass invocation, and a
+schedule $\sigma=(\pi_1,\dots,\pi_k)$ applies its stages in order to give $\sigma(G)$. We write $\pi_j\circ\pi_i$ for the
+schedule that applies $\pi_i$ and then $\pi_j$.
+
+Let $J$ be a cost of a module. The cost change of a schedule is
+\begin{equation}\label{eq:delta}
+  \Delta^J_\sigma(G)=J(\sigma(G))-J(G).
+\end{equation}
+For two stages, the interaction is the part of the pair's cost change that its two single changes do not explain,
+\begin{equation}\label{eq:interaction}
+\begin{split}
+  I^J_{ij}(G)&=\Delta^J_{ij}(G)-\Delta^J_i(G)-\Delta^J_j(G)\\
+  &=\Delta^J(\pi_j\mid\pi_i(G))-\Delta^J(\pi_j\mid G),
+\end{split}
+\end{equation}
+where $\Delta^J(\pi_j\mid\pi_i(G))=J(\pi_j(\pi_i(G)))-J(\pi_i(G))$ is the change that $\pi_j$ causes after $\pi_i$. The
+interaction is zero when the two passes act independently on $G$ for the cost $J$. A positive value means that the pair's
+combined change is larger than the sum of its single changes.
+
+The study uses two costs. The instruction count $N$ of the optimized module is an exact integer, measured before lowering, so
+the backend does not affect it. The wall-clock time $J$ is measured with noise (Section~\ref{sec:timing}).
+
+\subsection{Instruction-count interaction}
+
+We normalize the instruction-count interaction by the canonical count $N(G)$,
+\begin{equation}\label{eq:instcount}
+  \tilde I_{ij}(G)=\frac{I^N_{ij}(G)}{N(G)},
+\end{equation}
+and average it over the $K$ kernels to give the tensor $\mathbf{M}^N_{\mathrm{pass}}$. Its entries are fractions of the
+canonical instruction count.
+
+\begin{remark}[Self-interaction identity]
+\label{rem:identity}
+Suppose that a second application of $\pi_i$ leaves the module unchanged. Then $\Delta^N_{ii}(G)=\Delta^N_i(G)$, and the
+self-interaction is $\tilde I_{ii}(G)=(\Delta^N_{ii}(G)-2\Delta^N_i(G))/N(G)=-\Delta^N_i(G)/N(G)$. The identity is exact,
+because the counts are integers of the same module. Section~\ref{sec:results} checks it on every kernel where the premise
+holds.
+\end{remark}
+
+\subsection{Timing interaction}
+
+The timing interaction is divided by the canonical time of the sweep's window,
+\begin{equation}\label{eq:timing}
+  \tilde I^t_{ij}(G)=\frac{I^t_{ij}(G)}{J_0(G)},
+\end{equation}
+where $I^t_{ij}$ is the interaction of the wall-clock cost. Both deltas of a pair are measured in one exclusive window, and the
+noise is estimated from the sweeps whose optimized IR equals the canonical IR (Section~\ref{sec:timing}).
+
+\subsection{The single-effect ratio baseline}
+
+This baseline defines the transition tensor with a floor in the denominator,
+\begin{equation}\label{eq:ratio}
+  [\mathbf{M}^{\mathrm{ratio}}_{\mathrm{pass}}]_{ij}=\frac{1}{K}\sum_{G}\frac{I^t_{ij}(G)}{\max\bigl(\varepsilon,\;\lvert\Delta^t_j(G)\rvert+\lvert\Delta^t_i(G)\rvert\bigr)},
+\end{equation}
+with $\varepsilon=\MpassEpsilonNs{}\,\mathrm{ns}$. Its denominator is built from two noisy single-pass measurements. It is
+unstable when both passes change the cost by about the noise level, and the floor only prevents division by zero. The paper
+reports this estimator as a diagnostic and does not use it for its conclusions.
+
+\subsection{Commutators}
+
+The commutator of two stages on one kernel is
+\begin{equation}\label{eq:commutator}
+\begin{split}
+  [\pi_i,\pi_j]_J(G)&=\frac{J((\pi_j\circ\pi_i)(G))-J((\pi_i\circ\pi_j)(G))}{J(G)}\\
+  &=\frac{\Delta^t_{ij}(G)-\Delta^t_{ji}(G)}{J(G)}.
+\end{split}
+\end{equation}
+It is zero when the two orders cannot be told apart at the resolution of the measurement.
+
+\subsection{Redundant executions and compile-time waste}
+
+The pass manager runs each pass as a separate execution. An execution is redundant when the IR printed after it is unchanged
+from the IR before it. For a schedule $\sigma$, let $E(\sigma)$ be the number of pass executions and $R(\sigma)$ the number of
+redundant ones. The redundant-pass ratio is
+\begin{equation}\label{eq:rpb}
+  \rho_{\mathrm{RPB}}(\sigma)=\frac{R(\sigma)}{E(\sigma)}.
+\end{equation}
+Let $P(\sigma)$ be the total pass time of the sweep's optimizer run, as its \texttt{-time-passes} report gives it. The pass
+time that redundant executions consume is estimated as
+\begin{equation}\label{eq:waste}
+  \mathcal{W}(\sigma)=P(\sigma)\,\rho_{\mathrm{RPB}}(\sigma).
+\end{equation}
+This estimate assumes that every execution costs the same share of $P(\sigma)$. The telemetry does not record the time of each
+execution, so the estimate is not a measurement of those times. The wall time of the optimizer process is not used, because it
+also includes process start-up, parsing, and trace output.
+
+\subsection{Objectives and the hypervolume}
+
+Each sweep is described by three objectives, all to be maximized. Let $J_0$ be the canonical cost measured in the sweep's own
+window, $T_0$ the canonical text size, and $C_0$ the compile time of the kernel's $-\mathrm{O}0$ sweep. For a sweep with cost
+$J$, text size $T$, and compile time $C$, the objectives are
+\begin{equation}\label{eq:objectives}
+  s=\frac{J_0}{J_0+J},\qquad b=\frac{T_0}{T_0+T},\qquad c=\frac{C_0}{C_0+C},
+\end{equation}
+where $C$ is the optimizer wall time recorded for the sweep. Each objective is $\tfrac12$ when the sweep matches its reference,
+so the reference point of the hypervolume is $\mathbf{r}=(\tfrac12,\tfrac12,\tfrac12)$. A schedule contributes only when it is
+better than the reference on all three objectives. The hypervolume of a finite set $P$ is the Lebesgue measure of
+$\bigcup_{p\in P}[\mathbf{r},p]$.
+
+\subsection{What an UNSAT answer establishes}
+\label{sec:unsat}
+
+The checker encodes a fragment $\mathcal{F}$ of LLVM integer code: the operations \texttt{add}, \texttt{sub}, \texttt{mul},
+\texttt{and}, \texttt{or}, \texttt{xor}, \texttt{shl}, \texttt{lshr}, \texttt{ashr}, \texttt{icmp}, \texttt{select},
+\texttt{zext}, \texttt{sext}, \texttt{trunc}, and \texttt{ret}, on values of at most $64$ bits. Each instruction in
+$\mathcal{F}$ may carry only the flags of Table~\ref{tab:flags}. A block containing any other instruction, operand, or
+flag is not encodable, and the checker reports it as such. Each defined value $v$ is encoded as a pair $(\hat v,\bar v)$
+of a bit-vector and a poison flag. A live-in is a value used but not defined in the block.
+
+\begin{table}[t]
+\centering
+  \caption{Poison conditions of the modeled flags, on defined operands. Each condition is an exact predicate on the
+  bit-vectors, and any instruction in the fragment whose condition holds yields poison.}
+  \label{tab:flags}
+  \begin{tabular}{|l|l|p{0.52\linewidth}|}
+    \hline
+    Instruction & Flag & Poison when \\
+    \hline
+    \texttt{add}, \texttt{sub}, \texttt{mul} & \texttt{nsw} & the exact result lies outside the signed range of the width \\
+    \hline
+    \texttt{add}, \texttt{sub}, \texttt{mul} & \texttt{nuw} & the exact result lies outside the unsigned range of the width \\
+    \hline
+    \texttt{shl} & \texttt{nsw} & the signed value times $2^{\text{amount}}$ lies outside the signed range \\
+    \hline
+    \texttt{shl} & \texttt{nuw} & the unsigned value times $2^{\text{amount}}$ lies outside the unsigned range \\
+    \hline
+    \texttt{lshr}, \texttt{ashr} & \texttt{exact} & any bit shifted out is one \\
+    \hline
+    \texttt{or} & \texttt{disjoint} & the two operands share a set bit \\
+    \hline
+    \texttt{zext} & \texttt{nneg} & the operand is negative as a signed value \\
+    \hline
+    \texttt{trunc} & \texttt{nsw}, \texttt{nuw} & the truncated value, extended back, differs from the operand \\
+    \hline
+    \texttt{icmp} & \texttt{samesign} & the operands have different sign bits \\
+    \hline
+    \hline
+    \texttt{shl}, \texttt{lshr}, \texttt{ashr} & none & the shift amount is at least the bit width \\
+    \hline
+  \end{tabular}
+\end{table}
+
+For a name $x$ defined in both blocks, the refinement query is
+\begin{equation}
+  V_x=\lnot\bar{x}_s\;\wedge\;\bigl(\bar{x}_t\;\vee\;\hat{x}_s\neq\hat{x}_t\bigr),
+\end{equation}
+where the subscripts $s$ and $t$ denote the source and target blocks. A violation is an assignment of non-poison live-in
+values for which the source defines $x$ without poison and the target does not define it equally.
+
+\begin{lemma}[Encoding agreement]
+\label{lem:agreement}
+For each instruction in $\mathcal{F}$, if every operand's encoded pair agrees with the LLVM value and poison of that operand,
+then the instruction's encoded pair agrees with the LLVM result. The value term applies the operation to the bit-vectors. The
+poison term is the disjunction of the operands' poison bits, the shift-amount condition, and the flag conditions of
+Table~\ref{tab:flags}. For \texttt{select}, the poison term depends only on the chosen arm and the condition.
+\end{lemma}
+
+The lemma has two supports. The first is by construction. Each flag condition is an exact predicate on the bit-vectors.
+The overflow predicates widen the operands by one bit for \texttt{add} and \texttt{sub}, and by the full width for
+\texttt{mul}. The second is by exhaustive evaluation. The production encoder is run on every concrete case for widths up to
+\EncodingMaxWidth{}, with every defined value and one poisoned operand, and each result is compared with an independent
+reference written from the poison rules. The check covers \EncodingCases{} cases in \EncodingFamilies{} instruction
+families, with \EncodingMismatches{} disagreements (Table~\ref{tab:encoding}). The exhaustive check covers small widths only,
+so the lemma for larger widths rests on the construction argument.
+
+\input{generated/table_encoding}
+
+\textbf{Soundness of the query.} Let $B_s,B_t\in\mathcal{F}$ have the same live-in names and widths, and let $x$ be a name
+defined in both blocks. Suppose that no assignment of non-poison values to the live-ins satisfies $V_x$. Take an assignment
+under which $B_s$ defines $x$ without poison. By Lemma~\ref{lem:agreement}, applied to the instructions of each block in
+definition order, the encoded pairs of every name agree with LLVM under that assignment. So $\bar{x}_s$ is false, and
+$\hat{x}_s$ is the value of $x$ in $B_s$. If $B_t$ did not define $x$ without poison, or computed a different value, then
+$\bar{x}_t\vee\hat{x}_s\neq\hat{x}_t$ would hold, and the assignment would satisfy $V_x$. That contradicts the assumption.
+So $B_t$ defines $x$ without poison and computes the same value. This argument is the whole soundness claim, and it holds
+only as far as the lemma does.
+
+The argument makes no claim about values defined in only one block, about live-ins that differ, about poison live-ins, or
+about facts that hold only in the surrounding function. The last limit matters in practice. An optimizer may add a
+\texttt{nuw} flag because a range fact from another block rules out wrap-around. A block-local check does not see that
+fact. It then reports a counterexample that the whole function never reaches. We therefore report a SAT answer as a
+candidate counterexample, and we separate it from behavior observed by execution.
+
+\subsection{Exact hypervolume}
+
+\textbf{Exactness of the algorithm.} The hypervolume is computed with exact rational arithmetic over the stored binary64
+objective values. The routine \texttt{hypervolume\_\allowbreak{}3d} first discards the points that are not strictly greater than the
+reference point in every coordinate. A discarded point has a box of zero measure, so discarding it does not change the
+union. The three-dimensional union is then cut into slabs along the third coordinate, and the cross-section of each slab is
+measured with a two-dimensional routine. That routine sorts the points by their first coordinate and adds one strip for each
+point that raises the running maximum of the second coordinate. The volume is the sum of the cross-sections times the slab
+thicknesses. The routine is covered by unit tests that accompany the artifact. The result is exact for the
+stored objective values, not for the measurements behind them, because each objective value is a ratio of measured times.

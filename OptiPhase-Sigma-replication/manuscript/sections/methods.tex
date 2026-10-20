@@ -1,0 +1,123 @@
+\section{Experimental Methodology}
+\label{sec:methods}
+
+\subsection{Benchmarks and canonical IR}
+
+The benchmark set has \NumKernels{} kernels. \NumPolyBenchKernels{} come from PolyBench/C version \texttt{4.\allowbreak{}2.\allowbreak{}1} (beta)
+\cite{pouchet2016polybench}, obtained from its SourceForge mirror, with the archive's \texttt{SHA-256} recorded in the
+manifest. \NumMiBenchKernels{} come from MiBench \cite{guthaus2001mibench}, whose per-category archives are published by the
+University of Michigan. A MiBench kernel is one invocation in the small-dataset script of each program in the automotive,
+network, security, and telecomm categories. The \texttt{security/\allowbreak{}pgp} program ships only a script that depends on a configured
+keyring, so it is excluded. \NumTSVCCoreMarkKernels{} come from the TSVC loops \cite{callahan1988vectorizing}, which are taken
+from the LLVM test suite, and from the standalone kernels of CoreMark \cite{eembccoremark}. Evaluations of vectorizing compilers appear in the literature \cite{maleki2011evaluation}.
+
+Each kernel is compiled to unoptimized bitcode with \texttt{clang -O0 -Xclang -disable-\allowbreak O0-\allowbreak optnone
+-emit-\allowbreak llvm -c}, linked with its own libraries where needed, and canonicalized with
+\texttt{opt -passes=\allowbreak mem2reg,\allowbreak loop-simplify,\allowbreak lcssa}. The sweeps use this canonical form. Section~\ref{sec:results-canonical} measures how the \texttt{mem2reg}-only form, which omits the \texttt{loop-simplify} and \texttt{lcssa} steps, changes the passes. A canonical
+module passes three checks. It must pass \texttt{llvm-dis} validation. Two native runs must produce the same output digest.
+Interpreting the canonical bitcode with \texttt{lli} must give the same digest. All \NumVerifiedKernels{} kernels passed.
+
+Two kernels read uninitialized automatic variables under plain \texttt{-O0} builds, so their native runs disagreed.
+Zero-initializing automatic variables with \texttt{-ftrivial-\allowbreak auto-\allowbreak var-\allowbreak init=\allowbreak zero}
+removed the disagreement, and the flag is applied to every build of those kernels. Two programs print elapsed time. Those
+fields are masked before digests are compared, and nothing else is masked.
+
+\subsection{The sweep campaign}
+
+Each kernel is swept under six regimes, which give \SweepsPerKernel{} sweeps per kernel and \NumSweeps{} in all.
+
+\begin{description}
+  \item[R1] The standard levels \texttt{default<\allowbreak{}O0>} to \texttt{default<\allowbreak{}O3>}, and the size levels. LLVM \LLVMVersion{} rejects
+        the names \texttt{default<\allowbreak{}Os>} and \texttt{default<\allowbreak{}Oz>}, so each size level is \texttt{default<\allowbreak{}O2>} with the
+        \texttt{optsize} or \texttt{minsize} attribute forced on every defined function. This gives \NumOneSweeps{} sweeps.
+  \item[R2] Each single pass of the pass set. \ValidCanonicalPassCount{} of the \CanonicalPassCount{} canonical passes are
+        valid in this LLVM. The other \RejectedCanonicalCount{} are replaced by \SubstituteCount{} substitute passes, chosen
+        by a rule that was fixed before any result was seen. The rule and the whitelist are in the configuration directory. The pass \texttt{unify-loop-exits} crashes \texttt{opt} on two kernels, as described below, so it is replaced by \texttt{newgvn} in its own R2 slot on every kernel before any sweep runs.
+        This gives \NumTwoSweeps{} sweeps.
+  \item[R3] Every ordered pair of \NumThreePasses{} passes, including repeated passes, which gives \NumThreeCombinations{} pairs.
+        This gives \NumThreeSweeps{} sweeps.
+  \item[R4] Prefixes of the \texttt{default<\allowbreak{}O3>} pipeline, cut at the stages of LLVM's own nested text. There are
+        \FourPrefixStages{} prefixes, which gives \NumFourSweeps{} sweeps.
+  \item[R5] Interference around \texttt{loop-vectorize}. The \NumFivePreSequences{} pre-pivot and \NumFivePostSequences{}
+        post-pivot cleanup sequences are listed in Table~\ref{tab:r5seq}. Every combination is run, which gives
+        \NumFiveCombinations{} sweeps per kernel. The regime has \NumFiveSweeps{} sweeps.
+  \item[R6] The \SixSequencesPerKernel{} highest-scoring chains of \SixSequenceLength{} distinct R3 passes. A chain's score is the sum of the instruction-count interaction (Equation~\ref{eq:instcount}), normalized by the canonical instruction count, over its consecutive distinct pairs; the diagonal contributes nothing. Ties are broken lexicographically. There are \SixCandidates{} such chains, and this regime runs after the matrix has been computed from R3. It gives \NumSixSweeps{} sweeps. The matrix is built from exact instruction counts and carries no timing noise, so the chains do not inherit the noise of the timed matrix. R6 is still reported as a secondary result.
+\end{description}
+\input{generated/table_r5_sequences}
+
+\textbf{Deviations from the sweep design.} LLVM \LLVMVersion{} aborts a standalone \texttt{instcombine} on some functions, with a
+fixpoint error after one iteration. For those sweeps the engine retried once with the spelling
+\texttt{instcombine<\allowbreak{}\allowbreak no-verify-fixpoint>}, which removes the abort and nothing else. The default spelling was always
+tried first. Of the \SpellingCandidates{} completed sweeps that contain a standalone \texttt{instcombine}, \SpellingIdentical{}
+produced byte-identical IR under the two spellings, and \SpellingDiffering{} differed. \RetriedSweeps{} sweeps were run with the
+retry spelling, and the recorded pass sequence shows it.
+
+Separately, \texttt{unify-loop-exits} terminated \texttt{opt} with a segmentation fault on \ArchivedCrashes{} gsm kernels in an earlier campaign with the same pass set. The archived records of that campaign are kept with the other data, and their results are not reported. The sweep plan replaces that pass by \texttt{newgvn} in its R2 slot on every kernel before any sweep runs, so no R2 sweep crashes. The variant check reproduces the archived crashes on the \texttt{mem2reg}-only module, and it runs the replacement on the same module: \ArchivedCrashesReproduced{} of \ArchivedCrashes{} crashes reproduced, and \ArchivedReplacementRuns{} replacement runs succeeded.
+
+\subsection{Measured quantities}
+
+Each variant is optimized twice. The traced run uses \texttt{-print-changed}, \texttt{-debug-pass-manager}, and \texttt{-time-passes}, and it gives the redundancy counts and the instruction count. The clean run uses only \texttt{-time-passes}, so its wall time and pass time exclude the serialization that \texttt{-print-changed} performs. The two runs must produce identical IR, and a sweep that does not is recorded as failed. The sweep then reads four quantities. The instruction count $N$ is the number of instructions of the optimized module, counted on its listing before lowering. The pass time $P$ is the total in the \texttt{-time-passes} report of the clean run. The compile time $C$ is the wall time of the clean \texttt{opt} process, measured around it. The sweep then lowers the optimized IR with \texttt{llc -O0 -filetype=obj}, links the object with the benchmark's libraries, and measures the \texttt{\_\allowbreak{}\_\allowbreak{}text} section with \texttt{llvm-size -m}. The lowering level therefore affects the timing and the text size, and not the instruction count. The number of vectorized loops is counted from the \texttt{llvm.\allowbreak{}loop.\allowbreak{}isvectorized} metadata of the optimized module, because the remark stream can change the optimization that it reports on. The telemetry column named \texttt{scev\_\allowbreak{}invalidation\_\allowbreak{}count} is a proxy and is not used in the results.
+
+\subsection{IR-level checks}
+\label{sec:methods-ir}
+
+Each pass of the R3 set is applied to the canonical module, and then a second time to the result, with the same stage text
+that the sweeps use. The check is run on two canonical forms: the sweep canonical module, which applies \texttt{mem2reg}, \texttt{loop-simplify}, and \texttt{lcssa}, and the \texttt{mem2reg}-only module, which omits the \texttt{loop-simplify} and \texttt{lcssa} steps, rebuilt from each kernel's linked bitcode. For each form the check records whether the first application changes the
+bitcode, and whether the second application changes it again. A kernel where the second application leaves the bitcode unchanged
+is one where that pass is idempotent. The \texttt{instcombine} stage falls back to the spelling that the sweeps used after its
+fixpoint abort. The checks are reported in Table~\ref{tab:passchecks}.
+
+\subsection{Timing}
+\label{sec:timing}
+
+Timing is wall-clock time. A sweep's binary and its
+canonical binary are timed in one exclusive window. The order alternates between sweeps. Each binary receives \WarmupRuns{}
+warm-up runs and then \TimedRuns{} timed runs, and its cost is the median of the timed runs. The canonical median measured in
+the same window is the reference $J_0$ for that sweep. Compilation runs under a readers--writer gate, so no compile job overlaps
+a timed window.
+
+The telemetry column for the cost is named \texttt{exec\_\allowbreak{}cycles\_\allowbreak{}median} to keep the schema fixed, but its values are
+nanoseconds. Timing noise was measured on the sweeps whose optimized IR is identical to the canonical IR. Provided that lowering
+is deterministic, their paired deltas measure noise rather than code. Over \NoiseSweeps{} such sweeps (\NoiseIdenticalPct{}\% of
+the campaign), the median absolute paired delta was \NoiseMedianAbsPct{}\% of $J_0$, and the ninety-fifth percentile was
+\NoiseNinetyFifthAbsPct{}\%. These are descriptive statistics, and they set the noise floor for every timing result.
+
+\subsection{Refinement checks}
+
+For each sweep, the canonical IR and the optimized IR are read as LLVM textual listings. Each function is matched by name,
+and each block by label. A block pair is compared when both blocks lie in the fragment of Section~\ref{sec:unsat} and have the
+same live-in names and widths. Every name defined in both blocks is checked with the query of Section~\ref{sec:unsat}, with a
+solver timeout of \ZThreeTimeoutSeconds{} seconds per name. The solver is Z3 \cite{demoura2008z3}. A sweep's status is SAT if any
+name is violated, UNKNOWN if any query times out, UNSAT if every compared name refines, and not comparable if no name was
+compared. A block pair that falls outside the fragment is counted as not encodable and is never dropped silently.
+
+For the Pareto-front sweeps, each query is also written as an \texttt{SMT-LIB 2} block and re-checked by the z3 command-line
+binary. That check is independent of the Python verdict, and it is not a separate proof. The optimized IR is rebuilt from the
+canonical bitcode by rerunning \texttt{opt} with the sweep's arguments and no traces. The rebuilt IR must have the same
+instruction count as the timed sweep. If it does not, the sweep is recorded as IR\_NOT\_REPRODUCED and receives no refinement
+status. An ERROR status means that the check itself failed, for example because a tool exited with an error. Both outcomes are
+reported in the results instead of being excluded.
+
+The encoder models each flag in Table~\ref{tab:flags}, and a flag outside that table makes its block not encodable. Its agreement
+with an independent reference is checked exhaustively for widths up to \EncodingMaxWidth{} bits (Section~\ref{sec:framework}).
+
+\subsection{Analysis}
+
+Every reported statistic is a deterministic function of the stored telemetry and of the IR-level checks. The instruction-count
+interactions are exact for each kernel. Their standard errors across kernels measure how much the kernels differ, and they are
+not noise estimates. An entry is marked when its mean exceeds two standard errors across kernels, which is a consistency mark,
+and the paper reports no hypothesis test. The timing interactions are divided by the canonical time and compared with the noise
+floor of Section~\ref{sec:timing}. Shares, percentiles, the commutator formula, exact hypervolumes, and Shannon entropies in bits
+are computed as before.
+
+A kernel's timing noise is estimated from its identical-IR sweeps as $1.4826$ times the median absolute paired delta, which is
+the standard deviation of a zero-centered normal distribution with that median. The noise-aware variant of the ratio estimator
+floors each kernel's denominator at twice that noise.
+
+\textbf{Lowering pilot.} A pilot lowers four kernels and four passes with \texttt{llc} at
+\texttt{-O2} and at \texttt{-O0}. The pilot is separate
+from the sweep telemetry, and Section~\ref{sec:threats} reports it.
+
+\textbf{Software.} The software is Python \texttt{3.\allowbreak{}12} with \texttt{z3-solver 5.\allowbreak{}3.\allowbreak{}0.\allowbreak{}0}, LLVM \LLVMVersion{} from Homebrew, and
+tectonic for the manuscript. Package versions
+are pinned in \texttt{requirements.\allowbreak{}txt}, and every table in the paper is generated from the stored outputs.

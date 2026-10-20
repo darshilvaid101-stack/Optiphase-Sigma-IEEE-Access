@@ -1,0 +1,144 @@
+{
+  "families": {
+    "add": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "add nsw": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "add nsw nuw": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "add nuw": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "and": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "ashr": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "ashr exact": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "icmp": {
+      "cases": 4040,
+      "mismatches": 0
+    },
+    "icmp samesign": {
+      "cases": 4040,
+      "mismatches": 0
+    },
+    "lshr": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "lshr exact": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "mul": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "mul nsw": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "mul nsw nuw": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "mul nuw": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "or": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "or disjoint": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "select": {
+      "cases": 1212,
+      "mismatches": 0
+    },
+    "sext": {
+      "cases": 28,
+      "mismatches": 0
+    },
+    "shl": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "shl nsw": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "shl nsw nuw": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "shl nuw": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "sub": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "sub nsw": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "sub nsw nuw": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "sub nuw": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "trunc": {
+      "cases": 74,
+      "mismatches": 0
+    },
+    "trunc nsw": {
+      "cases": 74,
+      "mismatches": 0
+    },
+    "trunc nsw nuw": {
+      "cases": 74,
+      "mismatches": 0
+    },
+    "trunc nuw": {
+      "cases": 74,
+      "mismatches": 0
+    },
+    "xor": {
+      "cases": 404,
+      "mismatches": 0
+    },
+    "zext": {
+      "cases": 28,
+      "mismatches": 0
+    },
+    "zext nneg": {
+      "cases": 28,
+      "mismatches": 0
+    }
+  },
+  "first_mismatches": [],
+  "max_width": 4,
+  "total_cases": 19368,
+  "total_mismatches": 0
+}

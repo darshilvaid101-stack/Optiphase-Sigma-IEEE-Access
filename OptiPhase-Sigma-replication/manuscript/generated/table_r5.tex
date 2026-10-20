@@ -1,0 +1,33 @@
+\begin{table}[t]
+\centering
+\caption{Interference of cleanup sequences with \texttt{loop-vectorize}, as a percentage of the canonical cost. Mean, standard error, and median are over kernels. The last column counts kernels whose effect exceeds two noise standard deviations of that kernel.}
+\label{tab:r5}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|l|l|r|r|r|r|}
+\hline
+Position & Sequence & Mean (\%) & SE (\%) & Median (\%) & Beyond noise \\
+\hline
+after & dce & +0.11 & 0.24 & -0.07 & 6 \\
+\hline
+after & instcombine & -2.75 & 1.13 & -0.98 & 23 \\
+\hline
+after & jump-threading & -0.35 & 0.98 & +0.23 & 28 \\
+\hline
+after & simplifycfg & -2.14 & 1.69 & -0.01 & 38 \\
+\hline
+before & instcombine & -1.79 & 0.65 & -0.77 & 24 \\
+\hline
+before & instcombine+jump-threading & -0.48 & 1.01 & +0.17 & 32 \\
+\hline
+before & jump-threading & -0.11 & 0.96 & -0.48 & 37 \\
+\hline
+before & jump-threading+simplifycfg & -1.92 & 1.56 & -0.21 & 32 \\
+\hline
+before & simplifycfg & -1.95 & 1.65 & -0.02 & 29 \\
+\hline
+before & simplifycfg+instcombine & -2.29 & 1.69 & -0.33 & 34 \\
+\hline
+before & simplifycfg+jump-threading & -2.38 & 1.63 & -0.30 & 35 \\
+\hline
+\end{tabular}
+\end{table}

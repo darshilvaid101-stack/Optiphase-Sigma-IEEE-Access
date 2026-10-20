@@ -1,0 +1,35 @@
+\begin{table}[t]
+\centering
+\caption{Largest entries of the ratio estimator, $\mathbf{M}^{\mathrm{ratio}}_{\mathrm{pass}}$ (Equation~\ref{eq:ratio}), with standard errors. An entry is marked when its magnitude exceeds two standard errors.}
+\label{tab:mpass}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|l|l|r|r|l|}
+\hline
+First pass & Second pass & Mean & SE & Beyond 2 SE \\
+\hline
+reassociate & reassociate & -3.7198 & 3.6405 & no \\
+\hline
+instcombine & loop-rotate & -2.7512 & 2.7181 & no \\
+\hline
+loop-vectorize & loop-vectorize & -2.2911 & 2.3976 & no \\
+\hline
+slp-vectorizer & slp-vectorizer & -1.2466 & 0.8554 & no \\
+\hline
+instcombine & dce & -0.9200 & 0.9568 & no \\
+\hline
+loop-rotate & gvn & -0.6911 & 0.2307 & yes \\
+\hline
+instcombine & early-cse & -0.6766 & 0.5147 & no \\
+\hline
+loop-rotate & jump-threading & -0.6730 & 0.1786 & yes \\
+\hline
+jump-threading & loop-rotate & -0.6389 & 0.1667 & yes \\
+\hline
+gvn & loop-rotate & -0.6141 & 0.2177 & yes \\
+\hline
+instcombine & dse & -0.5888 & 0.3660 & no \\
+\hline
+reassociate & licm & +0.5722 & 0.3749 & no \\
+\hline
+\end{tabular}
+\end{table}

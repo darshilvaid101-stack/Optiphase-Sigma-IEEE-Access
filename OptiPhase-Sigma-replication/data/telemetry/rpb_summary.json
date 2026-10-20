@@ -1,0 +1,276 @@
+{
+  "by_regime": {
+    "R1": {
+      "sweeps": 360,
+      "mean_rpb_ratio": 0.8436247269588644,
+      "total_waste_cycle_ms": 11004.117053371347
+    },
+    "R2": {
+      "sweeps": 5040,
+      "mean_rpb_ratio": 0.6220811467974374,
+      "total_waste_cycle_ms": 62837.884515826954
+    },
+    "R3": {
+      "sweeps": 13500,
+      "mean_rpb_ratio": 0.6294714773159964,
+      "total_waste_cycle_ms": 187022.8678250839
+    },
+    "R4": {
+      "sweeps": 3900,
+      "mean_rpb_ratio": 0.7452394578692867,
+      "total_waste_cycle_ms": 73267.06015672696
+    },
+    "R5": {
+      "sweeps": 2400,
+      "mean_rpb_ratio": 0.5680063586268678,
+      "total_waste_cycle_ms": 32090.026831396997
+    },
+    "R6": {
+      "sweeps": 3600,
+      "mean_rpb_ratio": 0.5593346766250024,
+      "total_waste_cycle_ms": 47748.87851923547
+    }
+  },
+  "pareto_per_kernel": {
+    "polybench/correlation": {
+      "front_size": 30,
+      "hypervolume": 0.0
+    },
+    "polybench/covariance": {
+      "front_size": 37,
+      "hypervolume": 3.4947383509801545e-06
+    },
+    "polybench/gemm": {
+      "front_size": 39,
+      "hypervolume": 2.4055712063877643e-06
+    },
+    "polybench/gemver": {
+      "front_size": 36,
+      "hypervolume": 7.752511335136696e-06
+    },
+    "polybench/gesummv": {
+      "front_size": 23,
+      "hypervolume": 2.228060467644847e-05
+    },
+    "polybench/symm": {
+      "front_size": 20,
+      "hypervolume": 9.066372521989363e-05
+    },
+    "polybench/syr2k": {
+      "front_size": 28,
+      "hypervolume": 3.089959668325692e-06
+    },
+    "polybench/syrk": {
+      "front_size": 19,
+      "hypervolume": 6.322089539721421e-06
+    },
+    "polybench/trmm": {
+      "front_size": 23,
+      "hypervolume": 1.1640705602415947e-05
+    },
+    "polybench/2mm": {
+      "front_size": 45,
+      "hypervolume": 0.0
+    },
+    "polybench/3mm": {
+      "front_size": 36,
+      "hypervolume": 1.0109333649372932e-06
+    },
+    "polybench/atax": {
+      "front_size": 37,
+      "hypervolume": 6.035475493925676e-09
+    },
+    "polybench/bicg": {
+      "front_size": 28,
+      "hypervolume": 6.66197229394792e-07
+    },
+    "polybench/doitgen": {
+      "front_size": 36,
+      "hypervolume": 1.1926886746645553e-05
+    },
+    "polybench/mvt": {
+      "front_size": 32,
+      "hypervolume": 1.8931724786041296e-05
+    },
+    "polybench/cholesky": {
+      "front_size": 37,
+      "hypervolume": 9.087258961581352e-05
+    },
+    "polybench/durbin": {
+      "front_size": 25,
+      "hypervolume": 0.0
+    },
+    "polybench/gramschmidt": {
+      "front_size": 34,
+      "hypervolume": 1.3099923029568174e-07
+    },
+    "polybench/lu": {
+      "front_size": 39,
+      "hypervolume": 1.596182731980587e-06
+    },
+    "polybench/ludcmp": {
+      "front_size": 38,
+      "hypervolume": 2.4016007400582917e-06
+    },
+    "polybench/trisolv": {
+      "front_size": 32,
+      "hypervolume": 1.5800598997130967e-06
+    },
+    "polybench/deriche": {
+      "front_size": 27,
+      "hypervolume": 2.193307048153851e-06
+    },
+    "polybench/floyd-warshall": {
+      "front_size": 22,
+      "hypervolume": 3.063217155441028e-06
+    },
+    "polybench/nussinov": {
+      "front_size": 21,
+      "hypervolume": 7.329837518511311e-05
+    },
+    "polybench/adi": {
+      "front_size": 32,
+      "hypervolume": 3.279545312004466e-06
+    },
+    "polybench/fdtd-2d": {
+      "front_size": 55,
+      "hypervolume": 4.052972253755514e-06
+    },
+    "polybench/heat-3d": {
+      "front_size": 51,
+      "hypervolume": 8.282627118908418e-05
+    },
+    "polybench/jacobi-1d": {
+      "front_size": 26,
+      "hypervolume": 1.152477619483965e-06
+    },
+    "polybench/jacobi-2d": {
+      "front_size": 47,
+      "hypervolume": 5.776897589734038e-05
+    },
+    "polybench/seidel-2d": {
+      "front_size": 20,
+      "hypervolume": 4.831919847275159e-05
+    },
+    "mibench/bitcount": {
+      "front_size": 30,
+      "hypervolume": 0.0
+    },
+    "mibench/basicmath": {
+      "front_size": 25,
+      "hypervolume": 2.947990267839803e-06
+    },
+    "mibench/qsort": {
+      "front_size": 17,
+      "hypervolume": 0.00012884160160619705
+    },
+    "mibench/susan-smoothing": {
+      "front_size": 29,
+      "hypervolume": 0.0
+    },
+    "mibench/susan-edges": {
+      "front_size": 22,
+      "hypervolume": 0.0
+    },
+    "mibench/susan-corners": {
+      "front_size": 26,
+      "hypervolume": 1.1858986757488757e-05
+    },
+    "mibench/dijkstra": {
+      "front_size": 18,
+      "hypervolume": 1.2029640371148286e-05
+    },
+    "mibench/patricia": {
+      "front_size": 27,
+      "hypervolume": 9.974080353709564e-05
+    },
+    "mibench/blowfish-encode": {
+      "front_size": 31,
+      "hypervolume": 1.0716280339919836e-05
+    },
+    "mibench/blowfish-decode": {
+      "front_size": 27,
+      "hypervolume": 8.613665567247266e-06
+    },
+    "mibench/rijndael-encode": {
+      "front_size": 32,
+      "hypervolume": 6.090698109845313e-05
+    },
+    "mibench/rijndael-decode": {
+      "front_size": 30,
+      "hypervolume": 1.6244712271811433e-05
+    },
+    "mibench/sha": {
+      "front_size": 17,
+      "hypervolume": 0.00029196442838510324
+    },
+    "mibench/crc32": {
+      "front_size": 22,
+      "hypervolume": 1.4642769509906892e-07
+    },
+    "mibench/fft-forward": {
+      "front_size": 19,
+      "hypervolume": 7.65232206612523e-06
+    },
+    "mibench/fft-inverse": {
+      "front_size": 29,
+      "hypervolume": 4.083676328691158e-05
+    },
+    "mibench/adpcm-rawcaudio": {
+      "front_size": 18,
+      "hypervolume": 0.0020443679773979526
+    },
+    "mibench/adpcm-rawdaudio": {
+      "front_size": 9,
+      "hypervolume": 0.0015623671493454159
+    },
+    "mibench/gsm-toast": {
+      "front_size": 32,
+      "hypervolume": 0.0
+    },
+    "mibench/gsm-untoast": {
+      "front_size": 27,
+      "hypervolume": 8.8933868737311e-06
+    },
+    "tsvc/s000": {
+      "front_size": 47,
+      "hypervolume": 0.0
+    },
+    "tsvc/s111": {
+      "front_size": 35,
+      "hypervolume": 0.0
+    },
+    "tsvc/s271": {
+      "front_size": 48,
+      "hypervolume": 1.0071042327868886e-08
+    },
+    "tsvc/s311": {
+      "front_size": 43,
+      "hypervolume": 8.322896483260862e-05
+    },
+    "tsvc/s321": {
+      "front_size": 22,
+      "hypervolume": 1.3027508756916137e-05
+    },
+    "coremark/core_bench_list": {
+      "front_size": 22,
+      "hypervolume": 0.0
+    },
+    "coremark/core_bench_matrix": {
+      "front_size": 28,
+      "hypervolume": 0.0
+    },
+    "coremark/core_bench_state": {
+      "front_size": 30,
+      "hypervolume": 2.6818520386648607e-06
+    },
+    "coremark/crcu8": {
+      "front_size": 32,
+      "hypervolume": 2.9825026219395636e-05
+    },
+    "coremark/matrix_mul_matrix_bitextract": {
+      "front_size": 20,
+      "hypervolume": 3.7514210506279393e-05
+    }
+  }
+}

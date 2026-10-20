@@ -1,0 +1,22 @@
+{
+  "rule": "A canonical R2 pass that makes opt terminate with a signal, with no diagnostic, on a kernel is not run on that kernel. Its sweep is recorded as crashed in the audit. The first whitelisted pass after the eight substitutes that LLVM 23 accepts takes its place, under the next free R2 index (90). This is the same whitelist order used for the substitutes, so the R2 set keeps 84 passes per kernel.",
+  "evidence": "Reproduced with a standalone run of the pass alone on the canonical module: exit status 139 (SIGSEGV) for unify-loop-exits on both kernels. The replacement was run alone on both kernels and exits with status 0.",
+  "replacements": [
+    {
+      "crashed_sweep_id": "K48-R2-065",
+      "kernel_id": "mibench/gsm-toast",
+      "crashed_pass": "unify-loop-exits",
+      "replacement_sweep_id": "K48-R2-090",
+      "replacement_pass": "newgvn",
+      "replacement_stage": "function(newgvn)"
+    },
+    {
+      "crashed_sweep_id": "K49-R2-065",
+      "kernel_id": "mibench/gsm-untoast",
+      "crashed_pass": "unify-loop-exits",
+      "replacement_sweep_id": "K49-R2-090",
+      "replacement_pass": "newgvn",
+      "replacement_stage": "function(newgvn)"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+project:
+  name: "OptiPhase-Sigma"
+  codename: "OP-Sigma"
+  investigators:
+    - name: "Devarsh Patel"
+      institution: "School of Computer Science & Engineering, Vellore Institute of Technology, India"
+    - name: "Darshil Vaid"
+      institution: "School of Computer Science & Engineering, Vellore Institute of Technology, India"
+  target_venues:
+    - "ACM Transactions on Architecture and Code Optimization (TACO)"
+    - "The Journal of Supercomputing (Springer Nature)"
+
+paths:
+  root: "."
+  venv_python: ".venv/bin/python"
+  llvm_bin_dir: "/opt/homebrew/opt/llvm/bin"
+  clang: "/opt/homebrew/opt/llvm/bin/clang"
+  opt: "/opt/homebrew/opt/llvm/bin/opt"
+  llvm_dis: "/opt/homebrew/opt/llvm/bin/llvm-dis"
+  llvm_size: "/opt/homebrew/opt/llvm/bin/llvm-size"
+  llvm_mca: "/opt/homebrew/opt/llvm/bin/llvm-mca"
+  llvm_link: "/opt/homebrew/opt/llvm/bin/llvm-link"
+  lli: "/opt/homebrew/opt/llvm/bin/lli"
+  llc: "/opt/homebrew/opt/llvm/bin/llc"
+  z3: "/opt/homebrew/bin/z3"
+  tectonic: "/opt/homebrew/bin/tectonic"
+
+execution:
+  cpu_cores: 8
+  random_seed: 42
+  z3_timeout_ms: 5000
+  llvm_mca_rarch: 16
+  vector_lane_widths: [4, 8]
+  spill_penalty_lambda: 8.0
+  pareto_reference_point: [0.5, 0.5, 0.5]
+  chebyshev_eta: 0.01
+
+sweeps:
+  total_sweeps: 28800
+  kernels_count: 60
+  sweeps_per_kernel: 480
+  regimes:
+    R1_baselines: 360
+    R2_single_pass: 5040
+    R3_pairwise_mpass: 13500
+    R4_prefix_rpb: 3900
+    R5_dpi_vectorization: 2400
+    R6_pareto_synthesis: 3600

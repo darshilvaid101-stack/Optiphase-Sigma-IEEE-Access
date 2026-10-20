@@ -1,0 +1,35 @@
+\begin{table}[t]
+\centering
+\caption{Largest mean Lie-bracket commutators over kernels, in units of the canonical cost, with standard errors.}
+\label{tab:lie}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|l|l|r|r|l|}
+\hline
+First pass & Second pass & Mean & SE & Beyond 2 SE \\
+\hline
+loop-rotate & loop-vectorize & -0.0279 & 0.0131 & yes \\
+\hline
+loop-vectorize & loop-rotate & +0.0279 & 0.0131 & yes \\
+\hline
+early-cse & loop-rotate & +0.0153 & 0.0055 & yes \\
+\hline
+loop-rotate & early-cse & -0.0153 & 0.0055 & yes \\
+\hline
+licm & loop-rotate & -0.0147 & 0.0070 & yes \\
+\hline
+loop-rotate & licm & +0.0147 & 0.0070 & yes \\
+\hline
+simplifycfg & indvars & -0.0138 & 0.0092 & no \\
+\hline
+indvars & simplifycfg & +0.0138 & 0.0092 & no \\
+\hline
+gvn & licm & +0.0133 & 0.0061 & yes \\
+\hline
+licm & gvn & -0.0133 & 0.0061 & yes \\
+\hline
+instcombine & loop-vectorize & +0.0090 & 0.0070 & no \\
+\hline
+loop-vectorize & instcombine & -0.0090 & 0.0070 & no \\
+\hline
+\end{tabular}
+\end{table}

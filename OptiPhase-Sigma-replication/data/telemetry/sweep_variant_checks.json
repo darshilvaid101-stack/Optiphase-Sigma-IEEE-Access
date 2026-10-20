@@ -1,0 +1,43 @@
+{
+  "crashes": [
+    {
+      "kernel_id": "mibench/gsm-toast",
+      "pass": "unify-loop-exits",
+      "reproduced": true,
+      "returncode": -11,
+      "sweep_id": "K48-R2-065"
+    },
+    {
+      "kernel_id": "mibench/gsm-untoast",
+      "pass": "unify-loop-exits",
+      "reproduced": true,
+      "returncode": -11,
+      "sweep_id": "K49-R2-065"
+    }
+  ],
+  "instcombine_spelling": {
+    "candidates": 3488,
+    "differing": [],
+    "differing_count": 0,
+    "identical": 3488,
+    "run_failure_count": 0,
+    "run_failures": []
+  },
+  "passed": true,
+  "replacements": [
+    {
+      "kernel_id": "mibench/gsm-toast",
+      "pass": "newgvn",
+      "returncode": 0,
+      "runs": true,
+      "sweep_id": "K48-R2-090"
+    },
+    {
+      "kernel_id": "mibench/gsm-untoast",
+      "pass": "newgvn",
+      "returncode": 0,
+      "runs": true,
+      "sweep_id": "K49-R2-090"
+    }
+  ]
+}

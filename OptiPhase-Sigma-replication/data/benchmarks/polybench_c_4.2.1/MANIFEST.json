@@ -1,0 +1,846 @@
+{
+  "suite": "PolyBench/C",
+  "requiredVersion": "4.2.1",
+  "resolvedVersion": "4.2.1 (beta)",
+  "versionEvidence": [
+    "README header reads: PolyBench/C 4.2.1 (beta)",
+    "README has a section New in 4.2.1-beta",
+    "CHANGELOG has a section titled Changes in 4.2.1"
+  ],
+  "sourceUrl": "https://sourceforge.net/projects/polybench/files/polybench-c-4.2.1-beta.tar.gz/download",
+  "sourceUrlsAttempted": [
+    {
+      "url": "https://web.cse.ohio-state.edu/~pouchet.2/software/polybench/download/polybench-c-4.2.1-beta.tar.gz",
+      "result": "HTTP 301 redirect to https://cse.osu.edu/directory, file not served"
+    },
+    {
+      "url": "https://sourceforge.net/projects/polybench/files/polybench-c-4.2.1-beta.tar.gz/download",
+      "result": "HTTP 200 on the second attempt; the first attempt returned HTTP 504 from a SourceForge mirror"
+    }
+  ],
+  "archive": {
+    "name": "polybench-c-4.2.1-beta.tar.gz",
+    "sizeBytes": 297237,
+    "sha256": "426519ee8443a5f2175de6a3e9328cda8917a5e33053d0e8f59855ab56d689a4",
+    "entryCount": 119,
+    "extractedRoot": "polybench-c-4.2.1-beta"
+  },
+  "retrievedAtUtc": "2026-10-15T17:41:20Z",
+  "repoRoot": "<repository root>",
+  "targetDir": "data/benchmarks/polybench_c_4.2.1",
+  "kernelCount": 30,
+  "kernelSelection": [
+    "2mm",
+    "3mm",
+    "adi",
+    "atax",
+    "bicg",
+    "cholesky",
+    "correlation",
+    "covariance",
+    "deriche",
+    "doitgen",
+    "durbin",
+    "fdtd-2d",
+    "floyd-warshall",
+    "gemm",
+    "gemver",
+    "gesummv",
+    "gramschmidt",
+    "heat-3d",
+    "jacobi-1d",
+    "jacobi-2d",
+    "lu",
+    "ludcmp",
+    "mvt",
+    "nussinov",
+    "seidel-2d",
+    "symm",
+    "syr2k",
+    "syrk",
+    "trisolv",
+    "trmm"
+  ],
+  "kernels": [
+    {
+      "name": "correlation",
+      "group": "datamining/correlation",
+      "path": "datamining/correlation/correlation.c"
+    },
+    {
+      "name": "covariance",
+      "group": "datamining/covariance",
+      "path": "datamining/covariance/covariance.c"
+    },
+    {
+      "name": "gemm",
+      "group": "linear-algebra/blas/gemm",
+      "path": "linear-algebra/blas/gemm/gemm.c"
+    },
+    {
+      "name": "gemver",
+      "group": "linear-algebra/blas/gemver",
+      "path": "linear-algebra/blas/gemver/gemver.c"
+    },
+    {
+      "name": "gesummv",
+      "group": "linear-algebra/blas/gesummv",
+      "path": "linear-algebra/blas/gesummv/gesummv.c"
+    },
+    {
+      "name": "symm",
+      "group": "linear-algebra/blas/symm",
+      "path": "linear-algebra/blas/symm/symm.c"
+    },
+    {
+      "name": "syr2k",
+      "group": "linear-algebra/blas/syr2k",
+      "path": "linear-algebra/blas/syr2k/syr2k.c"
+    },
+    {
+      "name": "syrk",
+      "group": "linear-algebra/blas/syrk",
+      "path": "linear-algebra/blas/syrk/syrk.c"
+    },
+    {
+      "name": "trmm",
+      "group": "linear-algebra/blas/trmm",
+      "path": "linear-algebra/blas/trmm/trmm.c"
+    },
+    {
+      "name": "2mm",
+      "group": "linear-algebra/kernels/2mm",
+      "path": "linear-algebra/kernels/2mm/2mm.c"
+    },
+    {
+      "name": "3mm",
+      "group": "linear-algebra/kernels/3mm",
+      "path": "linear-algebra/kernels/3mm/3mm.c"
+    },
+    {
+      "name": "atax",
+      "group": "linear-algebra/kernels/atax",
+      "path": "linear-algebra/kernels/atax/atax.c"
+    },
+    {
+      "name": "bicg",
+      "group": "linear-algebra/kernels/bicg",
+      "path": "linear-algebra/kernels/bicg/bicg.c"
+    },
+    {
+      "name": "doitgen",
+      "group": "linear-algebra/kernels/doitgen",
+      "path": "linear-algebra/kernels/doitgen/doitgen.c"
+    },
+    {
+      "name": "mvt",
+      "group": "linear-algebra/kernels/mvt",
+      "path": "linear-algebra/kernels/mvt/mvt.c"
+    },
+    {
+      "name": "cholesky",
+      "group": "linear-algebra/solvers/cholesky",
+      "path": "linear-algebra/solvers/cholesky/cholesky.c"
+    },
+    {
+      "name": "durbin",
+      "group": "linear-algebra/solvers/durbin",
+      "path": "linear-algebra/solvers/durbin/durbin.c"
+    },
+    {
+      "name": "gramschmidt",
+      "group": "linear-algebra/solvers/gramschmidt",
+      "path": "linear-algebra/solvers/gramschmidt/gramschmidt.c"
+    },
+    {
+      "name": "lu",
+      "group": "linear-algebra/solvers/lu",
+      "path": "linear-algebra/solvers/lu/lu.c"
+    },
+    {
+      "name": "ludcmp",
+      "group": "linear-algebra/solvers/ludcmp",
+      "path": "linear-algebra/solvers/ludcmp/ludcmp.c"
+    },
+    {
+      "name": "trisolv",
+      "group": "linear-algebra/solvers/trisolv",
+      "path": "linear-algebra/solvers/trisolv/trisolv.c"
+    },
+    {
+      "name": "deriche",
+      "group": "medley/deriche",
+      "path": "medley/deriche/deriche.c"
+    },
+    {
+      "name": "floyd-warshall",
+      "group": "medley/floyd-warshall",
+      "path": "medley/floyd-warshall/floyd-warshall.c"
+    },
+    {
+      "name": "nussinov",
+      "group": "medley/nussinov",
+      "path": "medley/nussinov/nussinov.c"
+    },
+    {
+      "name": "adi",
+      "group": "stencils/adi",
+      "path": "stencils/adi/adi.c"
+    },
+    {
+      "name": "fdtd-2d",
+      "group": "stencils/fdtd-2d",
+      "path": "stencils/fdtd-2d/fdtd-2d.c"
+    },
+    {
+      "name": "heat-3d",
+      "group": "stencils/heat-3d",
+      "path": "stencils/heat-3d/heat-3d.c"
+    },
+    {
+      "name": "jacobi-1d",
+      "group": "stencils/jacobi-1d",
+      "path": "stencils/jacobi-1d/jacobi-1d.c"
+    },
+    {
+      "name": "jacobi-2d",
+      "group": "stencils/jacobi-2d",
+      "path": "stencils/jacobi-2d/jacobi-2d.c"
+    },
+    {
+      "name": "seidel-2d",
+      "group": "stencils/seidel-2d",
+      "path": "stencils/seidel-2d/seidel-2d.c"
+    }
+  ],
+  "keptFileCount": 72,
+  "keptFiles": [
+    {
+      "path": "datamining/correlation/correlation.c",
+      "sha256": "f35de426846bd8ee6ebb77d4c96176b3cf1dbeafd4efe2d19d06f74043ce5d24"
+    },
+    {
+      "path": "datamining/correlation/correlation.h",
+      "sha256": "a01fbab134e2b8fcd9591f5349551dadc8f8c9814d6be03901d1977c156cca6f"
+    },
+    {
+      "path": "datamining/covariance/covariance.c",
+      "sha256": "a386edb7635c8d991413f38417b6c7cde8a2db75d95c3cf93f28440165cf710d"
+    },
+    {
+      "path": "datamining/covariance/covariance.h",
+      "sha256": "dd330a7bfc8d88c85d56de14cad9854f9e59b28e1f1e8bcc16e173ab0f201b5f"
+    },
+    {
+      "path": "linear-algebra/blas/gemm/gemm.c",
+      "sha256": "1568eec3636bbca13d576643eb9d44b280fb37409679a747ae89123e5f310acc"
+    },
+    {
+      "path": "linear-algebra/blas/gemm/gemm.h",
+      "sha256": "69147d88e4d87e4e5e0be1fdfa0e766863072bc23aa73739a9d3fc378304ba52"
+    },
+    {
+      "path": "linear-algebra/blas/gemver/gemver.c",
+      "sha256": "fc130ebf4e632bfb24dabe9f61d9184a05ad8618551bef7533d4a903caee4147"
+    },
+    {
+      "path": "linear-algebra/blas/gemver/gemver.h",
+      "sha256": "bd216c5ae35e62511e2a421c744996870eaf0250e32079131b73e98f25211cd5"
+    },
+    {
+      "path": "linear-algebra/blas/gesummv/gesummv.c",
+      "sha256": "0500b876ed3d2058cdea353119d0e8e9d814e8c531c9437e069121d13e80231f"
+    },
+    {
+      "path": "linear-algebra/blas/gesummv/gesummv.h",
+      "sha256": "b3482553e2e74e9ff6f1840d71e0c00b1e7ed40e5f3d39784848757fe2402ec3"
+    },
+    {
+      "path": "linear-algebra/blas/symm/symm.c",
+      "sha256": "cd5355043f9a4b7300886fbfb1d25720456f6f65375838353fd633b5ece27814"
+    },
+    {
+      "path": "linear-algebra/blas/symm/symm.h",
+      "sha256": "daf3694a58a9497b70cf178952e5a2c755ce3b84b0d76fa2c101e1ae067e1c80"
+    },
+    {
+      "path": "linear-algebra/blas/syr2k/syr2k.c",
+      "sha256": "4d7a77f3516a1f97f551582fdb6d5c6aedf7a515bc8329bc041d8161440b2663"
+    },
+    {
+      "path": "linear-algebra/blas/syr2k/syr2k.h",
+      "sha256": "605bf60a6dc8649cc4af39b205762bf89e25ce66818d735ff0b896b07326508d"
+    },
+    {
+      "path": "linear-algebra/blas/syrk/syrk.c",
+      "sha256": "db06033355fec93ffefb4ace46f0f8a551b5c49e83b97ed3839e3602d72270df"
+    },
+    {
+      "path": "linear-algebra/blas/syrk/syrk.h",
+      "sha256": "ba42fddf7484d3f75398f0a2cd95fb4ee8701b2c8fa04506a23ecc515b1a026c"
+    },
+    {
+      "path": "linear-algebra/blas/trmm/trmm.c",
+      "sha256": "cb0448897ccc566ff9d1cfd24c872e7ffc103a24c6924b75a63787d639b9a2f1"
+    },
+    {
+      "path": "linear-algebra/blas/trmm/trmm.h",
+      "sha256": "a72505ee819713260fa79ffff65f0e0577dec85751958dfb6928dafe9806b665"
+    },
+    {
+      "path": "linear-algebra/kernels/2mm/2mm.c",
+      "sha256": "9e4d952429dfebe2130ce86de6c894f35f43fac899e8e65e94b413e79462e481"
+    },
+    {
+      "path": "linear-algebra/kernels/2mm/2mm.h",
+      "sha256": "1265ba7c461e5d4be896c34fdefab8e91b2b643136ee6426fda6597b2060c037"
+    },
+    {
+      "path": "linear-algebra/kernels/3mm/3mm.c",
+      "sha256": "ca1eb00d358891b2e2f5d075942758b111e3d5e62e11507cb8378c8f1c420012"
+    },
+    {
+      "path": "linear-algebra/kernels/3mm/3mm.h",
+      "sha256": "93158ef7ccd8f9558029303299d000548f888eb77bf52b8b42d618c12d669804"
+    },
+    {
+      "path": "linear-algebra/kernels/atax/atax.c",
+      "sha256": "b3925adb41b5efb545ee1c9278ee2776e4970fdec64e72398494a336d59facbb"
+    },
+    {
+      "path": "linear-algebra/kernels/atax/atax.h",
+      "sha256": "b896f0a5fab49f4d52b1fb2ea7bcd7c4afabecb20bfee0deea271ec05b033761"
+    },
+    {
+      "path": "linear-algebra/kernels/bicg/bicg.c",
+      "sha256": "540a0f5864bc443857a5fa5ac473c7302980f32294a33c8dc10f49ddf8612115"
+    },
+    {
+      "path": "linear-algebra/kernels/bicg/bicg.h",
+      "sha256": "489f6d8c2f28fa6d4ef68625a1dc272acb4eade671ba8dcd2ccd8b5457573ecb"
+    },
+    {
+      "path": "linear-algebra/kernels/doitgen/doitgen.c",
+      "sha256": "fb1aed52d0707a37eb557474703b9503b2b103fd9128cce6f125fbbabfe13a5e"
+    },
+    {
+      "path": "linear-algebra/kernels/doitgen/doitgen.h",
+      "sha256": "8de32c7d685c028f6c7f2e1992f4013bd5e64cd1548c653a4eed5e93dd318d35"
+    },
+    {
+      "path": "linear-algebra/kernels/mvt/mvt.c",
+      "sha256": "201dfe26e1119f3901b11f4c802e970dc48c7f6a0e64dca71854292d0c689465"
+    },
+    {
+      "path": "linear-algebra/kernels/mvt/mvt.h",
+      "sha256": "d4fc8f75f08150eeab3b5f94083912f2b61cb6404660ffbb3116107355ad18cd"
+    },
+    {
+      "path": "linear-algebra/solvers/cholesky/cholesky.c",
+      "sha256": "94b3838ec1e63da2dde8e2eff4c08e15f075796c8546bf1a4864667de840d429"
+    },
+    {
+      "path": "linear-algebra/solvers/cholesky/cholesky.h",
+      "sha256": "ec01164617696ab24b97db51286ce56332b025396584ffd36e2cfc5cf68728c0"
+    },
+    {
+      "path": "linear-algebra/solvers/durbin/durbin.c",
+      "sha256": "d9fc23c870a83e8dc1baf02cd22d1172df460636893a64604e5f229e774bfabc"
+    },
+    {
+      "path": "linear-algebra/solvers/durbin/durbin.h",
+      "sha256": "fa4fb13ad8dbf44edf1136ecdc9356bcb4ee62c1486432ef40b7dc1397a7f99c"
+    },
+    {
+      "path": "linear-algebra/solvers/gramschmidt/gramschmidt.c",
+      "sha256": "a693f97c1a9d3cf1de8568919772e281075590f1ab703b4a79a3658ce9a41184"
+    },
+    {
+      "path": "linear-algebra/solvers/gramschmidt/gramschmidt.h",
+      "sha256": "cdd62972c51689f2c0408da9aa5fd331e8883453ab4b29b653630f94edbba0c5"
+    },
+    {
+      "path": "linear-algebra/solvers/lu/lu.c",
+      "sha256": "fef8b5a139f9a06d1290efb366039928d6e7601c80394e4f22300f6eb179135b"
+    },
+    {
+      "path": "linear-algebra/solvers/lu/lu.h",
+      "sha256": "db525ac282f3abb84a0c9e022adff6c0087ddff3dd8acd1d858a685e8919867b"
+    },
+    {
+      "path": "linear-algebra/solvers/ludcmp/ludcmp.c",
+      "sha256": "cc5c1fe0e3def03cf1bb4bc8ad86a26630073277fdd61d434c8032257fa56a9f"
+    },
+    {
+      "path": "linear-algebra/solvers/ludcmp/ludcmp.h",
+      "sha256": "42794ff65a92c637f74323c0dd745d8daa57e684ec2c35ab361c252479a5d0e8"
+    },
+    {
+      "path": "linear-algebra/solvers/trisolv/trisolv.c",
+      "sha256": "cc6b88871b988558fd03a7091ed01a412f61ebcfc60c0fea26a6d525ec338608"
+    },
+    {
+      "path": "linear-algebra/solvers/trisolv/trisolv.h",
+      "sha256": "85480b302ede62139db11019f733f8942dd4df52ebcc64f89bf73aa038930804"
+    },
+    {
+      "path": "medley/deriche/deriche.c",
+      "sha256": "def21924fc242239ba893011216d15312be573d6f62ec0872d592aaa5fac8575"
+    },
+    {
+      "path": "medley/deriche/deriche.h",
+      "sha256": "8570ecf0f1db2dd23ee174861be7797cf636e1d6b87ca1604e34ab15536b3c91"
+    },
+    {
+      "path": "medley/floyd-warshall/floyd-warshall.c",
+      "sha256": "53cc5292bca21e379b31e6a6daaee1e30b7180675cad0b0d0acc8e7975262b12"
+    },
+    {
+      "path": "medley/floyd-warshall/floyd-warshall.h",
+      "sha256": "af409f8e3e9fe878d9ecada09155dc01b198144c730007bbdce9b27e941f42f1"
+    },
+    {
+      "path": "medley/nussinov/nussinov.c",
+      "sha256": "d38571c8430e8ea4c6f0eea343dbd9403f376ca5bcd59d90419e8d7cb5722989"
+    },
+    {
+      "path": "medley/nussinov/nussinov.h",
+      "sha256": "50a7e9304987abe020311c31676f3f00d9adf8dd4c11bb44b2388a7d215cd297"
+    },
+    {
+      "path": "stencils/adi/adi.c",
+      "sha256": "9927aa0bfe3576c7c6ba575ce9102cc61f2d9b2257d1304892f3b84c4a85576c"
+    },
+    {
+      "path": "stencils/adi/adi.h",
+      "sha256": "9085eaed851def7b595dd8db254898643150486f676b68ae0b4087335d847658"
+    },
+    {
+      "path": "stencils/fdtd-2d/fdtd-2d.c",
+      "sha256": "197f90ee7b0cb8a01955df72d636dd179b133060594103a77725887e88562e92"
+    },
+    {
+      "path": "stencils/fdtd-2d/fdtd-2d.h",
+      "sha256": "3b388b26adaab0b8fd1f1b3f70f69e05adbf36309cf931c25a7a5e74f881bf30"
+    },
+    {
+      "path": "stencils/heat-3d/heat-3d.c",
+      "sha256": "c976678611f8e4f9e3e38ab95a2e46c6ef59c03d7e7f7f8214ff8c5eed476934"
+    },
+    {
+      "path": "stencils/heat-3d/heat-3d.h",
+      "sha256": "5d656fd597b04aef46d24606b7bbe5fe35986bcaac4179d111e316a964ace182"
+    },
+    {
+      "path": "stencils/jacobi-1d/jacobi-1d.c",
+      "sha256": "b8390a18c6b42f1c68dcd241bd2403265c73469e07d002fcbad860c9c2925e7e"
+    },
+    {
+      "path": "stencils/jacobi-1d/jacobi-1d.h",
+      "sha256": "5a0e5ad77e99cbbe979edbb98b2d0feae641d4930660695b6d786105b10efb85"
+    },
+    {
+      "path": "stencils/jacobi-2d/jacobi-2d.c",
+      "sha256": "5bd884a7ef7ccc3e009bb5988c919ca4aa09a0c4fb14d229d52109423a215255"
+    },
+    {
+      "path": "stencils/jacobi-2d/jacobi-2d.h",
+      "sha256": "6ccf8928f16646cbf2f90a509c8d01a231063a08a76a670b7802b3b979f61770"
+    },
+    {
+      "path": "stencils/seidel-2d/seidel-2d.c",
+      "sha256": "6cd69ddf170e873b817bc07c6ae60afe462bb233f6d98547501482fdeafcf754"
+    },
+    {
+      "path": "stencils/seidel-2d/seidel-2d.h",
+      "sha256": "762333078b1c5041925203fbe9b06d423385b612ae5a0e0953cd0a55490a04a9"
+    },
+    {
+      "path": "utilities/benchmark_list",
+      "sha256": "197c70fba5d78317e49e0620ae86db212c1ccc9818f3a0f2b97732567d90b854"
+    },
+    {
+      "path": "utilities/clean.pl",
+      "sha256": "2f79ef5dcc53480402ff70d68b5cff5d752b74521765985c797b0fd73fe150f3"
+    },
+    {
+      "path": "utilities/create_cpped_version.pl",
+      "sha256": "2c21f01b7ce6316503a6681aa27fecc2bbfe8f1d97ff7fab691c2baf500d480e"
+    },
+    {
+      "path": "utilities/header-gen.pl",
+      "sha256": "d3475d8691d65051e4a50c5bb80169d58db3688d8f6f53a452584ea3ffabfadd"
+    },
+    {
+      "path": "utilities/makefile-gen.pl",
+      "sha256": "f0f108bbf7e0c6353adf98bc061601f1248e2d1f107d272d335cacfded6d0254"
+    },
+    {
+      "path": "utilities/papi_counters.list",
+      "sha256": "5c2590fea0c4dec75141447f289af5e0d751746f1d80efcd28b1ba5d28786887"
+    },
+    {
+      "path": "utilities/polybench.R",
+      "sha256": "643717c0cb974a13d435d463de9b028ca3218507800a65804e060907e82cad5b"
+    },
+    {
+      "path": "utilities/polybench.c",
+      "sha256": "5de1de319495831bdb589a1ae8c2bfaf336f55c5549ab428c83d9d5905177f58"
+    },
+    {
+      "path": "utilities/polybench.h",
+      "sha256": "a709a71b20ae86e46215c2645c604ea0296771bc3e8efbce63bcd9676f58b521"
+    },
+    {
+      "path": "utilities/polybench.spec",
+      "sha256": "bd21a6f27a8cb48c699f050e2a42c5b89124a1369ba2f99768add316f4104a4f"
+    },
+    {
+      "path": "utilities/run-all.pl",
+      "sha256": "b769abab4ac7c58049951c4a9440de2963b817b169328d8c25a1d58173f8f3e2"
+    },
+    {
+      "path": "utilities/time_benchmark.sh",
+      "sha256": "ad23e0430f96f827712147d112979b1e3001b208b722bc4f8bccfc6f703362b7"
+    }
+  ],
+  "excludedFiles": [
+    {
+      "path": "AUTHORS",
+      "reason": "Top-level project documentation, not a kernel or harness file"
+    },
+    {
+      "path": "CHANGELOG",
+      "reason": "Top-level project documentation, not a kernel or harness file"
+    },
+    {
+      "path": "LICENSE.txt",
+      "reason": "Top-level license file, excluded as a non-kernel file (see notes)"
+    },
+    {
+      "path": "README",
+      "reason": "Top-level project documentation, not a kernel or harness file"
+    },
+    {
+      "path": "THANKS",
+      "reason": "Top-level project documentation, not a kernel or harness file"
+    },
+    {
+      "path": "medley/nussinov/Nussinov.orig.c",
+      "reason": "Non-kernel backup copy of nussinov.c (352 lines versus 143 lines)"
+    },
+    {
+      "path": "polybench.pdf",
+      "reason": "Top-level PDF manual, not a kernel or harness file"
+    },
+    {
+      "path": "utilities/template-for-new-benchmark.c",
+      "reason": "Benchmark template, the example template named in the spec (this archive has no example/ directory)"
+    }
+  ],
+  "notes": [
+    "Archive checks before extraction: the tar listing showed 119 entries, all under polybench-c-4.2.1-beta/, with no absolute paths, no parent-directory references, no links and no special files.",
+    "No upstream checksum was available to compare against. The OSU host redirects to cse.osu.edu/directory and the SourceForge file page publishes no hash. The archive sha256 was computed locally from the downloaded file.",
+    "retrievedAtUtc is the archive file modification time, which is the download completion time.",
+    "Every kept file is a byte-identical copy (verified with cmp) of the extracted upstream file. No file was edited, reformatted or generated.",
+    "polybench.c and polybench.h ship only under utilities/ in this release; there are no top-level copies. The whole utilities/ directory is kept except the template file listed under excludedFiles.",
+    "Each kernel directory keeps its .c file and its paired .h file as shipped. Nothing was compiled or executed.",
+    "LICENSE.txt (Ohio State University Software Distribution License, PolyBench/C copyright 2010-2016) was excluded as a top-level non-kernel file. Redistribution may need the license text; restore it if the project decides so."
+  ],
+  "manifestGeneratedAtUtc": "2026-10-15T17:57:36+00:00",
+  "fileCount": 73,
+  "files": [
+    {
+      "path": "LICENSE.txt",
+      "sha256": "051cd26bce2f040209767780e375fb048efb14eb97001b24259f532f54917a4f"
+    },
+    {
+      "path": "datamining/correlation/correlation.c",
+      "sha256": "f35de426846bd8ee6ebb77d4c96176b3cf1dbeafd4efe2d19d06f74043ce5d24"
+    },
+    {
+      "path": "datamining/correlation/correlation.h",
+      "sha256": "a01fbab134e2b8fcd9591f5349551dadc8f8c9814d6be03901d1977c156cca6f"
+    },
+    {
+      "path": "datamining/covariance/covariance.c",
+      "sha256": "a386edb7635c8d991413f38417b6c7cde8a2db75d95c3cf93f28440165cf710d"
+    },
+    {
+      "path": "datamining/covariance/covariance.h",
+      "sha256": "dd330a7bfc8d88c85d56de14cad9854f9e59b28e1f1e8bcc16e173ab0f201b5f"
+    },
+    {
+      "path": "linear-algebra/blas/gemm/gemm.c",
+      "sha256": "1568eec3636bbca13d576643eb9d44b280fb37409679a747ae89123e5f310acc"
+    },
+    {
+      "path": "linear-algebra/blas/gemm/gemm.h",
+      "sha256": "69147d88e4d87e4e5e0be1fdfa0e766863072bc23aa73739a9d3fc378304ba52"
+    },
+    {
+      "path": "linear-algebra/blas/gemver/gemver.c",
+      "sha256": "fc130ebf4e632bfb24dabe9f61d9184a05ad8618551bef7533d4a903caee4147"
+    },
+    {
+      "path": "linear-algebra/blas/gemver/gemver.h",
+      "sha256": "bd216c5ae35e62511e2a421c744996870eaf0250e32079131b73e98f25211cd5"
+    },
+    {
+      "path": "linear-algebra/blas/gesummv/gesummv.c",
+      "sha256": "0500b876ed3d2058cdea353119d0e8e9d814e8c531c9437e069121d13e80231f"
+    },
+    {
+      "path": "linear-algebra/blas/gesummv/gesummv.h",
+      "sha256": "b3482553e2e74e9ff6f1840d71e0c00b1e7ed40e5f3d39784848757fe2402ec3"
+    },
+    {
+      "path": "linear-algebra/blas/symm/symm.c",
+      "sha256": "cd5355043f9a4b7300886fbfb1d25720456f6f65375838353fd633b5ece27814"
+    },
+    {
+      "path": "linear-algebra/blas/symm/symm.h",
+      "sha256": "daf3694a58a9497b70cf178952e5a2c755ce3b84b0d76fa2c101e1ae067e1c80"
+    },
+    {
+      "path": "linear-algebra/blas/syr2k/syr2k.c",
+      "sha256": "4d7a77f3516a1f97f551582fdb6d5c6aedf7a515bc8329bc041d8161440b2663"
+    },
+    {
+      "path": "linear-algebra/blas/syr2k/syr2k.h",
+      "sha256": "605bf60a6dc8649cc4af39b205762bf89e25ce66818d735ff0b896b07326508d"
+    },
+    {
+      "path": "linear-algebra/blas/syrk/syrk.c",
+      "sha256": "db06033355fec93ffefb4ace46f0f8a551b5c49e83b97ed3839e3602d72270df"
+    },
+    {
+      "path": "linear-algebra/blas/syrk/syrk.h",
+      "sha256": "ba42fddf7484d3f75398f0a2cd95fb4ee8701b2c8fa04506a23ecc515b1a026c"
+    },
+    {
+      "path": "linear-algebra/blas/trmm/trmm.c",
+      "sha256": "cb0448897ccc566ff9d1cfd24c872e7ffc103a24c6924b75a63787d639b9a2f1"
+    },
+    {
+      "path": "linear-algebra/blas/trmm/trmm.h",
+      "sha256": "a72505ee819713260fa79ffff65f0e0577dec85751958dfb6928dafe9806b665"
+    },
+    {
+      "path": "linear-algebra/kernels/2mm/2mm.c",
+      "sha256": "9e4d952429dfebe2130ce86de6c894f35f43fac899e8e65e94b413e79462e481"
+    },
+    {
+      "path": "linear-algebra/kernels/2mm/2mm.h",
+      "sha256": "1265ba7c461e5d4be896c34fdefab8e91b2b643136ee6426fda6597b2060c037"
+    },
+    {
+      "path": "linear-algebra/kernels/3mm/3mm.c",
+      "sha256": "ca1eb00d358891b2e2f5d075942758b111e3d5e62e11507cb8378c8f1c420012"
+    },
+    {
+      "path": "linear-algebra/kernels/3mm/3mm.h",
+      "sha256": "93158ef7ccd8f9558029303299d000548f888eb77bf52b8b42d618c12d669804"
+    },
+    {
+      "path": "linear-algebra/kernels/atax/atax.c",
+      "sha256": "b3925adb41b5efb545ee1c9278ee2776e4970fdec64e72398494a336d59facbb"
+    },
+    {
+      "path": "linear-algebra/kernels/atax/atax.h",
+      "sha256": "b896f0a5fab49f4d52b1fb2ea7bcd7c4afabecb20bfee0deea271ec05b033761"
+    },
+    {
+      "path": "linear-algebra/kernels/bicg/bicg.c",
+      "sha256": "540a0f5864bc443857a5fa5ac473c7302980f32294a33c8dc10f49ddf8612115"
+    },
+    {
+      "path": "linear-algebra/kernels/bicg/bicg.h",
+      "sha256": "489f6d8c2f28fa6d4ef68625a1dc272acb4eade671ba8dcd2ccd8b5457573ecb"
+    },
+    {
+      "path": "linear-algebra/kernels/doitgen/doitgen.c",
+      "sha256": "fb1aed52d0707a37eb557474703b9503b2b103fd9128cce6f125fbbabfe13a5e"
+    },
+    {
+      "path": "linear-algebra/kernels/doitgen/doitgen.h",
+      "sha256": "8de32c7d685c028f6c7f2e1992f4013bd5e64cd1548c653a4eed5e93dd318d35"
+    },
+    {
+      "path": "linear-algebra/kernels/mvt/mvt.c",
+      "sha256": "201dfe26e1119f3901b11f4c802e970dc48c7f6a0e64dca71854292d0c689465"
+    },
+    {
+      "path": "linear-algebra/kernels/mvt/mvt.h",
+      "sha256": "d4fc8f75f08150eeab3b5f94083912f2b61cb6404660ffbb3116107355ad18cd"
+    },
+    {
+      "path": "linear-algebra/solvers/cholesky/cholesky.c",
+      "sha256": "94b3838ec1e63da2dde8e2eff4c08e15f075796c8546bf1a4864667de840d429"
+    },
+    {
+      "path": "linear-algebra/solvers/cholesky/cholesky.h",
+      "sha256": "ec01164617696ab24b97db51286ce56332b025396584ffd36e2cfc5cf68728c0"
+    },
+    {
+      "path": "linear-algebra/solvers/durbin/durbin.c",
+      "sha256": "d9fc23c870a83e8dc1baf02cd22d1172df460636893a64604e5f229e774bfabc"
+    },
+    {
+      "path": "linear-algebra/solvers/durbin/durbin.h",
+      "sha256": "fa4fb13ad8dbf44edf1136ecdc9356bcb4ee62c1486432ef40b7dc1397a7f99c"
+    },
+    {
+      "path": "linear-algebra/solvers/gramschmidt/gramschmidt.c",
+      "sha256": "a693f97c1a9d3cf1de8568919772e281075590f1ab703b4a79a3658ce9a41184"
+    },
+    {
+      "path": "linear-algebra/solvers/gramschmidt/gramschmidt.h",
+      "sha256": "cdd62972c51689f2c0408da9aa5fd331e8883453ab4b29b653630f94edbba0c5"
+    },
+    {
+      "path": "linear-algebra/solvers/lu/lu.c",
+      "sha256": "fef8b5a139f9a06d1290efb366039928d6e7601c80394e4f22300f6eb179135b"
+    },
+    {
+      "path": "linear-algebra/solvers/lu/lu.h",
+      "sha256": "db525ac282f3abb84a0c9e022adff6c0087ddff3dd8acd1d858a685e8919867b"
+    },
+    {
+      "path": "linear-algebra/solvers/ludcmp/ludcmp.c",
+      "sha256": "cc5c1fe0e3def03cf1bb4bc8ad86a26630073277fdd61d434c8032257fa56a9f"
+    },
+    {
+      "path": "linear-algebra/solvers/ludcmp/ludcmp.h",
+      "sha256": "42794ff65a92c637f74323c0dd745d8daa57e684ec2c35ab361c252479a5d0e8"
+    },
+    {
+      "path": "linear-algebra/solvers/trisolv/trisolv.c",
+      "sha256": "cc6b88871b988558fd03a7091ed01a412f61ebcfc60c0fea26a6d525ec338608"
+    },
+    {
+      "path": "linear-algebra/solvers/trisolv/trisolv.h",
+      "sha256": "85480b302ede62139db11019f733f8942dd4df52ebcc64f89bf73aa038930804"
+    },
+    {
+      "path": "medley/deriche/deriche.c",
+      "sha256": "def21924fc242239ba893011216d15312be573d6f62ec0872d592aaa5fac8575"
+    },
+    {
+      "path": "medley/deriche/deriche.h",
+      "sha256": "8570ecf0f1db2dd23ee174861be7797cf636e1d6b87ca1604e34ab15536b3c91"
+    },
+    {
+      "path": "medley/floyd-warshall/floyd-warshall.c",
+      "sha256": "53cc5292bca21e379b31e6a6daaee1e30b7180675cad0b0d0acc8e7975262b12"
+    },
+    {
+      "path": "medley/floyd-warshall/floyd-warshall.h",
+      "sha256": "af409f8e3e9fe878d9ecada09155dc01b198144c730007bbdce9b27e941f42f1"
+    },
+    {
+      "path": "medley/nussinov/nussinov.c",
+      "sha256": "d38571c8430e8ea4c6f0eea343dbd9403f376ca5bcd59d90419e8d7cb5722989"
+    },
+    {
+      "path": "medley/nussinov/nussinov.h",
+      "sha256": "50a7e9304987abe020311c31676f3f00d9adf8dd4c11bb44b2388a7d215cd297"
+    },
+    {
+      "path": "stencils/adi/adi.c",
+      "sha256": "9927aa0bfe3576c7c6ba575ce9102cc61f2d9b2257d1304892f3b84c4a85576c"
+    },
+    {
+      "path": "stencils/adi/adi.h",
+      "sha256": "9085eaed851def7b595dd8db254898643150486f676b68ae0b4087335d847658"
+    },
+    {
+      "path": "stencils/fdtd-2d/fdtd-2d.c",
+      "sha256": "197f90ee7b0cb8a01955df72d636dd179b133060594103a77725887e88562e92"
+    },
+    {
+      "path": "stencils/fdtd-2d/fdtd-2d.h",
+      "sha256": "3b388b26adaab0b8fd1f1b3f70f69e05adbf36309cf931c25a7a5e74f881bf30"
+    },
+    {
+      "path": "stencils/heat-3d/heat-3d.c",
+      "sha256": "c976678611f8e4f9e3e38ab95a2e46c6ef59c03d7e7f7f8214ff8c5eed476934"
+    },
+    {
+      "path": "stencils/heat-3d/heat-3d.h",
+      "sha256": "5d656fd597b04aef46d24606b7bbe5fe35986bcaac4179d111e316a964ace182"
+    },
+    {
+      "path": "stencils/jacobi-1d/jacobi-1d.c",
+      "sha256": "b8390a18c6b42f1c68dcd241bd2403265c73469e07d002fcbad860c9c2925e7e"
+    },
+    {
+      "path": "stencils/jacobi-1d/jacobi-1d.h",
+      "sha256": "5a0e5ad77e99cbbe979edbb98b2d0feae641d4930660695b6d786105b10efb85"
+    },
+    {
+      "path": "stencils/jacobi-2d/jacobi-2d.c",
+      "sha256": "5bd884a7ef7ccc3e009bb5988c919ca4aa09a0c4fb14d229d52109423a215255"
+    },
+    {
+      "path": "stencils/jacobi-2d/jacobi-2d.h",
+      "sha256": "6ccf8928f16646cbf2f90a509c8d01a231063a08a76a670b7802b3b979f61770"
+    },
+    {
+      "path": "stencils/seidel-2d/seidel-2d.c",
+      "sha256": "6cd69ddf170e873b817bc07c6ae60afe462bb233f6d98547501482fdeafcf754"
+    },
+    {
+      "path": "stencils/seidel-2d/seidel-2d.h",
+      "sha256": "762333078b1c5041925203fbe9b06d423385b612ae5a0e0953cd0a55490a04a9"
+    },
+    {
+      "path": "utilities/benchmark_list",
+      "sha256": "197c70fba5d78317e49e0620ae86db212c1ccc9818f3a0f2b97732567d90b854"
+    },
+    {
+      "path": "utilities/clean.pl",
+      "sha256": "2f79ef5dcc53480402ff70d68b5cff5d752b74521765985c797b0fd73fe150f3"
+    },
+    {
+      "path": "utilities/create_cpped_version.pl",
+      "sha256": "2c21f01b7ce6316503a6681aa27fecc2bbfe8f1d97ff7fab691c2baf500d480e"
+    },
+    {
+      "path": "utilities/header-gen.pl",
+      "sha256": "d3475d8691d65051e4a50c5bb80169d58db3688d8f6f53a452584ea3ffabfadd"
+    },
+    {
+      "path": "utilities/makefile-gen.pl",
+      "sha256": "f0f108bbf7e0c6353adf98bc061601f1248e2d1f107d272d335cacfded6d0254"
+    },
+    {
+      "path": "utilities/papi_counters.list",
+      "sha256": "5c2590fea0c4dec75141447f289af5e0d751746f1d80efcd28b1ba5d28786887"
+    },
+    {
+      "path": "utilities/polybench.R",
+      "sha256": "643717c0cb974a13d435d463de9b028ca3218507800a65804e060907e82cad5b"
+    },
+    {
+      "path": "utilities/polybench.c",
+      "sha256": "5de1de319495831bdb589a1ae8c2bfaf336f55c5549ab428c83d9d5905177f58"
+    },
+    {
+      "path": "utilities/polybench.h",
+      "sha256": "a709a71b20ae86e46215c2645c604ea0296771bc3e8efbce63bcd9676f58b521"
+    },
+    {
+      "path": "utilities/polybench.spec",
+      "sha256": "bd21a6f27a8cb48c699f050e2a42c5b89124a1369ba2f99768add316f4104a4f"
+    },
+    {
+      "path": "utilities/run-all.pl",
+      "sha256": "b769abab4ac7c58049951c4a9440de2963b817b169328d8c25a1d58173f8f3e2"
+    },
+    {
+      "path": "utilities/time_benchmark.sh",
+      "sha256": "ad23e0430f96f827712147d112979b1e3001b208b722bc4f8bccfc6f703362b7"
+    }
+  ]
+}

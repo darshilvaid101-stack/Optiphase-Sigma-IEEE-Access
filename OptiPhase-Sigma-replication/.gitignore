@@ -1,0 +1,46 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# LaTeX & Tectonic temporary files
+*.aux
+*.log
+*.out
+*.toc
+*.xdv
+*.synctex.gz
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+
+# Editors
+.vscode/
+.idea/
+
+# Third-party benchmark sources (licences vary; manifests stay tracked)
+data/benchmarks/polybench_c_4.2.1/*
+!data/benchmarks/polybench_c_4.2.1/MANIFEST.json
+data/benchmarks/mibench_v1/*
+!data/benchmarks/mibench_v1/MANIFEST.json
+data/benchmarks/tsvc_coremark/*
+!data/benchmarks/tsvc_coremark/MANIFEST.json
+
+# Generated benchmark intermediates (regenerated deterministically by task3)
+data/benchmarks/_build/
+data/benchmarks/bitcode_O0_canon/*.bc
+*.bc
+*.ll
+*.o
+
+# Manuscript build outputs (rebuilt by run_all_autonomous.sh)
+manuscript/build/

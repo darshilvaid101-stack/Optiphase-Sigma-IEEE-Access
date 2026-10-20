@@ -1,0 +1,62 @@
+\section{Discussion}
+\label{sec:discussion}
+
+The introduction asked four questions. The answers are partial, and the first and the third carry the most weight.
+
+\emph{Pass interactions.} The instruction-count interactions are exact, large, and structured. Of the \InstInteractionCells{}
+ordered pairs of the \NumThreePasses{} R3 passes, \InstInteractionConsistentCells{} have a mean beyond two standard errors across
+kernels. The largest entries are self-pairs and pairs of passes that remove the same redundant code. Where a second application of a
+pass leaves the bitcode unchanged, the self-interaction equals minus the pass's single effect, and that identity holds exactly in
+all \InstSelfIdentityCases{} cases tested. The timing interactions add little to this picture. \InteractionSignificantCells{} of
+\InteractionCells{} normalized timing interactions pass the two-standard-error test. That is more than chance alone would give, but
+every entry is smaller than the noise floor, so we do not count them as established.
+
+\emph{Canonical form.} On the \texttt{mem2reg}-only form, the five loop passes change every kernel. On the sweep canonical form, the
+smallest count among them is \PassChecksLoopMinCanonical{}, for \texttt{loop-unroll}. The canonical form therefore matters for
+\texttt{loop-unroll}, so the choice of canonical form is part of the result and not only a setup detail. For the other passes, the
+two forms differ by at most \PassChecksOtherMaxDiff{} kernels.
+
+\emph{Redundant executions.} Redundancy is common. On average, \RpbOverallMean{} of the pass executions in these sweeps leave the IR
+unchanged. Charged with their share of the pass time, the redundant executions consume \WasteTotalSeconds{} seconds across all
+sweeps. Only a small part of the optimizer's wall time is pass time, so the wall time is not used for the waste.
+
+\emph{Pareto structure.} The fronts contain \ParetoPoints{} non-dominated points. Their hypervolume depends on the reference point,
+so a value is meaningful only with its reference. Two of the three objectives depend on timing measurements, which carry noise. The speed objective uses
+the timing, and the compile objective uses the optimizer wall time.
+
+\emph{Verification.} The block-local checker decides refinement for the blocks in its fragment, which are \BlocksEncodablePct{}\% of
+the matched block pairs. Within those blocks, \NamesRefine{} names refine and \NamesViolated{} are violated. In
+\WitnessGainSweepsPct{}\% of the SAT sweeps, the candidate counterexample names an instruction to which the optimizer added a flag.
+The remaining candidates involve other changes or upstream values. The benchmark outputs match the canonical outputs in all but
+\OutputsDiffering{} of \OutputsChecked{} sweeps, on the one input each kernel runs. None of the exceptions is a SAT sweep. For each of them, the difference disappears under \texttt{-O2} lowering. That is consistent with the candidates being unreachable on those
+inputs, but it is not a proof of correctness. The one candidate inspected in full is excluded by an invariant of its loop, not by any
+single block, so SAT answers are reported as candidates for inspection, not as miscompilations.
+
+Four implications follow. First, a measure that is exact for each kernel, such as the instruction count, should be preferred to a
+noisy one whenever the question allows it. Second, the canonical form is a parameter of the study, and it should be reported and
+tested, as Section~\ref{sec:results-canonical} does for the loop passes. Third, block-local verification of optimized code needs
+facts from the surrounding function, such as value ranges, before its SAT answers can be trusted without inspection. Fourth,
+benchmark output can depend on timing. A canonical control failed on the bitcount kernel, and the kernel's ranking lines were
+masked under a rule recorded with the kernel. Any campaign that compares outputs should include such a control, and it should also
+test the lowering level, as the exceptions of Section~\ref{sec:results} show.
+
+Future work follows from these limits. The first item is a sensitivity analysis of the canonical form for every pass, not only the
+loop passes. The second is a measurement method with less noise, so that the timing interactions can be measured below the noise
+floor. The third is a function-level encoding with range facts, which would reduce the SAT answers that depend on context. The
+fourth is a compile-time objective based on pass time, which would change the fronts of Section~\ref{sec:results}. Larger kernel
+sets, a second machine, and whole-program benchmarks would test whether these results hold beyond small loop kernels.
+
+\section{Conclusion}
+
+We measured the interactions among the passes of the LLVM new pass manager on \NumKernels{} kernels, over \NumSweeps{} pipeline
+variants. The main measure is the instruction count of the optimized IR, which is exact and does not pass through the backend. Of
+its pairwise interactions, \InstInteractionConsistentCells{} of \InstInteractionCells{} are consistent across kernels, and the
+self-interactions follow an identity that holds in every tested case. Timing resolves few of these interactions,
+and the ones it flags lie below the noise floor. Redundant executions are common. The refinement checker decides refinement for a
+minority of the blocks it examines, and in \WitnessGainSweepsPct{}\% of its SAT sweeps the optimizer added a flag to the instruction
+that the SAT answer names. The one such case inspected in full is a false alarm of the block-local check. \OutputsDiffering{} sweeps
+produce output that differs from the canonical output under the \texttt{-O0} lowering, and we have not explained the difference.
+These are the claims the data support. They are bounded by one compiler release, one lowering level for the timing
+results, and one input per kernel.
+
+\input{sections/threats}

@@ -1,0 +1,79 @@
+\begin{table}[t]
+\centering
+\caption{Exhaustive agreement between the Z3 encoder and the reference semantics, widths 1 to 4, per instruction family.}
+\label{tab:encoding}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|l|r|r|}
+\hline
+Family & Cases & Mismatches \\
+\hline
+add & 404 & 0 \\
+\hline
+add nsw & 404 & 0 \\
+\hline
+add nsw nuw & 404 & 0 \\
+\hline
+add nuw & 404 & 0 \\
+\hline
+and & 404 & 0 \\
+\hline
+ashr & 404 & 0 \\
+\hline
+ashr exact & 404 & 0 \\
+\hline
+icmp & 4,040 & 0 \\
+\hline
+icmp samesign & 4,040 & 0 \\
+\hline
+lshr & 404 & 0 \\
+\hline
+lshr exact & 404 & 0 \\
+\hline
+mul & 404 & 0 \\
+\hline
+mul nsw & 404 & 0 \\
+\hline
+mul nsw nuw & 404 & 0 \\
+\hline
+mul nuw & 404 & 0 \\
+\hline
+or & 404 & 0 \\
+\hline
+or disjoint & 404 & 0 \\
+\hline
+select & 1,212 & 0 \\
+\hline
+sext & 28 & 0 \\
+\hline
+shl & 404 & 0 \\
+\hline
+shl nsw & 404 & 0 \\
+\hline
+shl nsw nuw & 404 & 0 \\
+\hline
+shl nuw & 404 & 0 \\
+\hline
+sub & 404 & 0 \\
+\hline
+sub nsw & 404 & 0 \\
+\hline
+sub nsw nuw & 404 & 0 \\
+\hline
+sub nuw & 404 & 0 \\
+\hline
+trunc & 74 & 0 \\
+\hline
+trunc nsw & 74 & 0 \\
+\hline
+trunc nsw nuw & 74 & 0 \\
+\hline
+trunc nuw & 74 & 0 \\
+\hline
+xor & 404 & 0 \\
+\hline
+zext & 28 & 0 \\
+\hline
+zext nneg & 28 & 0 \\
+\hline
+\end{tabular}
+\end{table}

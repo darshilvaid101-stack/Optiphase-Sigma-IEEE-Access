@@ -1,0 +1,69 @@
+{
+  "bitcount_recheck": {
+    "sweeps_checked": 480,
+    "sweeps_matching_canonical": 480
+  },
+  "coverage": {
+    "not_comparable_reasons": {
+      "matched_blocks_all_outside_fragment": 9508
+    },
+    "totals": {
+      "blocks_compared": 915263,
+      "blocks_matched": 3430824,
+      "blocks_not_encodable": 2515561,
+      "names_refines": 544249,
+      "names_unknown": 0,
+      "names_violated": 13523
+    }
+  },
+  "outputs_by_verdict": [
+    {
+      "bitcount": false,
+      "output_matches_canonical": true,
+      "status": "NOT_COMPARABLE",
+      "sweeps": 9508
+    },
+    {
+      "bitcount": false,
+      "output_matches_canonical": true,
+      "status": "SAT",
+      "sweeps": 2946
+    },
+    {
+      "bitcount": true,
+      "output_matches_canonical": true,
+      "status": "SAT",
+      "sweeps": 53
+    },
+    {
+      "bitcount": false,
+      "output_matches_canonical": false,
+      "status": "UNSAT",
+      "sweeps": 4
+    },
+    {
+      "bitcount": false,
+      "output_matches_canonical": true,
+      "status": "UNSAT",
+      "sweeps": 15862
+    },
+    {
+      "bitcount": true,
+      "output_matches_canonical": true,
+      "status": "UNSAT",
+      "sweeps": 427
+    }
+  ],
+  "sat_candidates": {
+    "adding_wrap_or_exactness_flag": 2255,
+    "flags_added_by_sweep": {
+      "disjoint": 379,
+      "exact": 104,
+      "nneg": 1613,
+      "nsw": 1094,
+      "nuw": 1953,
+      "samesign": 1424
+    },
+    "sweeps": 2999
+  }
+}

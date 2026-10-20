@@ -1,0 +1,35 @@
+\begin{table}[t]
+\centering
+\caption{Largest pairwise interaction entries over kernels, as a percentage of the canonical cost, with standard errors. Each entry is the mean of $(\Delta_{ij}-\Delta_i-\Delta_j)/J_0$ over kernels.}
+\label{tab:interaction}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|l|l|r|r|l|}
+\hline
+First pass & Second pass & Mean (\%) & SE (\%) & Beyond 2 SE \\
+\hline
+instcombine & jump-threading & +3.396 & 1.215 & yes \\
+\hline
+instcombine & instcombine & +3.274 & 1.385 & yes \\
+\hline
+gvn & instcombine & +3.061 & 1.362 & yes \\
+\hline
+jump-threading & loop-rotate & -2.962 & 0.743 & yes \\
+\hline
+simplifycfg & loop-rotate & -2.926 & 0.809 & yes \\
+\hline
+simplifycfg & instcombine & +2.901 & 1.270 & yes \\
+\hline
+loop-rotate & instcombine & +2.837 & 1.467 & no \\
+\hline
+loop-rotate & jump-threading & -2.789 & 0.876 & yes \\
+\hline
+jump-threading & instcombine & +2.679 & 1.276 & yes \\
+\hline
+gvn & loop-rotate & -2.625 & 0.745 & yes \\
+\hline
+instcombine & loop-rotate & +2.610 & 1.289 & yes \\
+\hline
+loop-rotate & simplifycfg & -2.591 & 0.815 & yes \\
+\hline
+\end{tabular}
+\end{table}

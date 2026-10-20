@@ -1,0 +1,76 @@
+\RequirePackage{tikz}
+\documentclass[pdflatex,sn-mathphys]{sn-jnl}
+
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{newtxtext,newtxmath}
+\usepackage{url}
+
+\def\burl#1{\url{#1}}
+\def\doiurl#1{\url{https://doi.org/#1}}
+
+\input{generated/macros}
+
+\graphicspath{{../figures/}}
+
+% Page-width figure: the shared sections call \PaperFigure{file}{caption}.
+\newcommand{\PaperFigure}[2]{%
+  \begin{figure}[t]%
+  \centering%
+  \includegraphics[width=\textwidth]{#1}%
+  \caption{#2}%
+  \end{figure}}
+
+\jyear{2026}
+
+% The running head on every page is about 1.36 pt taller than the class's 12 pt header box, so each page overflows by
+% that amount. A 14 pt header box holds it without changing the body text block.
+\AtBeginDocument{\setlength{\headheight}{14pt}}
+
+\theoremstyle{thmstyleone}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{thmstyletwo}
+\newtheorem{remark}{Remark}
+
+\theoremstyle{thmstylethree}
+\newtheorem{definition}{Definition}
+
+\AtBeginDocument{\hypersetup{pdftitle={OptiPhase-Sigma: Measured Pass Interference and Bounded Refinement Checks in the LLVM New Pass Manager}}}
+
+% The IEEE class defines \PARstart; the other layouts set the first word in plain type.
+\providecommand{\PARstart}[2]{#1#2}
+
+\begin{document}
+
+\title[OptiPhase-$\Sigma$]{OptiPhase-$\Sigma$: Measured Pass Interference and Bounded Refinement Checks in the LLVM New Pass Manager}
+
+\author[1]{\fnm{Devarsh} \sur{Patel}}\email{devarsh.patel2024@vitstudent.ac.in}
+\author[1]{\fnm{Darshil} \sur{Vaid}}\email{darshil.vaid2024@vitstudent.ac.in}
+\author*[1]{\fnm{Kanagaraj} \sur{R}}\email{kanagaraj.r@vit.ac.in}
+
+\affil*[1]{\orgdiv{School of Computer Science and Engineering}, \orgname{Vellore Institute of Technology}, \orgaddress{\city{Vellore}, \country{India}}}
+
+\abstract{\input{sections/abstract_body}}
+
+\keywords{phase ordering, LLVM new pass manager, pass interference, translation validation, Z3, hypervolume}
+
+\maketitle
+
+\input{sections/introduction}
+\input{sections/background}
+\input{sections/framework}
+\input{sections/methods}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/declarations}
+
+\bibliography{references_curated}
+
+\end{document}

@@ -1,0 +1,37 @@
+\begin{table}[t]
+\centering
+\caption{Cleanup sequences of R5 before and after \texttt{loop-vectorize}. Each row counts the sweeps that contain the sequence at that position, over all kernels.}
+\label{tab:r5seq}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|l|l|r|}
+\hline
+Position & Sequence & Sweeps \\
+\hline
+Pre-pivot & none & 300 \\
+\hline
+Pre-pivot & instcombine & 300 \\
+\hline
+Pre-pivot & instcombine, jump-threading & 300 \\
+\hline
+Pre-pivot & jump-threading & 300 \\
+\hline
+Pre-pivot & jump-threading, simplifycfg & 300 \\
+\hline
+Pre-pivot & simplifycfg & 300 \\
+\hline
+Pre-pivot & simplifycfg, instcombine & 300 \\
+\hline
+Pre-pivot & simplifycfg, jump-threading & 300 \\
+\hline
+Post-pivot & none & 480 \\
+\hline
+Post-pivot & dce & 480 \\
+\hline
+Post-pivot & instcombine & 480 \\
+\hline
+Post-pivot & jump-threading & 480 \\
+\hline
+Post-pivot & simplifycfg & 480 \\
+\hline
+\end{tabular}
+\end{table}

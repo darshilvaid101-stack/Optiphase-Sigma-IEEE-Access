@@ -1,0 +1,36 @@
+\section{Introduction}
+
+\PARstart{C}{ompilers} apply a sequence of optimization passes, not a single optimization, and the passes depend on one another. One pass can
+create the pattern that a later pass needs, remove information that another pass relies on, or change a cost that a later
+decision reads. This is the phase-ordering problem. Its size on real code is seldom measured directly. Most published experiments
+report which sequence performs best, not how much each pair of passes changes the result.
+
+This paper measures those interactions in the new pass manager of LLVM \cite{lattner2004llvm}. We ran \NumSweeps{} pipeline variants over \NumKernels{}
+kernels from four benchmark suites. The main measure is the instruction count of the optimized IR, which is exact and independent
+of timing and of the backend. We also timed every variant against the canonical build of its kernel in one measurement window, and
+we checked every variant's optimized IR against its canonical IR. The results are stored in a telemetry table with \NumColumns{}
+fields per sweep. We ask four questions.
+
+\begin{enumerate}
+  \item How much does the order of two passes change the code, and which pairs interact most? (Section~\ref{sec:results-instcount}.)
+  \item How much of that change is visible in the execution time, given the noise of the timing measurements? (Section~\ref{sec:results-timing}.)
+  \item How many pass executions in a standard pipeline leave the IR unchanged, and what time do those executions consume? (Section~\ref{sec:results-rpb}.)
+  \item How far can a bounded, machine-checked comparison of optimized code go towards showing that each transformation preserves
+        meaning? (Section~\ref{sec:results-refinement}.)
+\end{enumerate}
+
+Our contributions are the following.
+\begin{itemize}
+  \item An empirical campaign of \NumSweeps{} sweeps. It covers the single passes, every ordered pair of \NumThreePasses{} passes,
+        a stepwise ablation of the \texttt{-O3} pipeline, an interference study around \texttt{loop-vectorize}, and sequences chosen
+        from the instruction-count tensor.
+  \item An instruction-count interaction, normalized by the canonical count, and an identity for self-interactions that holds
+        exactly in all \InstSelfIdentityCases{} kernel-pass cases where it applies.
+  \item IR-level checks of every pass on two canonical forms, which show that the canonical form changes the effect of
+        \texttt{loop-unroll}.
+  \item A timing measure with its noise floor, and the finding that timing resolves few pass interactions, all of them below the noise floor.
+  \item A block-local refinement checker for integer LLVM IR. We state the soundness argument for its UNSAT answers, we check its
+        encoding exhaustively against an independent reference semantics for small widths, and we report where its answers stop
+        being evidence of correctness.
+\end{itemize}
+

@@ -1,0 +1,123 @@
+{
+  "bibliography": {
+    "curated_count": 30,
+    "foundational_count": 9,
+    "curated_recent_count": 30,
+    "duplicate_dois": [],
+    "entries_with_url_field": [],
+    "entries_without_year": []
+  },
+  "citations": {
+    "missing_bibliography_keys": [],
+    "uncited_curated_keys": [],
+    "cited_curated_count": 30,
+    "cited_foundational_count": 9,
+    "cited_recent_share": 1.0,
+    "unused_bibliography_entries": []
+  },
+  "labels": {
+    "undefined_labels": [],
+    "labels": 43
+  },
+  "builds": {
+    "acm": {
+      "log": {
+        "log_present": true,
+        "overfull_hbox_over_limit": 0,
+        "largest_overfull_points": 0.0,
+        "template_overfull_boxes_skipped": 0,
+        "undefined_citations": 0,
+        "undefined_references": 0,
+        "missing_characters": 0
+      },
+      "pdf": {
+        "pdf_present": true,
+        "pdf_text_present": true,
+        "pdf_expandable": true,
+        "link_annotations": 168,
+        "unlinked_citation_keys": [],
+        "raw_keys_in_text": [],
+        "bracket_artifacts": 0,
+        "letter_spaced_urls": 0
+      }
+    },
+    "ieee": {
+      "log": {
+        "log_present": true,
+        "overfull_hbox_over_limit": 0,
+        "largest_overfull_points": 0.0,
+        "template_overfull_boxes_skipped": 115,
+        "undefined_citations": 0,
+        "undefined_references": 0,
+        "missing_characters": 0
+      },
+      "pdf": {
+        "pdf_present": true,
+        "pdf_text_present": true,
+        "pdf_expandable": true,
+        "link_annotations": 107,
+        "unlinked_citation_keys": [],
+        "raw_keys_in_text": [],
+        "bracket_artifacts": 0,
+        "letter_spaced_urls": 0
+      }
+    },
+    "sn": {
+      "log": {
+        "log_present": true,
+        "overfull_hbox_over_limit": 0,
+        "largest_overfull_points": 0.0,
+        "template_overfull_boxes_skipped": 0,
+        "undefined_citations": 0,
+        "undefined_references": 0,
+        "missing_characters": 0
+      },
+      "pdf": {
+        "pdf_present": true,
+        "pdf_text_present": true,
+        "pdf_expandable": true,
+        "link_annotations": 166,
+        "unlinked_citation_keys": [],
+        "raw_keys_in_text": [],
+        "bracket_artifacts": 0,
+        "letter_spaced_urls": 0
+      }
+    }
+  },
+  "provenance": {
+    "present": true,
+    "inputs": 20,
+    "mismatched": []
+  },
+  "legacy_files_present": [],
+  "bare_number_count": 0,
+  "bare_numbers": [],
+  "overlap": {
+    "hard_overlap_runs": [],
+    "hard_overlap_count": 0,
+    "soft_overlap_runs": [],
+    "soft_overlap_count": 0
+  },
+  "cited_overlap": {
+    "hard_count": 0,
+    "soft_count": 0,
+    "hard": [],
+    "soft": [],
+    "cited_keys_without_abstract": 10
+  },
+  "defects": {
+    "body_file_names": [],
+    "pdf_phrases": {
+      "acm": [],
+      "ieee": [],
+      "sn": []
+    },
+    "pdf_orphan_labels": {
+      "acm": [],
+      "ieee": [],
+      "sn": []
+    }
+  },
+  "dossier_present": false,
+  "hard_checks_passed": true
+}

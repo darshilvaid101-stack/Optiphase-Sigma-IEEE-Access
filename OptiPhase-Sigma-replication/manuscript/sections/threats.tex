@@ -1,0 +1,34 @@
+\subsection{Threats to validity}
+\label{sec:threats}
+
+\textbf{Measures.} The main results use the instruction count of the optimized IR. That count measures code size at the IR
+level, and it says nothing about running time. The timing results carry measurement noise, and the speed objective of the
+Pareto analysis inherits it. The compile objective uses the optimizer wall time, which includes process start-up and trace output.
+Changing that objective to pass time would change the fronts, and the paper does not redo them.
+
+\textbf{Lowering.} The timing results and the text sizes use an optimized module lowered with \texttt{llc -O0}, so they exclude backend optimization. The instruction counts do not depend on lowering. A pilot (Section~\ref{sec:methods}) compares the size change of four passes on four kernels at \texttt{-O2} and at \texttt{-O0}. It gives \LoweringPilotNonzeroOZero{} nonzero size changes at \texttt{-O0} out of \LoweringPilotCases{} cases, against \LoweringPilotNonzeroOTwo{} at \texttt{-O2}, and \LoweringPilotSignFlips{} cases change sign between the two levels. The \texttt{-O0} lowering was chosen to keep backend optimization out of the size and timing results. It has a cost of its own, because it can change program output. The four output exceptions of Section~\ref{sec:results} are sweeps of \texttt{susan-smoothing} whose \texttt{-O0} binaries differ from the canonical binary, and for each of them the same optimized IR lowered at \texttt{-O2} gives the canonical output. The pilot used object files, not linked executables, so its sizes are a proxy for the sweeps' binaries.
+
+\textbf{Canonical form.} The sweeps use the sweep canonical form, which applies \texttt{mem2reg}, \texttt{loop-simplify}, and \texttt{lcssa}. Section~\ref{sec:results-canonical} shows that the loop passes depend on this choice. On the \texttt{mem2reg}-only form, every loop pass changes every kernel, whereas on the sweep canonical form \texttt{loop-unroll} changes only \PassChecksUnrollCanonicalChanged{} of \PassChecksKernels{} kernels. The other passes are less sensitive, and the two forms differ by at most \PassChecksOtherMaxDiff{} kernels for each of them. A pass that depends on a loop form it does not find may do nothing on these inputs, and the study does not separate that case from a pass that has no effect.
+
+\textbf{Timing.} Paired windows remove the bias of unpaired baselines, and the identical-IR runs bound the noise of identical code. They do not bound the differences between distinct binaries. Code layout and alignment can change the running time of two binaries that compute the same thing, and the identical-IR runs cannot show that effect. For this reason the timing comparisons count exceedances of the noise floor but do not treat them as interference. \textbf{Benchmarks and inputs.} The \NumKernels{} kernels are small, and most of them are loop nests or control-flow kernels. Each kernel runs on one input. The output agreement reported in Section~\ref{sec:results} is therefore evidence about those inputs only, and a miscompilation that appears only on other inputs would not be detected. The bitcount kernel shows that benchmark output can depend on timing. Its ranking lines were masked after the control check failed, and the rule is recorded with the kernel. \OutputsDiffering{} sweeps of \texttt{susan-smoothing} produce output images that differ from the canonical images under the \texttt{-O0} lowering, so the output comparison is not a complete check, and the paper reports those sweeps as exceptions.
+
+\textbf{One compiler release.} All results use LLVM \LLVMVersion. \RejectedCanonicalCount{} canonical passes are rejected by
+this release, and \SubstituteCount{} substitutes replace them. An earlier campaign recorded \ArchivedCrashes{} crashes of one single-pass sweep type, \texttt{unify-loop-exits}, on specific kernels. The current campaign replaces that pass by \texttt{newgvn} in its slot on every kernel before any sweep runs. The size levels use forced function attributes, because the release
+rejects the \texttt{Os} and \texttt{Oz} pipeline names. A standalone \texttt{instcombine} aborts on some functions. The spelling that skips the fixpoint check gave identical IR on \SpellingIdentical{} of the \SpellingCandidates{} completed sweeps that contain the pass, and \SpellingDiffering{} sweeps differed. It is still a different spelling of the same pass. All of these choices could change the results in another release.
+
+\textbf{Scope of the refinement proofs.} The UNSAT answers are proofs for block pairs in the fragment of
+Section~\ref{sec:unsat}, for names defined in both blocks, and for non-poison live-ins. They say nothing about memory, calls,
+floating point, vectors, control flow inside the block, or facts that hold only in the surrounding function. Only
+\BlocksEncodablePct{}\% of matched block pairs lie in the fragment, so most of each program is outside the proofs. A SAT answer is a
+candidate counterexample, and the paper reports it as one. The encoder's agreement with the reference semantics is checked
+exhaustively for small widths, which is finite evidence for the lemma of Section~\ref{sec:framework}.
+
+\textbf{Separate evidence.} The timing measurements, the refinement checks, and the output comparisons are separate evidence. A
+sweep whose optimized IR refines its canonical IR can still be slower, and a faster sweep is not thereby correct. The paper draws
+conclusions about correctness only from the refinement results and the output comparisons, and about cost only from the
+instruction counts and the timings.
+
+\textbf{Estimators.} The single-effect ratio baseline is a diagnostic only. Its denominator is noise-sized for
+\MpassNoiseDominatedPct{}\% of the kernel-entry pairs, and the regime R6 chains are selected from the instruction-count matrix instead, so they do not inherit that instability. The pass-time waste assumes that every execution costs the same share of its sweep's pass time. The hypervolume depends
+on the reference point, as Figure~\ref{fig:hv} shows, and the canonical reference was fixed before the analysis.
+

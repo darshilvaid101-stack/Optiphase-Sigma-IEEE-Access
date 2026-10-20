@@ -1,0 +1,41 @@
+\begin{table}[t]
+\centering
+\caption{IR-level checks over 60 kernels. Changed counts the kernels where the pass changes the module, on the sweep canonical form and on the mem2reg-only form. Repeated counts the kernels where a second application changes it again, out of those where the first changed it.}
+\label{tab:passchecks}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|l|r|r|r|r|}
+\hline
+Pass & Changed & Repeated & Mem2reg: changed & Mem2reg: repeated \\
+\hline
+instcombine & 60 & 30 & 60 & 30 \\
+\hline
+simplifycfg & 60 & 23 & 60 & 22 \\
+\hline
+early-cse & 60 & 53 & 59 & 46 \\
+\hline
+gvn & 60 & 27 & 60 & 20 \\
+\hline
+licm & 58 & 23 & 60 & 25 \\
+\hline
+loop-rotate & 60 & 32 & 60 & 31 \\
+\hline
+indvars & 59 & 42 & 60 & 42 \\
+\hline
+loop-unroll & 24 & 21 & 60 & 23 \\
+\hline
+loop-vectorize & 57 & 44 & 60 & 44 \\
+\hline
+slp-vectorizer & 31 & 19 & 32 & 20 \\
+\hline
+sccp & 60 & 26 & 60 & 26 \\
+\hline
+dce & 27 & 19 & 25 & 20 \\
+\hline
+dse & 24 & 19 & 22 & 20 \\
+\hline
+reassociate & 60 & 24 & 60 & 22 \\
+\hline
+jump-threading & 60 & 27 & 60 & 25 \\
+\hline
+\end{tabular}
+\end{table}

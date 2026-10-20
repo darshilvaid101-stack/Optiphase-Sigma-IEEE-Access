@@ -1,0 +1,266 @@
+{
+  "exceptions": [
+    {
+      "sweep_id": "K33-R3-159",
+      "kernel_id": "mibench/susan-smoothing",
+      "pipeline": "function(loop(loop-rotate)),function(early-cse)",
+      "digest_equal_to_canonical": false,
+      "sweep_vs_canonical": {
+        "output_small.smoothing.pgm": {
+          "identical": false,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 5811,
+          "max_byte_difference": 17
+        }
+      },
+      "lli_canonical_vs_native": {
+        "output_small.smoothing.pgm": {
+          "identical": true,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 0,
+          "max_byte_difference": 0
+        }
+      },
+      "lli_optimized_vs_native": {
+        "output_small.smoothing.pgm": {
+          "identical": true,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 0,
+          "max_byte_difference": 0
+        }
+      },
+      "llc_O2_canonical_vs_native": {
+        "output_small.smoothing.pgm": {
+          "identical": true,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 0,
+          "max_byte_difference": 0
+        }
+      },
+      "llc_O2_optimized_vs_native": {
+        "output_small.smoothing.pgm": {
+          "identical": true,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 0,
+          "max_byte_difference": 0
+        }
+      },
+      "single_stage_identical": {
+        "function(loop(loop-rotate))": true,
+        "function(early-cse)": true
+      }
+    },
+    {
+      "sweep_id": "K33-R3-160",
+      "kernel_id": "mibench/susan-smoothing",
+      "pipeline": "function(loop(loop-rotate)),function(gvn)",
+      "digest_equal_to_canonical": false,
+      "sweep_vs_canonical": {
+        "output_small.smoothing.pgm": {
+          "identical": false,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 5811,
+          "max_byte_difference": 17
+        }
+      },
+      "lli_canonical_vs_native": {
+        "output_small.smoothing.pgm": {
+          "identical": true,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 0,
+          "max_byte_difference": 0
+        }
+      },
+      "lli_optimized_vs_native": {
+        "output_small.smoothing.pgm": {
+          "identical": true,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 0,
+          "max_byte_difference": 0
+        }
+      },
+      "llc_O2_canonical_vs_native": {
+        "output_small.smoothing.pgm": {
+          "identical": true,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 0,
+          "max_byte_difference": 0
+        }
+      },
+      "llc_O2_optimized_vs_native": {
+        "output_small.smoothing.pgm": {
+          "identical": true,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 0,
+          "max_byte_difference": 0
+        }
+      },
+      "single_stage_identical": {
+        "function(loop(loop-rotate))": true,
+        "function(gvn)": true
+      }
+    },
+    {
+      "sweep_id": "K33-R6-041",
+      "kernel_id": "mibench/susan-smoothing",
+      "pipeline": "function(loop(loop-rotate)),function(gvn),function(early-cse)",
+      "digest_equal_to_canonical": false,
+      "sweep_vs_canonical": {
+        "output_small.smoothing.pgm": {
+          "identical": false,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 5811,
+          "max_byte_difference": 17
+        }
+      },
+      "lli_canonical_vs_native": {
+        "output_small.smoothing.pgm": {
+          "identical": true,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 0,
+          "max_byte_difference": 0
+        }
+      },
+      "lli_optimized_vs_native": {
+        "output_small.smoothing.pgm": {
+          "identical": true,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 0,
+          "max_byte_difference": 0
+        }
+      },
+      "llc_O2_canonical_vs_native": {
+        "output_small.smoothing.pgm": {
+          "identical": true,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 0,
+          "max_byte_difference": 0
+        }
+      },
+      "llc_O2_optimized_vs_native": {
+        "output_small.smoothing.pgm": {
+          "identical": true,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 0,
+          "max_byte_difference": 0
+        }
+      },
+      "single_stage_identical": {
+        "function(loop(loop-rotate))": true,
+        "function(gvn)": true,
+        "function(early-cse)": true
+      }
+    },
+    {
+      "sweep_id": "K33-R6-049",
+      "kernel_id": "mibench/susan-smoothing",
+      "pipeline": "function(loop(loop-rotate)),function(early-cse),function(gvn)",
+      "digest_equal_to_canonical": false,
+      "sweep_vs_canonical": {
+        "output_small.smoothing.pgm": {
+          "identical": false,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 5811,
+          "max_byte_difference": 17
+        }
+      },
+      "lli_canonical_vs_native": {
+        "output_small.smoothing.pgm": {
+          "identical": true,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 0,
+          "max_byte_difference": 0
+        }
+      },
+      "lli_optimized_vs_native": {
+        "output_small.smoothing.pgm": {
+          "identical": true,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 0,
+          "max_byte_difference": 0
+        }
+      },
+      "llc_O2_canonical_vs_native": {
+        "output_small.smoothing.pgm": {
+          "identical": true,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 0,
+          "max_byte_difference": 0
+        }
+      },
+      "llc_O2_optimized_vs_native": {
+        "output_small.smoothing.pgm": {
+          "identical": true,
+          "bytes": [
+            7233,
+            7233
+          ],
+          "differing_bytes": 0,
+          "max_byte_difference": 0
+        }
+      },
+      "single_stage_identical": {
+        "function(loop(loop-rotate))": true,
+        "function(early-cse)": true,
+        "function(gvn)": true
+      }
+    }
+  ]
+}

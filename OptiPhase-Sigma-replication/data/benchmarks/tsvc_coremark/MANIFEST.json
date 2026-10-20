@@ -1,0 +1,157 @@
+{
+  "suite": "tsvc_coremark",
+  "summary": "10 vectorization and state-machine micro-kernels: 5 TSVC loops and 5 CoreMark kernels. Every kept file is a byte-identical copy of the pinned upstream file. Nothing was compiled or executed, and no code was modified.",
+  "targetDir": "data/benchmarks/tsvc_coremark (under repository root <repository root>)",
+  "sources": [
+    {
+      "name": "CoreMark",
+      "url": "https://github.com/eembc/coremark",
+      "commit": "1f483d5b8316753a742cbf5590caf5bd0a4e4777",
+      "retrievedUtc": "2026-10-15T17:40:28Z",
+      "retrievalMethod": "git clone (full history) into an empty scratch directory; the clone HEAD commit was pinned",
+      "license": "Apache License 2.0, LICENSE.md copied to coremark/LICENSE.md"
+    },
+    {
+      "name": "TSVC (adaptation in llvm-test-suite)",
+      "url": "https://github.com/llvm/llvm-test-suite",
+      "path": "MultiSource/Benchmarks/TSVC",
+      "commit": "95569a773206d4ea96522bec400817478efa1511",
+      "retrievedUtc": "2026-10-15T17:40:30Z",
+      "retrievalMethod": "git clone --depth 1 --filter=blob:none --sparse into an empty scratch directory, then sparse checkout of MultiSource/Benchmarks/TSVC only",
+      "originalSource": "Maleki et al., An Evaluation of Vectorizing Compilers, PACT 2011, doi 10.1109/PACT.2011.68. The llvm-test-suite README cites http://polaris.cs.uiuc.edu/~maleki1/TSVC.tar.gz as the original download.",
+      "adaptationNotes": "From the llvm-test-suite README: the iteration count became a command-line parameter, per-type variants were added (the original tests only floats), categories were split into separate directories, and timing was removed from the output.",
+      "variantUsed": "float (-flt) category directories. The README states the original TSVC tests only floats, so the float variant is the faithful one.",
+      "license": "Permissive University of Illinois (NCSA-style) license, copyright 2011 University of Illinois at Urbana-Champaign and Polaris Research Group. MultiSource/Benchmarks/TSVC/LICENSE.TXT copied to tsvc/LICENSE.TXT. The llvm-test-suite root LICENSE.TXT differs from it and was not copied."
+    }
+  ],
+  "kernelCount": 10,
+  "kernels": [
+    {
+      "id": "tsvc:s000",
+      "definedIn": "tsvc/tsc.inc:819",
+      "buildEntry": "tsvc/LinearDependence-flt/tsc.c",
+      "category": "LINEAR_DEPENDENCE",
+      "behavior": "unit-stride map, no dependence",
+      "justification": "Simple map X[i] = Y[i] + 1 (tsc.inc:835). Reference case for a fully vectorizable loop."
+    },
+    {
+      "id": "tsvc:s111",
+      "definedIn": "tsvc/tsc.inc:847",
+      "buildEntry": "tsvc/LinearDependence-flt/tsc.c",
+      "category": "LINEAR_DEPENDENCE",
+      "behavior": "constant stride-2 access",
+      "justification": "for (i = 1; i < LEN; i += 2) a[i] = a[i-1] + b[i] (tsc.inc:861-862). Writes hit odd indices and reads hit even indices, so there is no loop-carried dependence. The test is the stride-2 access pattern with a read and a write to the same array, which a dependence test must disambiguate. Chosen as the strided-access case."
+    },
+    {
+      "id": "tsvc:s271",
+      "definedIn": "tsvc/tsc.inc:2785",
+      "buildEntry": "tsvc/ControlFlow-flt/tsc.c",
+      "category": "CONTROL_FLOW",
+      "behavior": "conditional update",
+      "justification": "if (b[i] > 0) a[i] += b[i] * c[i] (tsc.inc:2799-2800). Conditional store that needs if-conversion or masking to vectorize. Chosen as the conditional case."
+    },
+    {
+      "id": "tsvc:s311",
+      "definedIn": "tsvc/tsc.inc:3486",
+      "buildEntry": "tsvc/Reductions-flt/tsc.c",
+      "category": "REDUCTIONS",
+      "behavior": "floating-point sum reduction",
+      "justification": "sum += a[i] (tsc.inc:3502). Vectorizing a floating-point sum requires reassociation, which strict FP semantics do not allow. Chosen as the reduction case."
+    },
+    {
+      "id": "tsvc:s321",
+      "definedIn": "tsvc/tsc.inc:3998",
+      "buildEntry": "tsvc/Recurrences-flt/tsc.c",
+      "category": "RECURRENCES",
+      "behavior": "loop-carried flow dependence, distance 1",
+      "justification": "a[i] += a[i-1] * b[i] (tsc.inc:4012). First-order linear recurrence: each iteration reads the value the previous iteration wrote, so it cannot be vectorized as written. Chosen as the loop-carried-dependence case."
+    },
+    {
+      "id": "coremark:core_bench_state",
+      "definedIn": "coremark/core_state.c:46",
+      "behavior": "state machine",
+      "justification": "Workload entry point for the state machine. It runs core_state_transition (core_state.c:217) over the input twice, with byte corruption in between, using data-dependent branches and per-state counters. It is called from calc_func (core_list_join.c:91)."
+    },
+    {
+      "id": "coremark:core_bench_list",
+      "definedIn": "coremark/core_list_join.c:159",
+      "behavior": "linked list",
+      "justification": "Linked-list workload entry point, called from core_main.c:65 and core_main.c:67 with finder_idx 1 and -1. It performs pointer-chasing core_list_find, core_list_reverse, core_list_remove, core_list_undo_remove, and core_list_mergesort (with two comparators) on list_head nodes."
+    },
+    {
+      "id": "coremark:core_bench_matrix",
+      "definedIn": "coremark/core_matrix.c:92",
+      "behavior": "matrix",
+      "justification": "Matrix workload entry point. It calls matrix_test (core_matrix.c:130), which runs matrix_add_const, matrix_mul_const, matrix_mul_vect, matrix_mul_matrix, matrix_mul_matrix_bitextract, and matrix_sum."
+    },
+    {
+      "id": "coremark:crcu8",
+      "definedIn": "coremark/core_util.c:165",
+      "behavior": "bit-serial CRC step",
+      "justification": "Eight-iteration loop with a data-dependent branch (core_util.c:169-186). crcu16 calls it twice, and crc16 and crcu32 reach it through crcu16, so crcu8 is the only computational CRC kernel in core_util.c."
+    },
+    {
+      "id": "coremark:matrix_mul_matrix_bitextract",
+      "definedIn": "coremark/core_matrix.c:344",
+      "behavior": "integer strided reduction with bit-field extraction",
+      "justification": "Fifth CoreMark kernel. The other matrix kernels in core_bench_matrix are plain multiply and add. This one takes int16 operands (MATDAT_INT, coremark.h:104-107) into int32 products, extracts bit fields with shift-and-mask (bit_extract, core_matrix.c:49), reads B with a column stride of N, and reduces into C[i*N+j]. It is called from matrix_test (core_matrix.c:154). It adds an integer, bit-manipulating vectorization case that the floating-point TSVC loops do not cover."
+    }
+  ],
+  "coremarkPort": {
+    "selected": "posix",
+    "reason": "The upstream Makefile sets PORT_DIR=macos on Darwin. macos/core_portme.mak includes posix/core_portme.mak, which sets PORT_SRCS = posix/core_portme.c. The simple/ port was not used.",
+    "copied": [
+      "coremark/posix/core_portme.c",
+      "coremark/posix/core_portme.h",
+      "coremark/posix/core_portme_posix_overrides.h"
+    ]
+  },
+  "coremarkChecksumCheck": {
+    "upstreamFile": "coremark.md5 at the pinned commit",
+    "result": "5 of 6 entries match",
+    "matching": ["core_list_join.c", "core_main.c", "core_matrix.c", "core_state.c", "core_util.c"],
+    "mismatch": {
+      "file": "coremark.h",
+      "copyMd5": "b0ec69b6c8e75853d06accb3b1bcf534",
+      "upstreamMd5": "8ca974c013b380dc7f0d6d1afb76eb2d"
+    },
+    "cause": "Commit 4ee6eca (2023-10-06, 'Fix typo') changed one comment word in coremark.h (ultithread to multithread) and did not regenerate coremark.md5, which was last updated in 9d07b05 (2022-06-15). At 9d07b05 all six entries match, and no later commit touches the other five files.",
+    "option": "Re-pinning CoreMark to 9d07b05 would make all six entries match. Not done, because the pinned commit is the current HEAD."
+  },
+  "files": [
+    {"path": "coremark/core_list_join.c", "sha256": "ca00e4e010ece47d7f040cb92aa50a95345a00d3171b59d088f6b243be06ce7b"},
+    {"path": "coremark/core_main.c", "sha256": "17884c93c5b94378eb0ff02b4df3725756cf2addb9b8cbcaa6200a4649ff5ca7"},
+    {"path": "coremark/core_matrix.c", "sha256": "ecdff717b5a5c4907d221a606760e25499899cbf617582c05d40db71c91351e4"},
+    {"path": "coremark/core_state.c", "sha256": "f4b84bb0a3452c45a4daa664ab502bfdccbd31cb57d93e9ac490c60937717a4e"},
+    {"path": "coremark/core_util.c", "sha256": "a3fbfcb9bb943b638624b8ece01c5836dd56a96d7bcde2697b248d077447327f"},
+    {"path": "coremark/coremark.h", "sha256": "42642b9a06c7ed2b3bd9eda971b7c3868c4f5d27bf7ef6c4bba11291a0c2598a"},
+    {"path": "coremark/LICENSE.md", "sha256": "9577b9c846f61fd69a0d8ac965998c6450c7d8969f71f0bb4a931b91aebad28a"},
+    {"path": "coremark/posix/core_portme.c", "sha256": "f2b48f062058d528a5907e339ffd05d98f64d59e7c40d500fe05563eb5247ad0"},
+    {"path": "coremark/posix/core_portme.h", "sha256": "a40e90ef4c5a5626d438afee1f8da628c2800105d4c3b5318e8810b34be554f2"},
+    {"path": "coremark/posix/core_portme_posix_overrides.h", "sha256": "1dc67b5c1b9c773cccc740b911d708333d3bf154c3313f77b8a52e18209eda59"},
+    {"path": "tsvc/LICENSE.TXT", "sha256": "19a1ed5a00c18e907cedcaa7b89cf68b46711d039f49ad30136675656b466d78"},
+    {"path": "tsvc/tests.h", "sha256": "0ee52c30273110a8e1788a2cca2d333e245b89a6bb17938eec45a0ecad9abf97"},
+    {"path": "tsvc/types.h", "sha256": "fca955f589d820f84b838d1afd890e2e8bb04e63b5f8c2d5ff9ace0f540b0fb2"},
+    {"path": "tsvc/tsc.inc", "sha256": "d4e9d5d228cf28de28fa0ba4c54a6917a917c36eaea2ec3cd842d666229b2ae5"},
+    {"path": "tsvc/dummy.inc", "sha256": "af62fba457871ba03d8025cc36905c81cec03b2862f93888a682636ff18a0945"},
+    {"path": "tsvc/LinearDependence-flt/tsc.c", "sha256": "3590847029bab697d91e010a6f0c954f1151a118948ec0aea1a70256362cc89a"},
+    {"path": "tsvc/LinearDependence-flt/dummy.c", "sha256": "76d030d2c17ffb160f726629483f1a8673768a5da1bebae49c359109002368b9"},
+    {"path": "tsvc/ControlFlow-flt/tsc.c", "sha256": "61d8da4cfe1af8d725f6d04760285c4c9a57cb398f8a179ae3dfa396181f8eec"},
+    {"path": "tsvc/ControlFlow-flt/dummy.c", "sha256": "76d030d2c17ffb160f726629483f1a8673768a5da1bebae49c359109002368b9"},
+    {"path": "tsvc/Reductions-flt/tsc.c", "sha256": "6c6f9fb92563d5285007988229f58094b20b78653900f882d96cfcc96a1246e1"},
+    {"path": "tsvc/Reductions-flt/dummy.c", "sha256": "76d030d2c17ffb160f726629483f1a8673768a5da1bebae49c359109002368b9"},
+    {"path": "tsvc/Recurrences-flt/tsc.c", "sha256": "be4891f17084a07905ed7382071beb45254b9f4a5fe573e4e81549ef833463fd"},
+    {"path": "tsvc/Recurrences-flt/dummy.c", "sha256": "76d030d2c17ffb160f726629483f1a8673768a5da1bebae49c359109002368b9"}
+  ],
+  "excludedFromUpstream": [
+    "CoreMark: Makefile, README.md, barebones_porting.md, coremark.md5 (used only for the checksum check above), all *.mak build fragments, and every port tree except posix/ (barebones, simple, linux, macos, cygwin, freebsd, rtems, zephyr, docs).",
+    "TSVC: README, all CMakeLists.txt files, all *.reference_output files, the llvm-test-suite root LICENSE.TXT, and the 32 category directories not used (every -dbl variant and the unused -flt categories)."
+  ],
+  "blockers": [],
+  "notes": [
+    "Nothing was compiled or executed.",
+    "tsc.inc defines every TSVC kernel, and each category tsc.c enables its kernels through the TESTS flag. Building the LinearDependence-flt entry also runs the other LINEAR_DEPENDENCE kernels (s1111, s112, and so on). Downstream builds need a harness-level selection, since no code was edited here.",
+    "The CoreMark core_bench_* functions run through iterate() in core_main.c and need the rest of the harness, so they are not standalone programs.",
+    "The TSVC license is a permissive University of Illinois (NCSA-style) license. It is not on the approved-license list in the user's dependency-management rules. It governs benchmark source rather than a package dependency, so it is flagged for review."
+  ]
+}

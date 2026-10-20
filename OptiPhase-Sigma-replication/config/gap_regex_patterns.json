@@ -1,0 +1,70 @@
+{
+  "clusters": {
+    "G1": {
+      "name": "Black-Box Phase Ordering Opacity",
+      "description": "Treats compiler passes as opaque tokens without modeling NewPM analysis invalidation",
+      "patterns": [
+        "(?:black[- ]box|opaque)\\s+(?:phase[- ]ordering|heuristic|search|RL|agent)",
+        "(?:fails?|unable|neglects?)\\s+to\\s+(?:model|track|account for)\\s+(?:analysis|invalidation|precondition)",
+        "(?:destroys?|invalidates?|corrupts?)\\s+(?:ScalarEvolution|SCEV|LoopAccessInfo|DominatorTree)",
+        "(?:destructive pass interference|DPI|phase[- ]ordering collapse)",
+        "(?:pass interaction|enabling relation)\\s+remains?\\s+(?:unexplored|unmodeled|unknown)"
+      ]
+    },
+    "G2": {
+      "name": "Static Instruction Count Misalignment",
+      "description": "Optimizing raw static instruction counts suppresses vectorization and unrolling",
+      "patterns": [
+        "(?:static instruction count|InstCount|raw instruction delta|\\bdelta[- ]inst\\b)\\s+(?:fallacy|misalignment|metric)",
+        "(?:penalizes?|suppresses?|misses?)\\s+(?:loop unrolling|vectorization|SIMD|strength reduction)",
+        "(?:increase|higher|bloat)\\s+(?:in|of)\\s+static instructions?\\s+(?:despite|while reducing)\\s+(?:runtime|execution|cycles)",
+        "(?:register pressure|stack spill|live-range inflation)\\s+(?:ignored|neglected|unaccounted)",
+        "(?:loop-weighted|execution-weighted|throughput-aware)\\s+cost\\s+(?:functional|model|metric)"
+      ]
+    },
+    "G3": {
+      "name": "Unverified Transformation Soundness",
+      "description": "Missing translation validation risks miscompilations under poison and undef",
+      "patterns": [
+        "(?:unverified|soundness|formal verification|translation validation)\\s+(?:lacking|omitted|missing|gap)",
+        "(?:silent miscompilation|semantic deviation|refinement violation|UB|undefined behavior)",
+        "(?:poison|undef|nsw|nuw)\\s+(?:semantics|propagation|handling)\\s+(?:ignored|unverified)",
+        "(?:Alive2|SMT|Z3|bounded verification)\\s+(?:not applied|absent|unsupported)",
+        "(?:equivalence|refinement)\\s+(?:proof|guarantee)\\s+(?:lacking|unproven)"
+      ]
+    },
+    "G4": {
+      "name": "Compilation Time & Redundant Pass Bloat",
+      "description": "Zero-mutation fixed-point pass invocations cause unnecessary compilation overhead",
+      "patterns": [
+        "(?:redundant pass|pass bloat|fixed[- ]point waste|zero[- ]mutation)",
+        "(?:no-op|zero[- ]delta|unchanged IR)\\s+pass\\s+(?:execution|invocation|overhead)",
+        "(?:compilation wall-clock|compile time|compilation overhead)\\s+(?:explosion|neglected|ignored)",
+        "(?:idempotence|idempotent deficit|pass pruning)\\s+(?:unaddressed|unexplored)",
+        "(?:repetitive|cyclic|redundant)\\s+(?:cleanup passes|instcombine|simplifycfg)"
+      ]
+    },
+    "G5": {
+      "name": "Single-Objective Scalarization Bias",
+      "description": "Collapsing speedup, code size, and compilation into ad-hoc weighted sums",
+      "patterns": [
+        "(?:single[- ]objective|scalarization|weighted sum)\\s+(?:bias|limitation|flaw)",
+        "(?:Pareto|multi[- ]objective|trade-off)\\s+(?:frontier|hypervolume|dominance)\\s+(?:omitted|neglected)",
+        "(?:conflicting objectives|speedup vs code size|binary footprint vs compile time)",
+        "(?:exact Lebesgue|3D hypervolume|Chebyshev)\\s+(?:not computed|unexplored)",
+        "(?:ad[- ]hoc weighting|arbitrary scalarization|heuristic tuning)"
+      ]
+    },
+    "G6": {
+      "name": "Micro-Benchmark Generalization Collapse",
+      "description": "Evaluations restricted to synthetic loops fail on control-flow-heavy embedded workloads",
+      "patterns": [
+        "(?:synthetic|polyhedral[- ]only|micro-benchmark)\\s+(?:overfitting|bias|restriction)",
+        "(?:fails?|does not generalize)\\s+to\\s+(?:real[- ]world|embedded|control[- ]flow)",
+        "(?:PolyBench.*only|lack of cross-suite|benchmark diversity)",
+        "(?:irregular control flow|branchy code|system workloads|MiBench)",
+        "(?:workload generalizability|external validity|domain shift)"
+      ]
+    }
+  }
+}
